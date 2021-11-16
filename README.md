@@ -21,5 +21,10 @@ TODO
 
 ### Registro
 ![signup_wireframe](./Wireframes/wireframe_login.jpg)
+
 ### Login
 ![login_wireframe](./Wireframes/wireframe_signup.jpg)
+
+### Detalle de producto
+![detail_wireframe](./Wireframes/wireframe_productDetail.png)
+
