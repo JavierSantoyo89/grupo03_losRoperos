@@ -1,5 +1,7 @@
 # grupo03_losRoperos
 
+## Acerca de
+TODO
 
 ## Integrantes:
 
