@@ -17,3 +17,9 @@ Licenciado en tecnologías de Información con experiencia en bases de datos rel
 ### Diego Salas
 TODO
 
+## Wireframes
+
+### Registro
+![signup_wireframe](./Wireframes/wireframe_login.jpg)
+### Login
+![login_wireframe](./Wireframes/wireframe_signup.jpg)
