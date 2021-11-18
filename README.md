@@ -15,7 +15,7 @@ Estudié Ing. Biomédica, pero tras dos años de trabajar en ese campo me cambi�
 Licenciado en tecnologías de Información con experiencia en bases de datos relacionales, administración de personal y procesos.
 
 ### Diego Salas
-TODO
+ Ingeniero Biomedico con dos años de experiencia y maestro de yoga creando un negocio en linea.
 
 ## Wireframes
 
