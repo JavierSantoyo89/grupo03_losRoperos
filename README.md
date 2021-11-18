@@ -25,6 +25,11 @@ Licenciado en tecnologías de Información con experiencia en bases de datos rel
 ### Login
 ![login_wireframe](./Wireframes/wireframe_signup.jpg)
 
+### Home
+![home_wireframe](./Wireframes/wireframe_home.png)
+
 ### Detalle de producto
 ![detail_wireframe](./Wireframes/wireframe_productDetail.png)
 
+### Shopping bag
+![shopping_bag_wireframe](./Wireframes/wireframe_shoppingBag.jpeg)
