@@ -1,0 +1,16 @@
+1.	Comenzar a hacer…
+•	Se logró estar de acuerdo en crear una tienda en línea para el Proyecto enfocado en ropa.
+•	Se le asignaron ventanas a cada quien.
+
+2.	Hacer más…
+•	Buscar na relación de colores para el proyecto acorde a los deseos de marketing.
+•	Rediseñar el logo.
+
+3.	Continuar haciendo…
+•	Pulir cada una de las ventanas para implementarlo en producción.
+
+4.	Hacer menos…
+•	Reducir el lapso entre reuniones para dar entregables.
+
+5.	Dejar de hacer…
+•	Dejar de lado el proyecto.
