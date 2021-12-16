@@ -1,0 +1,23 @@
+{
+  "name": "proyecto_tienda_ropa",
+  "version": "1.0.0",
+  "description": "Tienda de Ropa",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JavierSantoyo89/grupo03_losRoperos.git"
+  },
+  "author": "Diego Salas, Javier Santoyo, Miguel Santamaria y Eduardo Enciso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JavierSantoyo89/grupo03_losRoperos/issues"
+  },
+  "homepage": "https://github.com/JavierSantoyo89/grupo03_losRoperos#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

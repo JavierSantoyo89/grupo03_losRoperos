@@ -1,0 +1,271 @@
+
+/* css general*/
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: Roboto, sans-serif;
+    background-color: #FFFFFF;
+}
+p{
+    font-size: 12px;
+}
+header{
+    display: flex;
+    background-color: #C4C4C4;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 350px;
+    flex-wrap: wrap;
+    
+}
+header div {
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+}
+.buscador, .navegacion{
+    width:35%;
+}
+.logo{
+    width:30%;
+    border-radius:100px
+}
+.buscador form{
+    display: flex;
+    box-shadow: 0px 7px 20px rgba(121, 188, 207, 0.4);
+    background-color:#ffff; 
+    border-radius: 100px;
+    font-size: 30px;
+}
+
+
+.fa-search{
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    right:5px;
+}
+ .fa-search:before{
+    font-size: 14px;
+   
+}
+.buscador form .input-buscador{
+    background-color:#ffff;
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    justify-content:center;
+    font-size: 18px;
+    
+}
+
+.navegacion, .buscador{
+    flex-direction:column;
+    justify-content: flex-start;
+    padding:25px;
+}
+
+.navegacion ul, .productos ul{
+    display:flex;
+    flex-direction:row;
+    
+    justify-content: space-between;
+    list-style-type: none;
+    
+    
+}
+
+.navegacion ul li a, .productos ul li a{
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+.productos{
+    width: 100%;
+    background-color:#1F1E1E;
+    color: #79BCCF;
+    margin-right: 10%;
+    margin-left:10%;
+    font-weight: bold;
+}
+.banner{
+    background-color: #FFFFFF;
+    width: 100%;
+    
+}
+.anuncio{
+    display:flex;
+    flex-direction: column;
+    background: linear-gradient(91.25deg, rgba(33, 206, 255, 0.2) 0%, rgba(255, 2, 53, 0.2) 100%), #C4C4C4;
+    width: 100%;
+    height: 100%;
+    margin-right: 10%;
+    margin-left:10%;
+    
+}
+.anuncio p{
+    font-size: 30px;
+    padding:10px;
+    
+}
+.descuento{
+    font-weight:bolder;
+}
+main{
+    background-color:#FFFFFF;
+    margin-right: 10%;
+    margin-left:10%;
+    font-family: 'Cabin', sans-serif;
+}
+h1{
+    padding:20px;
+    font-weight: bolder;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+}
+
+main section .descripcion {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+main section .cantidad, .precio{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    justify-content:center;
+    align-items: center;
+}
+main section .name{
+    display: flex;
+    flex-direction: column; 
+    justify-content:center;
+    padding:5%
+}
+main section .name strong{
+    font-weight: bold;
+}
+#descripcion{
+    padding:5%;
+    font-size:16px;
+}
+
+#cantidad{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+#cantidad span{
+    margin-right: 5%;
+}
+#cantidad form{
+    width:10%;
+    
+}
+#cantidad input{
+    width:100%;
+}
+.precio{
+    justify-content: flex-end;
+}
+#precio{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+}
+
+#precio span{
+    width:100%;
+    
+}
+main section .cupon, .pagar {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+#cupon{
+    width:100%;
+}
+#pagar{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content:space-between;
+    
+}
+.subtotal, .total{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-end;
+}
+footer{
+    background-color: #FFFFFF;
+    color:#FFFFFF;
+    padding: 28px 0px 64px;
+    font-size: 16px;
+}
+footer p{
+  font-size: 16px; 
+  font-weight: bold;
+}
+
+footer .down{
+    background-color:#000;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 10%;
+    margin-left:10%;
+    
+}
+footer .down .service, .account, .information, .follow{
+    width:25%;
+    display:flex;
+    flex-direction: column;
+    padding:5%;
+    
+    
+}
+footer ul{
+    list-style-type: none;
+    color: #ffff;
+    text-decoration: none;
+    padding:5%
+}
+footer a{
+    text-decoration: none;
+    color: #ffff;
+    font-size: 14px;
+}
+
+footer .footer-flex ul, .terms ul, .follow ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.follow ul{
+    justify-content:center;
+    
+}
+footer .redes li{
+    padding:10%;
+}
+footer i{
+    font-size:24px;
+}
+footer .terms li{
+    padding:5%;
+}
