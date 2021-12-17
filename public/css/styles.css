@@ -2,8 +2,8 @@
 /*----------------------------------------variables de CSS---------------------------------------------*/
 :root{
     --blanco :#FFFFFF;
-    --Roboyo-font: Roboto, sans-serif;
-    --Cabin-font:'Cabin', sans-serif;
+    --Roboto-font: "Roboto", sans-serif;
+    --Cabin-font:"Cabin", sans-serif;
     --header-color: #C4C4C4;
     --productos-color:#1F1E1E;
     --negro: #1F1E1E;
