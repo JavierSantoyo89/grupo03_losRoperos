@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./partials/head') %>
+    <body>
+        <%- include('./partials/header') %>
+        <main>
+            <h1>Carrito</h1>
+                <section class= "main-section">
+                    <div class= "descripcion">
+                        <img src="images/ropa2.jpg" alt="producto-vender">
+                        <div class= "name">
+                            <strong id="descripcion">Los Roperos</strong>
+                            <p id="descripcion">Cool Jacket 300 </p>
+                            <p id="descripcion">Talla:Mediana</p>
+                            <span id="descripcion">SKU: 34324535DT12-3124</span>
+                        </div>
+                    </div>
+                    <div class="cantidad">
+                        <div id="cantidad">
+                            <span>Cantidad: </span>
+                            <i class="fas fa-minus"></i>
+                            <form class="numero" method="GET" action=# ><input type="text" id="cantidad" placeholder="  1"></form>
+                            <i class="fas fa-plus"></i>
+                         </div>
+                    </div>
+                    <div class="precio">
+                        <div id="precio">
+                            <span>$999.00 MXN</span>
+                            <span>Eliminar</span> 
+
+                        </div>
+                    </div>
+                </section>
+                <section class="secondary-section">
+                    <div id="cupon">
+                        <span>Aqui va un cupon</span>
+                    </div>
+                    <div id="pagar">
+                        <div class="subtotal">
+                            <span>SUBTOTAL:</span>
+                            <span>$999.00</span>
+                        </div>
+                        <div class="total">
+                            <span>TOTAL:</span>
+                            <span>$999.00</span>
+                        </div>
+                    </div>
+                </section>
+        </main>
+        <%- include('./partials/footer') %>
+    </body>
+    
+</html>
