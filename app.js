@@ -14,7 +14,7 @@ const routes = require('./routers/main');
 const routersDetail = require('./routers/products');
 
 app.use('/',routes);
-app.use('/detail',routersDetail);
+app.use('/products',routersDetail);
 
 // ------- levantar servidor ------- //
 app.listen(1689,()=>{
