@@ -11,10 +11,10 @@ app.use(express.static(__dirname + '/public'));
 
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');
-const routersDetail = require('./routers/products');
+const routerDetalle = require('./routers/products');
 
 app.use('/',routes);
-app.use('/products',routersDetail);
+app.use('/detalle',routerDetalle);
 
 // ------- levantar servidor ------- //
 app.listen(1689,()=>{

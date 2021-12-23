@@ -2,58 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
-    <link rel="stylesheet" href="/css/styleDetalleProducto.css">
-    <link rel='shortcut icon' href="/images/logosvgRoperos.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
     <title>Detalle del producto</title>
 </head>
 <body >
 
 <!-------------------------------------------------------------------------- Cabezal -------------------------------------------------------------------------->
-    <header>
-        <section class="Cabezal">
-            <div class='divCabezal'>
-                <img class= "logoCIA "src="/images/logosvgRoperos.svg" alt ='Logo Roperos' >
-                <p class= 'textoCabezal'>Compra lo que quieras y te llega hasta la puerta de tu hogar.</p>
-                <img Class= 'logoCarrito' src="/images/cart-arrow-down-solid.svg" alt ='carrito de compras' >
-                </div>
-        </section>
-    </header>
+<%-include ("./partials/header.ejs") %>
 
-    <!-------------------------------------------------------------------------- Main -------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------- Banner --------------------------------------------------------------------------->
+<%-include ("./partials/banner.ejs") %>
+
+<!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
     <main>
 
         <article class="container">
                 <img class = "imgProduct" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=736&q=80" width="300">
 
-                <p><strong>Nombre: </strong><%=product.name></p>
-                <p><strong>Modelo: </strong><%=product.model></p>
-                <p><strong>Marca: </strong><%=product.marca></p>
-                <p><strong>Existencias: </strong><%=product.count></p>
-                <p><strong>Descripcion: </strong><%=product.description</p>
+                <p><strong>Nombre: </strong><%= product.name %></p>
+                <p><strong>Modelo: </strong><%= product.model %></p>
+                <p><strong>Marca: </strong><%= product.marca %></p>
+                <p><strong>Existencias: </strong><%= product.count %></p>
+                <p><strong>Descripcion: </strong><%= product.description %></p>
             
                 <input  id="BtnAgreagarCarrito" type="button" value="agregarCarrito">
         </article>
 
     </main>
+<!-- 'http://localhost:1689/detalle/1' -->
+<!-------------------------------------------------------------------------- Footer -------------------------------------------------------------------------->
+<%-include ("./partials/footer.ejs")%>
 
-<!-------------------------------------------------------------------------- Pier de pagina -------------------------------------------------------------------------->
-    <footer>
-        <section class="pieFooterPadre">
-            <ul class="pieDePagHijo">
-                <li><a href="#">Quienes somos</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="https://github.com/JavierSantoyo89/grupo03_losRoperos">Repositorio</a></li>
-            </ul>
-            <div class="pieCentral">
-                <p>Overflow 2021</p>
-                <p>Todos los derechos reservados</p>
-            </div>
-            
-        </section>
-            
-    </footer>
 </body>
 </html>

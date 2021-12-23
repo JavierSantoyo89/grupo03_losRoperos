@@ -2,17 +2,16 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
-const productsDB = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const controller = {
-	// Detail - Detail from one product
-	detail: (req, res) => {
-		// Do the magic
-		//res.sendFile(path.join(__dirname, "../views/products"));
-    res.render("products", {'products': productsDB});
-	}
+const productsController = {
+    detalle : (req,res) => {
+        //res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
+		let id = req.params.id
+		let product = products.find(product => product.id == id)
+        res.render('products.ejs',{product, toThousand})
+    }
 };
-
-module.exports = controller;
+module.exports = productsController
