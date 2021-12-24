@@ -11,6 +11,10 @@ body{
 }
 p{
     font-size: 12px;
+
+/* ----------------------------------------------------- */
+
+/* --------------------- Header ------------------------ */
 }
 header{
     display: flex;
@@ -94,11 +98,18 @@ header div {
     margin-left:10%;
     font-weight: bold;
 }
+/* ------------------------ */
+
+/* ------------------------ Banner ------------------------ */
+
+
 .banner{
+    
     background-color: #FFFFFF;
     width: 100%;
     
 }
+
 .anuncio{
     display:flex;
     flex-direction: column;
@@ -117,6 +128,13 @@ header div {
 .descuento{
     font-weight:bolder;
 }
+
+
+
+/* --------------------- */
+
+
+/* --------------------- CSS Carrito.ejs ----------------------- */
 main{
     background-color:#FFFFFF;
     margin-right: 10%;
@@ -210,6 +228,10 @@ main section .cupon, .pagar {
     flex-direction:row;
     justify-content: flex-end;
 }
+/* --------------------- */
+
+/* --------------------- Footer ----------------------- */
+
 footer{
     background-color: #FFFFFF;
     color:#FFFFFF;
