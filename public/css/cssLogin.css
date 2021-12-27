@@ -1,0 +1,33 @@
+
+.Login-Conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.formEstructura{
+    margin: 50px;
+    padding: 30px 30px 50px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background: black;
+    border-top: 1px solid red;
+    border-radius: 20px;
+}
+
+.Btnlogin{
+    Margin-top: 70px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#newUSer{
+    display:none;
+}

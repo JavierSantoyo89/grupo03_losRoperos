@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/cssLogin.css" type="text/css" media="all">
+</head>
+<body>
+    <%-include ("./partials/header.ejs") %>
+    <%-include ("./partials/banner.ejs") %>
+
+    <main class="Login-Conteiner">
+
+        <form class="formEstructura">
+            
+            <label>User:             <input class="oldUser" type="text"></label>
+            <label>Password:         <input class="oldUser" type="password"></label>
+                           
+                <div class="btnLogin">
+                      <!--  <input class="BtnGlobal" type="submit" value='ingresar'>
+                        <input class="BtnGlobal" type="button" value="Crear cuenta">
+                        <input class="BtnGlobal" type="reset" value="Limpiar"> -->
+
+                        <div id="close"><a href="javascript:cerrar();">cerrar</a></div>
+                        <button id="ingresar" onClick="reply_click(this.id)">Ingresar</button>
+                        <button id="crearCuenta" onClick= mostrar()>Crear cuenta</button>
+                        <button id="limpiar" onClick="reply_click(this.id)">Limpiar</button>
+                        
+                </div>
+        </form>
+        <form class='formEstructura' id="newUser" style="display:none">
+            <label>User:             <input class="oldUser" type="text"></label>
+            <label>Birthday:         <input type ="date"></label>
+            <label>Mail:             <input type="email"></label>
+            <label>Password:         <input type="password"></label>
+            <label>Confirm password: <input type="password"></label>
+            <div id="close"><a href="javascript:cerrar();">cerrar</a></div>
+
+            <div class="btnLogin">
+                <!--  <input class="BtnGlobal" type="submit" value='ingresar'>
+                  <input class="BtnGlobal" type="button" value="Crear cuenta">
+                  <input class="BtnGlobal" type="reset" value="Limpiar"> -->
+                  <button id="ingresar" onClick="reply_click(this.id)">Crear cuenta</button>
+                  <button id="crearCuenta" onClick= cerrar()>Login</button>
+                  <button id="limpiar" onClick="reply_click(this.id)">Limpiar</button>
+                  
+          </div>
+        </form>
+    </main>
+
+    <%-include ("./partials/footer.ejs")%>
+
+    <script type="text/javascript">
+/*  Revisar que al momento de cargar no muestr el form NewUser y cuando haces click en boton nueva Vuenta muestre form NewUser u coulte formLogin*/
+/*         
+        function mostrar() {
+
+            var titulo = document.getElementById("newUSer");
+            titulo.style.display = 'block';
+*/
+function mostrar() {
+            if(newUser.style.display === 'none'){
+                var titulo = document.getElementById("newUSer");
+            titulo.style.display = 'block';
+             alert('SE ACTIVO LA FUNCION MOSTRAR');
+            } else{
+                alert('No salio como tenia idea');
+            }
+             
+        }
+
+
+        function cerrar() {
+            div = document.getElementById('newUser');
+            div.style.display = 'none';
+            alert('SE ACTIVO LA FUNCION ocultar');
+        }
+
+/*function showNewUser() {
+    var x = document.getElementById("newUser");
+        if (x.style.display === "block") {
+            alert("Jalo")
+            x.style.display = "block";         
+        } else {
+            alert("no jalo")
+            x.style.display = "none";
+        }
+}
+function mostrar() {
+            div = document.getElementById("newUser");
+            div.style.display = " ";
+        }
+*/
+    </script>
+</body>
+</html>
