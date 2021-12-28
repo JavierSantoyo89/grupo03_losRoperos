@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
+    <title>Detalle del producto</title>
+</head>
+<body >
+
+<!-------------------------------------------------------------------------- Cabezal -------------------------------------------------------------------------->
+<%-include ("./partials/header.ejs") %>
+
+<!-------------------------------------------------------------------------- Banner --------------------------------------------------------------------------->
+<%-include ("./partials/banner.ejs") %>
+
+<!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
+    <main>
+
+        <article class="container">
+                <img class = "imgProduct" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=736&q=80" width="300">
+
+                <p><strong>Nombre: </strong><%= product.name %></p>
+                <p><strong>Modelo: </strong><%= product.model %></p>
+                <p><strong>Marca: </strong><%= product.marca %></p>
+                <p><strong>Existencias: </strong><%= product.count %></p>
+                <p><strong>Descripcion: </strong><%= product.description %></p>
+            
+                <input  id="BtnAgreagarCarrito" type="button" value="agregarCarrito">
+        </article>
+
+    </main>
+<!-- 'http://localhost:1689/detalle/1' -->
+<!-------------------------------------------------------------------------- Footer -------------------------------------------------------------------------->
+<%-include ("./partials/footer.ejs")%>
+
+</body>
+</html>

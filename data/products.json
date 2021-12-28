@@ -1,0 +1,17 @@
+[{
+    "id": 1,
+    "name": "chaqueta retro",
+    "model": "chaqueton",
+    "marca": "Louis Vuitron",
+    "count": 10,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque urna sagittis tortor hendrerit consectetur."
+},
+{
+    "id": 2,
+    "name": "Jalo",
+    "model": "Esta",
+    "marca": "mierda!!!",
+    "count": 10000,
+    "description": "Eso cabron!!!"
+}
+]
