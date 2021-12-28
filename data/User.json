@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "dateSystem": "01/01/2022",
+        "FirstName":"Francisco Javier",
+        "LastName":"Santoyo Rios",
+        "Date":"16/03/1989",
+        "mail":"javier.santoyo@yahoo.com",
+        "Password":"1234"
+    },
+    { 
+        "id": "2",
+        "dateSystem": "",
+        "FirstName":"",
+        "LastName":"",
+        "Date":"",
+        "mail":"",
+        "Password":""},
+    { 
+        "id": "3",
+        "dateSystem": "",
+        "FirstName":"",
+        "LastName":"",
+        "Date":"",
+        "mail":"",
+        "Password":""}
+]

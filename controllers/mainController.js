@@ -8,13 +8,8 @@ const mainController = {
         res.render("product")
     },
     carrito : (req,res) => {
-        res.render("carrito")
-    },
-    login : (req,res) => {
-        res.render("login")
-    },
-    register : (req,res) => {
-        res.render("register")
+        //res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
+        res.render('carrito')
     }
     
 }

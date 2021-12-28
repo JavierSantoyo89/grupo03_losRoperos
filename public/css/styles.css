@@ -23,6 +23,10 @@ body{
 }
 p{
     font-size: 12px;
+
+/* ----------------------------------------------------- */
+
+/* --------------------- Header ------------------------ */
 }
 /*--------------------------------- css header----------------------------------------------*/
 header{
@@ -107,19 +111,27 @@ header div {
     margin-left:10%;
     font-weight: bold;
 }
+/* ------------------------ */
+
+/* ------------------------ Banner ------------------------ */
+
+
 .banner{
-    background-color: var(--blanco);
+    
+    background-color: #FFFFFF;
     width: 100%;
     
 }
+
 .anuncio{
     display:flex;
     flex-direction: column;
     background: var(--anuncio-background);
-    width: 100%;
+    width: 80%;
     height: 100%;
     margin-right: 10%;
     margin-left:10%;
+    align-items: center;
     
 }
 .anuncio p{
@@ -131,7 +143,12 @@ header div {
     font-weight:bolder;
 }
 
-/*----------------------------------------------- css main carrito------------------------------------------*/
+
+
+/* --------------------- */
+
+
+/* --------------------- CSS Carrito.ejs ----------------------- */
 main{
     background-color: var(--blanco);
     margin-right: 10%;
@@ -226,8 +243,10 @@ main section .cupon, .pagar {
     flex-direction:row;
     justify-content: flex-end;
 }
+/* --------------------- */
 
-/* -----------------------------------------------css footer--------------------------------------*/
+/* --------------------- Footer ----------------------- */
+
 footer{
     background-color: var(--blanco);
     color: var(--blanco);

@@ -1,0 +1,119 @@
+
+/*! ----------------------- Configuracion global ----------------------- */
+*{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/bike.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+
+
+ /*! ----------------------- Header ----------------------- */
+.divCabezal{
+    display: flex;
+    justify-content: space-between;
+
+    border: 5px solid black;
+    border-radius: 0 0 12% 12%;
+    background-color: gray;
+    opacity: .7;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+
+.logoCarrito{
+    width: 30px;
+    align-self: flex-end;
+    margin-right: 8px;
+}
+
+.logoCIA{
+    width:80px; 
+    box-align:left;
+}
+
+
+/*! ----------------------- Main ----------------------- */
+main {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    border: 5px solid black;
+    
+    background-color:rgb(231, 231, 231);
+    font-size: medium;
+    color: black;
+    text-align: center;
+    width: 70vw;
+    padding: 15px;    
+}
+
+.imgProduct{
+        padding-top: 10px;
+        width: 25vw;
+        border-radius: 20%;
+}
+
+#BtnAgreagarCarrito {
+    color: white;
+    background-color:cornflowerblue;
+    border-radius: 30%;
+}
+
+
+
+/*! ----------------------- Footer ----------------------- */
+.pieFooterPadre{
+    position:flex;
+    bottom:0px;
+    width: 100vw;
+    border: 5px solid rgb(0, 0, 0);
+    background-color:rgb(119,119,119);
+    margin-top: 10px;
+}
+
+.pieDePagHijo{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding-right: 50px;
+}
+
+.pieCentral p.pieCentral{
+    Display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: -10;
+}
+
+
+
+/*! ----------------------- Media query's ----------------------- */
+
+@media screen and (max-width:380px) {
+    .logoCIA{
+        display: none;
+    }
+}
+
+/*! No funciono
+.pieFooterPadre{
+    position: absolute;
+   margin-bottom: 0px;
+    align-items: center;
+    background-color: aqua;
+}*/

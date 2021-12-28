@@ -1,18 +1,26 @@
+// ------- Require's dependencies ------- //
 const express = require('express');
 const app = express();
+const  path = require('path');
 
+// ------- Template engine ------- //
 app.set('view engine', 'ejs');
 
-const routes = require('./routers/main');
+// ------- Ruta para hacer publica la carpeta "public" ------- //
+app.use(express.static(__dirname + '/public'));
 
-app.use(  express.static(__dirname + '/public'));
+// ------- Variables de rutas ------- //
+const routes = require('./routers/main');
+const routerDetalle = require('./routers/products');
+const routerLogin = require('./routers/login');
 
 app.use('/',routes);
+app.use('/detalle',routerDetalle);
+app.use('/login',routerLogin);
 
-
-app.listen(3000,()=>{
-    console.log('Servidor funcionando')
-
+// ------- levantar servidor ------- //
+app.listen(1689,()=>{
+    console.log('Servidor funcionando en http://localhost:1689');
 });
 
 

@@ -10,9 +10,9 @@ router.get('/product',mainController.product);
 
 router.get('/carrito', mainController.carrito);
 
-router.get('/login',mainController.login);
+/*router.get('/login',mainController.login);
 
 router.get('/register',mainController.register);
-
+*/
 module.exports = router;
 
