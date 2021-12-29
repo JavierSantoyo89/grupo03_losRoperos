@@ -15,8 +15,10 @@ const routerDetalle = require('./routers/products');
 const routerLogin = require('./routers/login');
 
 app.use('/',routes);
+app.use('/search', routes);
 app.use('/detalle',routerDetalle);
 app.use('/login',routerLogin);
+
 
 // ------- levantar servidor ------- //
 app.listen(1689,()=>{
