@@ -9,6 +9,9 @@ app.set('view engine', 'ejs');
 // ------- Ruta para hacer publica la carpeta "public" ------- //
 app.use(express.static(__dirname + '/public'));
 
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');
 const routerDetalle = require('./routers/products');
