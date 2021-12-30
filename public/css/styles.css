@@ -306,3 +306,16 @@ footer i{
 footer .terms li{
     padding:5%;
 }
+
+/* --------------------- Footer ----------------------- */
+
+#notFound-Body{
+    background-image:url('../images/404Backfround.png');
+   height: 100vh;
+   width: 100vw;
+   background-repeat: no-repeat;
+   background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+}

@@ -12,6 +12,11 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
+// ------- Para poder usar metodo PUT & DELETE ------- //
+    //const methodOverride = require('method-override');
+    //app.use(methodOverride('_method'))
+
+
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');
 const routerDetalle = require('./routers/products');
@@ -22,6 +27,10 @@ app.use('/search', routes);
 app.use('/detalle',routerDetalle);
 app.use('/login',routerLogin);
 
+// ------- Cadena de ruta para error 404 ------- //
+app.use((req,res,next)=>{
+    res.status(404).render('not-found')
+})
 
 // ------- levantar servidor ------- //
 app.listen(1689,()=>{
