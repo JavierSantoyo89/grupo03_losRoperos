@@ -3,6 +3,11 @@ const express = require('express');
 const app = express();
 const  path = require('path');
 
+
+// ------- Cadena para llamar middlewares ------- //
+        var logMiddleware = require('./middlewares/logmiddleware');
+        app.use(logMiddleware);
+
 // ------- Template engine ------- //
 app.set('view engine', 'ejs');
 
@@ -31,6 +36,7 @@ app.use('/login',routerLogin);
 app.use((req,res,next)=>{
     res.status(404).render('not-found')
 })
+
 
 // ------- levantar servidor ------- //
 app.listen(1689,()=>{
