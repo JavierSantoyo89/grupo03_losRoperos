@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding: 0px;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* margin:0;*/
+   /* font-family: 'roboto','sans-serif';*/
+    font-size: 14px;
+    background:url(/images/ciclistas.png) center;
+    background-size:100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+ }
+
+ 
+ form.registro{
+    
+    min-height: 0px;
+    align-content:center; 
+    position:relative; 
+    width:30%;
+    
+    height: 160%;
+    border-radius: 10px;
+    padding:15px;
+   background:rgba(0,0,0,0.3);
+   box-shadow:0 0 20px 0, inherit;
+   z-index: -1;
+ }
+
+h2{
+    text-align: center;
+    margin-top: 0;
+    /*color:rgba(0,0,0,0.4);*/
+    color:#fff;
+    }
+
+.input-casilla:hover{
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+    cursor:pointer;
+    
+}
+
+.input-formulario, .contraseña, .input-casilla{
+ display:block;
+ width: 100%;
+ border: 1px solid rgba(0,0,0, 0.4);
+ margin-top: 15px;
+ border-radius: 2px;
+ padding: 10px;
+ /*background: rgba(0,0,0,0.1)*/;
+ background: #fff;
+
+}
+
+#cumpleaños{
+    margin:0;
+    padding:0;
+}
+
+h4{
+    color:#fff;
+}
+h5{
+    color:#fff;
+font-size: 18px;
+}
+
+
+label {
+    color:#fff;
+}
+@media(max-width:480){
+    form{
+        width: 50%;
+    }
+.input-casilla,.input-formulario,.contraseña,#cumpleaños,#sell,#buy{
+    width: 100%;
+}
+label, h4{
+ width: 100%;   
+}
+}
