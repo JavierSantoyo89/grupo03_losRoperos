@@ -26,11 +26,13 @@ app.use(express.json());
 const routes = require('./routers/main');
 const routerDetalle = require('./routers/products');
 const routerLogin = require('./routers/login');
+const routerUsers=require('./routers/users');
 
 app.use('/',routes);
 app.use('/search', routes);
 app.use('/detalle',routerDetalle);
 app.use('/login',routerLogin);
+app.use('/registro',routerUsers);
 
 // ------- Cadena de ruta para error 404 ------- //
 app.use((req,res,next)=>{
