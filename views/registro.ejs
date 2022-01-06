@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title> </title>
+</head>
+<%-include ("./partials/header.ejs")%>
+<body>
+    <form action="/" method="POST" class="registro">
+           <h2>Registro de Usuario</h2>
+       <input class="input-formulario" type="text" name="name" placeholder="Nombre y apellido" required>
+            <input class="input-formulario" type="text" name="user" placeholder="Nombre de usuario"required>
+            <input class="input-formulario" type="email" name="email" placeholder="E-mail"required>
+            <br>
+            <br>
+            <label for="birth_date" id=cumpleaños><b><h5>Fecha de nacimiento</h5></b></label>
+            <input class="input-formulario" type="date" name="birth_date" id="birth_date">
+            <input class="input-formulario" type="text" name="addres" placeholder="Domicilio">
+           <br>
+            <h4>Perfil del Usuario</h4>
+            <div class="profile">
+                <input type="radio" name="profile" value="buy" id="buy">
+                <label for="buy">Comprador</label>
+                <input type="radio" name="profile" value="sell" id="sell">
+                <label for="sell">Vendedor</label>
+            </div>
+            <br>
+            <h5>Intereses</h5>
+            <div class="intereses">
+                <div>
+                    <input type="checkbox" name="interests" value="a" id="a">
+                    <label for="a">Casual</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="b" id="b">
+                    <label for="b">Caballero</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="c" id="c">
+                    <label for="c">Dama</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="d" id="d">
+                    <label for="d">Zapato</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="e" id="e">
+                    <label for="e">tenis</label>
+                </div>
+            </div>
+            
+            <h4>Elegí tu foto de usuario</h4>
+            <input class="input-formulario" type="file" name="avatar">
+            <br>
+            <br>
+            <input class="contraseña" type="password" name="pass" placeholder="Elegí tu contraseña">
+            <input class="contraseña" type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
+            <br>
+            <br>
+            <input class="input-casilla" type="submit" value="Enviar">
+            <input class="input-casilla" type="reset" value="Borrar">
+            <br>
+            <br>
+        </form>
+          
+</body>
+<%-include ("./partials/footer.ejs")%>
+
+</html>
