@@ -14,14 +14,14 @@
      display: flexbox;
      justify-content: center;
    
-    width: 50vw;
+    width: 30vw;
      align-self: center;
  }
  .registro_Form_Registro{
     display: flexbox;
     justify-content: center;
     flex-direction: column;
-
+    
     height: 100%;/*160%*/
     border-radius: 10px;
     padding:15px;
@@ -70,7 +70,7 @@ font-size: 18px;
 }
 
 
-.label {
+.checkbox_registro {
     color:#fff;
 }
 /*

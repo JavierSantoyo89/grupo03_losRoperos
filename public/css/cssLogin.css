@@ -1,11 +1,92 @@
 /*Te lo semi vacio(Ya es tu arte),  ya que tengas el CSS completo con tu diseño y con los prefijos adecuados
  "Nombre del sitio_ Calse/id" ej Login_Body lo pasas al css general y queda el sitio.*/
+*{
+   box-sizing: border-box;
+ }
 
-.login_Body{
-    background-color: rgb(99, 96, 96);
+.login_Body {   
+padding: 0px;
+margin: 0px;
+background-color: rgb(99, 96, 96);
+background:url(../images/bike.jpg)no-repeat;
+background-size:100vw 100vh;
+background-repeat: no-repeat;
+background-attachment: fixed;
 }
 
-.login_Formulario{
-    display: flex;
-    justify-content: center;
+ .contenedor_Login {
+     width: 100%;
+     padding: 15px;
+ }
+ 
+ .login_Formulario {  
+    margin-left: 40%;
+    width: 20vw;
+    align-self: center;  
+    height: 100%;/*160%*/
+    border-radius: 10px;
+    padding:15px;
+    background:rgba(0,0,0,0.3);
+    box-shadow:0 0 20px 0, inherit;
+    z-index: -1;
+}
+
+h1 { 
+    font-size: 40px;
+    text-align: center;
+    color:#fff;  
+}
+
+input[type="text"],
+input[type="password"] {
+font-size: 16px;
+width: 82%;
+padding: 12px;
+border:none;
+border-bottom: 2px solid white;
+background:transparent;
+}
+           
+.input_contenedor_Login {
+    margin-bottom: 15px;
+    border:none;
+    background: transparent;
+}    
+
+.icon_Login {
+    min-width:30px;
+    text-align: center;
+    font-size: 20px;
+    color:#fff;
+}
+
+.button_Login {
+border:none;
+width: 100%;
+text-align: center;
+padding: 12px;
+font-size: 20px;
+color: black;
+border-radius: 3px;
+cursor:pointer;
+}
+
+.button_Login:hover {
+color: #fff;
+background: rgba(0,0,0,0.3);
+}
+
+.link_Login {
+    text-decoration: none;
+    color:#fff;
+    font-weight: bold;
+ }
+
+.link_Login:hover {
+    border:3px solid #fff
+}
+
+.texto1 {
+    text-align: center;
+    color:#fff;
 }
