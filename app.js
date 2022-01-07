@@ -25,20 +25,16 @@ app.use(express.json());
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');
 const routerDetalle = require('./routers/products');
-const routerLogin = require('./routers/login');
-const routerUsers=require('./routers/users');
+const routerUsers = require('./routers/users');
 
 app.use('/',routes);
-app.use('/search', routes);
-app.use('/detalle',routerDetalle);
-app.use('/login',routerLogin);
-app.use('/registro',routerUsers);
+app.use('/user',routerUsers);
+app.use ('/detalle',routerDetalle);
 
 // ------- Cadena de ruta para error 404 ------- //
 app.use((req,res,next)=>{
     res.status(404).render('not-found')
 })
-
 
 // ------- levantar servidor ------- //
 app.listen(1689,()=>{
@@ -46,3 +42,10 @@ app.listen(1689,()=>{
 });
 
 
+/* Sitios funcionales
+http://localhost:1689
+http://localhost:1689/user/login
+http://localhost:1689/user/registro
+http://localhost:1689/detalle/2
+http://localhost:1689/detalle/1
+*/
