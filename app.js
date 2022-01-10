@@ -3,6 +3,10 @@ const express = require('express');
 const app = express();
 const  path = require('path');
 
+// ------- Para poder usar metodo PUT & DELETE ------- //
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+ //app.use(methodOverride('_method'))
+
 // ------- Cadena para llamar middlewares ------- //
         var logMiddleware = require('./middlewares/logmiddleware');
         app.use(logMiddleware);
@@ -15,11 +19,6 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
-
-// ------- Para poder usar metodo PUT & DELETE ------- //
-    //const methodOverride = require('method-override');
-    //app.use(methodOverride('_method'))
-
 
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');

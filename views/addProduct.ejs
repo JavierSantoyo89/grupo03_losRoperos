@@ -9,9 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/cssAddProduct.css" type="text/css" media="all">
 </head>
-    <body>
+    <body id="Bodys">
 
         <!-------------------------------------------------------------------------- Cabezal -------------------------------------------------------------------------->
         <%-include ("./partials/header.ejs") %>
@@ -21,8 +22,34 @@
         
         <!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
             <main>
+                <div id="AddProductDiv">
+                    <form id="AddProductForm" action="/products" method="POST" enctype="multipart/form-data">
 
-                <P>Hola a todos!!!.</P>
+                        <p>formato para agragar nuevos productos</p>
+                            
+                        <label> Nombre(s): </label>
+                        <input name="FirstName" type="" required>
+                        <label> Apellido(s): </label>
+                        <input name="LastName" type="" required>
+                        <label> Fecha de nacimiento: </label>
+                        <input name="Date" type="date" required>
+                        <label> Email: </label>
+                        <input name="Correo" type="email" required>
+                        <label> Confirma email: </label>
+                        <input name="ConfirmCorreo" type="email" required>
+                        <label> Contraseña: </label>
+                        <input name="Pass" type="password" required>
+                        <label> Repite contraseña: </label>
+                        <input name="ConfirmPass" type="password" required>
+                            
+                        <div id="AddProductBottones"></div>
+                            <button name="Enviar" type="submit">Cargar</button>
+                            <button name="Clear" type="reset">Reiniciar</button>
+                        </div>
+                    </form>
+
+                </div>
+                
             </main>
         
         <!-------------------------------------------------------------------------- Footer -------------------------------------------------------------------------->

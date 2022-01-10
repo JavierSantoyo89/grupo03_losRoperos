@@ -1,6 +1,7 @@
 // ************ Require's ************
 const { Router } = require('express');
 const express = require('express');
+const multer = require('multer');
 const router = express.Router();
 
 
