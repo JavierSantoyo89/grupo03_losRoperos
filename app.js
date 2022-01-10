@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const  path = require('path');
 
-
 // ------- Cadena para llamar middlewares ------- //
         var logMiddleware = require('./middlewares/logmiddleware');
         app.use(logMiddleware);
@@ -24,12 +23,12 @@ app.use(express.json());
 
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');
-const routerDetalle = require('./routers/products');
-const routerUsers = require('./routers/users');
+const routerProduct = require('./routers/products');
+const routerUser = require('./routers/users');
 
 app.use('/',routes);
-app.use('/user',routerUsers);
-app.use ('/detalle',routerDetalle);
+app.use('/product',routerProduct);
+app.use('/user',routerUser);
 
 // ------- Cadena de ruta para error 404 ------- //
 app.use((req,res,next)=>{
@@ -43,9 +42,13 @@ app.listen(1689,()=>{
 
 
 /* Sitios funcionales
-http://localhost:1689
-http://localhost:1689/user/login
-http://localhost:1689/user/registro
-http://localhost:1689/detalle/2
-http://localhost:1689/detalle/1
+http://localhost:1689                  // Vista home //
+http://localhost:1689/user/login       // Vista login //
+http://localhost:1689/user/register    // Vista registro //
+http://localhost:1689/product/add      // Vista agregar productos //
+*/
+
+/* Sitios a reparar
+http://localhost:1689/product/2
+http://localhost:1689/product/1
 */

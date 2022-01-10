@@ -3,6 +3,7 @@
     "name": "chaqueta retro",
     "model": "chaqueton",
     "marca": "Louis Vuitron",
+    "category": "stock",
     "count": 10,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque urna sagittis tortor hendrerit consectetur."
 },
@@ -11,6 +12,7 @@
     "name": "Jalo",
     "model": "Esta",
     "marca": "mierda!!!",
+    "category": "stock",
     "count": 10000,
     "description": "Eso cabron!!!"
 }

@@ -14,8 +14,11 @@ const validateLogin =[
 ]
 
 
+
+// ---- Rutas dedicadas a user's ---- //
 routerUsers.get('/login',usersController.login);
-routerUsers.post('/login', validateLogin, usersController.validarUser)
-routerUsers.get('/registro',usersController.registro);
+routerUsers.get('/register',usersController.registro);
+// routerUsers.post('/login', validateLogin, usersController.validarUser)
+
 
 module.exports = routerUsers;
