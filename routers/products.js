@@ -14,7 +14,8 @@ router.get('/',productsController.home);
 
 
 router.get('detalle/:id',productsController.detalle); 
-router.get('/add',productsController.addProduct);
+router.get('/add',productsController.home);
+router.post('/add',productsController.addProduct);
 
 
 

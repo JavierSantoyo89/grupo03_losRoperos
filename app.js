@@ -17,8 +17,9 @@ app.set('view engine', 'ejs');
 // ------- Ruta para hacer publica la carpeta "public" ------- //
 app.use(express.static(__dirname + '/public'));
 
-app.use(express.urlencoded({ extended: false}));
-app.use(express.json());
+// ---- Configuracion previa para usar metodos post, put & delete ---- //
+app.use(express.urlencoded({ extended: false})); // convierte el form a objeto literal
+app.use(express.json()); // convierte a JSON
 
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');
@@ -41,10 +42,10 @@ app.listen(1689,()=>{
 
 
 /* Sitios funcionales
-http://localhost:1689                  // Vista home //
-http://localhost:1689/user/login       // Vista login //
-http://localhost:1689/user/register    // Vista registro //
-http://localhost:1689/product/add      // Vista agregar productos //
+localhost:1689                  // Vista home //
+localhost:1689/user/login       // Vista login //
+localhost:1689/user/register    // Vista registro //
+localhost:1689/product/add      // Vista agregar productos //
 */
 
 /* Sitios a reparar

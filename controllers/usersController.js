@@ -8,17 +8,15 @@ const usersController = {
     registro: (req,res) => {
         res.render("registro")
     },
-    validarUser: (req,res) => {
-        let errors = validationResult(req);
-        //res.render("registro")
-        if (!errors.isEmpty()){ //Si errores no esta vacio
-            console.log(errors)
-                 return res.render ('login', { mensajeDeError: errors.mapped()})
-               res.send(errors)
-               //res.redirect('search')
-               //res.render('product')
-               console.log('hasta aqui jala')
+    createUser: (req,res) => {
+        /*let newUser = {
+            FirstName: req.body.name,
+            LastName:req.body.,
+            Date:"16/03/1989",
+            mail:"javier.santoyo@yahoo.com",
+            Password:*/
+            res.send(req.body)
         }
+
     }
-}
     module.exports=usersController;

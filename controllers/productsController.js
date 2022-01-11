@@ -13,8 +13,8 @@ const category = products.filter(function(product){
 const productsController = {
     // ---- Muesta todos los productos disponibles (No funciona al 100%) ---- //
     home: (req,res) => {
-        res.send('Web de productos')
-        //res.render("home")
+        //res.send('Web de productos')
+        res.render("addProduct")
     },
     
     // ---- Muesta el detalle de un producto ( Done )
@@ -28,8 +28,18 @@ const productsController = {
 
     // ---- Muestra la vista de agregar producto (Done) ---- //
     addProduct: (req,res) => {
+        let newProduct = {
+            name: req.body.name,
+            model: req.body.model,
+            marca: req.body.marca,
+            category: req.body.category,
+            count: req.body.count,
+            description: req.body.description
+        }
         //res.send('Ya jalo por aqui')
-        res.render('addProduct')
+        //res.send(newProduct);
+        //res.render('addProduct')
+        res.redirect('./')
     },
 };
 

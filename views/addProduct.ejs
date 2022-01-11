@@ -23,24 +23,22 @@
         <!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
             <main>
                 <div id="AddProductDiv">
-                    <form id="AddProductForm" action="/products" method="POST" enctype="multipart/form-data">
+                    <form id="AddProductForm" action="/product/add" method="POST">
 
                         <p>formato para agragar nuevos productos</p>
                             
-                        <label> Nombre(s): </label>
-                        <input name="FirstName" type="" required>
-                        <label> Apellido(s): </label>
-                        <input name="LastName" type="" required>
-                        <label> Fecha de nacimiento: </label>
-                        <input name="Date" type="date" required>
-                        <label> Email: </label>
-                        <input name="Correo" type="email" required>
-                        <label> Confirma email: </label>
-                        <input name="ConfirmCorreo" type="email" required>
-                        <label> Contraseña: </label>
-                        <input name="Pass" type="password" required>
-                        <label> Repite contraseña: </label>
-                        <input name="ConfirmPass" type="password" required>
+                        <label for="name"> Name: </label>
+                        <input name="name" type="text" required>
+                        <label for="model"> Model: </label>
+                        <input name="model" type="text" required>
+                        <label for="marca"> Marca: </label>
+                        <input name="marca" type="text" required>
+                        <label for="category"> Categria: </label>
+                        <input name="category" type="text" required>
+                        <label for="count"> Cantidad: </label>
+                        <input name="count" type="number" required>
+                        <label for="description"> Descripcion: </label>
+                        <input name="description" type="text" required>
                             
                         <div id="AddProductBottones"></div>
                             <button name="Enviar" type="submit">Cargar</button>
