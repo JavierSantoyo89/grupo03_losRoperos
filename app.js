@@ -5,7 +5,7 @@ const  path = require('path');
 
 // ------- Para poder usar metodo PUT & DELETE ------- //
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
- //app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 
 // ------- Cadena para llamar middlewares ------- //
         var logMiddleware = require('./middlewares/logmiddleware');
@@ -40,15 +40,20 @@ app.listen(1689,()=>{
     console.log('Servidor funcionando en http://localhost:1689');
 });
 
+/*
 
-/* Sitios funcionales
-localhost:1689                  // Vista home //
-localhost:1689/user/login       // Vista login //
-localhost:1689/user/register    // Vista registro //
-localhost:1689/product/add      // Vista agregar productos //
-*/
+Estructura del sitio
+    Home:
+        /                               // Vista home //
+        /search                         // Vista busqueda //
+        /carrito                        // Vista de carrito de compras //
+    User:
+        /user/login                 // Vista login //
+        /user/register              // Vista registro //
+    Product:
+        /product/[id]               // Vista detalle de x's producto //
+        /product/add                // Vista agregar productos //
+        /product/update/[id]        // Vista para actualizar x's producto //
+        /product/delete/[id]        // Borra registro de x's producto //
 
-/* Sitios a reparar
-http://localhost:1689/product/2
-http://localhost:1689/product/1
 */

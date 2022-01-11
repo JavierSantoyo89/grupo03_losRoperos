@@ -8,15 +8,21 @@ const router = express.Router();
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
-
 // ---- Rutas dedicadas para productos ---- //
 router.get('/',productsController.home);
+router.get('/:id',productsController.detalle); 
 
-
-router.get('detalle/:id',productsController.detalle); 
+// ---- Rutas para agregar producto ---- //
 router.get('/add',productsController.home);
 router.post('/add',productsController.addProduct);
 
+// ---- Rutas para update ---- //
+router.get('/update/:id',productsController.update);
+router.put('/update',productsController.update);
+
+// ---- Rutas para delete ---- //
+router.get('/delete/:id',productsController.delete);
+router.delete('/delete',productsController.delete);
 
 
 

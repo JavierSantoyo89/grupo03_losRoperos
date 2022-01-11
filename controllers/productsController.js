@@ -12,6 +12,10 @@ const category = products.filter(function(product){
 
 const productsController = {
     // ---- Muesta todos los productos disponibles (No funciona al 100%) ---- //
+    Index: (req,res) =>{
+        res.render("./products")
+    },
+    
     home: (req,res) => {
         //res.send('Web de productos')
         res.render("addProduct")
@@ -22,8 +26,9 @@ const productsController = {
         //res.send('detalle')
        // res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
 		let id = req.params.id
-		let products = products.find(product => product.id == id)
-        res.render('products',{products, toThousand});
+		//let product = products.find(product => product.id == id)
+        //res.render('products',{product, toThousand});
+        res.send("entras en el sitio del articulo " + id)
     },
 
     // ---- Muestra la vista de agregar producto (Done) ---- //
@@ -39,8 +44,18 @@ const productsController = {
         //res.send('Ya jalo por aqui')
         //res.send(newProduct);
         //res.render('addProduct')
-        res.redirect('./')
+        res.redirect('../')
     },
+    update: (req,res) => {
+        let id = req.params.id;
+        res.render('updateProduct')
+        //res.send('Funciono el controlador de actualizar' + id + 'Por metodo put!!!')
+    },
+    delete: (req,res) => {
+        let id = req.params.id;
+        res.render('deleteProduct')
+        //res.send('Funciono el controllador delete ' + id)
+    }
 };
 
 module.exports = productsController
