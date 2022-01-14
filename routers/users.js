@@ -17,6 +17,8 @@ const usersController = require('../controllers/usersController');
 
 // ---- Rutas dedicadas a user's ---- //
 routerUsers.get('/login',usersController.login);
+routerUsers.post('/login',usersController.ProcessLogin); //FALTA validaciones.
+
 routerUsers.get('/register',usersController.registro);
 routerUsers.post('/register', usersController.createUser)
 // routerUsers.post('/login', validateLogin, usersController.validarUser)

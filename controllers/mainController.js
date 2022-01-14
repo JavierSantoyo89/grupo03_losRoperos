@@ -13,6 +13,14 @@ const mainController = {
         let busqueda = req.query.buscador
         //res.send("Este animal busco " & busqueda)
         res.render("search")
+    }, numeroVisitas:
+    (req,res)=>{
+        res.render("PruebaPago")
+/*if(req.session.numeroVisitas == undefined) {
+            req.session.numeroVisitas =0
+        }
+        req.session.numeroVisitas ++;
+        res.send('Sesion tiene el numero: ' + req.session.numeroVisitas)*/
     }
     
 }
