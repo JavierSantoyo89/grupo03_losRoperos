@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const  path = require('path');
+const session = require('express-session');
 
 // ------- Para poder usar metodo PUT & DELETE ------- //
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
@@ -10,6 +11,7 @@ app.use(methodOverride('_method'));
 // ------- Cadena para llamar middlewares ------- //
         var logMiddleware = require('./middlewares/logmiddleware');
         app.use(logMiddleware);
+        app.use(session({secret: 'Secreto!!!'})); // para iniciar session
 
 // ------- Template engine ------- //
 app.set('view engine', 'ejs');
@@ -25,7 +27,6 @@ app.use(express.json()); // convierte a JSON
 const routes = require('./routers/main');
 const routerProduct = require('./routers/products');
 const routerUser = require('./routers/users');
-
 app.use('/',routes);
 app.use('/product',routerProduct);
 app.use('/user',routerUser);

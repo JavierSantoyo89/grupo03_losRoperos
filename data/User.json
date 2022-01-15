@@ -1,27 +1,26 @@
 [
     {
         "id": "1",
-        "dateSystem": "01/01/2022",
-        "FirstName":"Francisco Javier",
-        "LastName":"Santoyo Rios",
-        "Date":"16/03/1989",
-        "mail":"javier.santoyo@yahoo.com",
-        "Password":"1234"
+        "user": "JavierSantoyo89",
+        "firstName":"Francisco Javier",
+        "lastName":"Santoyo Rios",
+        "date":"16/03/1989",
+        "adress": "",
+        "rol": "Admin",
+        "email":"javier.santoyo@yahoo.com",
+        "password":"1234",
+        "dateSystem": "01/01/2021"
     },
     { 
         "id": "2",
-        "dateSystem": "",
-        "FirstName":"",
-        "LastName":"",
-        "Date":"",
-        "mail":"",
-        "Password":""},
-    { 
-        "id": "3",
-        "dateSystem": "",
-        "FirstName":"",
-        "LastName":"",
-        "Date":"",
-        "mail":"",
-        "Password":""}
+        "user": "Yuri",
+        "firstName":"Yuridia",
+        "lastName":"montemayor",
+        "date":"12/12/2021",
+        "adress": "",
+        "rol": "Client",
+        "email":"Y@gmail.com",
+        "password":"1234",
+        "dateSystem": "01/01/2000"
+    }
 ]
