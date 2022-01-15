@@ -2,21 +2,25 @@
     {
         "id": "1",
         "user": "JavierSantoyo89",
-        "FirstName":"Francisco Javier",
-        "LastName":"Santoyo Rios",
-        "Date":"16/03/1989",
+        "firstName":"Francisco Javier",
+        "lastName":"Santoyo Rios",
+        "date":"16/03/1989",
+        "adress": "",
+        "rol": "Admin",
         "email":"javier.santoyo@yahoo.com",
         "password":"1234",
-        "DateSystem": "01/01/2021"
+        "dateSystem": "01/01/2021"
     },
     { 
         "id": "2",
         "user": "Yuri",
-        "FirstName":"Yuridia",
-        "LastName":"montemayor",
-        "Date":"12/12/2021",
+        "firstName":"Yuridia",
+        "lastName":"montemayor",
+        "date":"12/12/2021",
+        "adress": "",
+        "rol": "Client",
         "email":"Y@gmail.com",
         "password":"1234",
-        "DateSystem": "01/01/2000"
+        "dateSystem": "01/01/2000"
     }
 ]

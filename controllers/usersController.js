@@ -47,7 +47,7 @@ const usersController = {
                    console.log("Usuario a logaerse no capturado")
                 }
         req.session.usuarioLogieado = usuarioALogearse;
-        res.send('Exito')
+        res.send('../')
         }else{
             return res.render('login', {errors: errors.errors});
             console,log(errors)

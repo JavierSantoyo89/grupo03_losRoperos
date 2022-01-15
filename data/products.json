@@ -2,18 +2,28 @@
     "id": 1,
     "name": "chaqueta retro",
     "model": "chaqueton",
-    "marca": "Louis Vuitron",
+    "brand": "Louis Vuitron",
+    "size": "ch",
+    "color": "red",
+    "price": 1000,
     "category": "stock",
+    "status": "Season",
     "count": 10,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque urna sagittis tortor hendrerit consectetur."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque urna sagittis tortor hendrerit consectetur.",
+    "img": ""
 },
 {
     "id": 2,
     "name": "Jalo",
     "model": "Esta",
-    "marca": "mierda!!!",
+    "brand": "mierda!!!",
+    "size": "ch",
+    "color": "red",
+    "price":1000,
     "category": "stock",
+    "status": "Season",
     "count": 10000,
-    "description": "Eso cabron!!!"
+    "description": "Eso cabron!!!",
+    "img": ""
 }
 ]
