@@ -15,6 +15,7 @@ app.use(methodOverride('_method'));
 
 // ------- Template engine ------- //
 app.set('view engine', 'ejs');
+app.set('views',path.join(__dirname,'/views'));
 
 // ------- Ruta para hacer publica la carpeta "public" ------- //
 app.use(express.static(__dirname + '/public'));
@@ -28,7 +29,7 @@ const routes = require('./routers/main');
 const routerProduct = require('./routers/products');
 const routerUser = require('./routers/users');
 app.use('/',routes);
-app.use('/product',routerProduct);
+app.use('/products',routerProduct);
 app.use('/user',routerUser);
 
 // ------- Cadena de ruta para error 404 ------- //

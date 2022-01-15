@@ -1,0 +1,122 @@
+/*----------------------------------------variables de CSS---------------------------------------------*/
+:root{
+    --blanco :#FFFFFF;
+    --Roboto-font: "Roboto", sans-serif;
+    --Cabin-font:"Cabin", sans-serif;
+    --header-color: #C4C4C4;
+    --productos-color:#1F1E1E;
+    --negro: #1F1E1E;
+    --celeste:#79BCCF;
+    --anuncio-background:linear-gradient(91.25deg, rgba(33, 206, 255, 0.2) 0%, rgba(255, 2, 53, 0.2) 100%), #C4C4C4;
+    
+}
+/*--------------------------------------------- css general----------------------------------------------*/
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--Roboto-font);
+    background-color: var(--blanco);
+}
+p{
+    font-size: 12px;
+}
+/* ----------------------------------------------------- */
+/* --------------------- CSS Carrito.ejs ----------------------- */
+main{
+    background-color: var(--blanco);
+    margin-right: 10%;
+    margin-left:10%;
+    font-family:var(--Cabin-font);
+}
+
+h1{
+    padding:20px;
+    font-weight: bolder;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+}
+
+main section .descripcion {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+main section .cantidad, .precio{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    justify-content:center;
+    align-items: center;
+}
+main section .name{
+    display: flex;
+    flex-direction: column; 
+    justify-content:center;
+    padding:5%
+}
+main section .name strong{
+    font-weight: bold;
+}
+#descripcion{
+    padding:5%;
+    font-size:16px;
+}
+
+#cantidad{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+#cantidad span{
+    margin-right: 5%;
+}
+#cantidad form{
+    width:10%;
+    
+}
+#cantidad input{
+    width:100%;
+}
+.precio{
+    justify-content: flex-end;
+}
+#precio{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+}
+
+#precio span{
+    width:100%;
+    
+}
+main section .cupon, .pagar {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+#cupon{
+    width:100%;
+}
+#pagar{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content:space-between;
+    
+}
+.subtotal, .total{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-end;
+}
+/* --------------------- */

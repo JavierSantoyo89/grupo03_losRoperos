@@ -10,15 +10,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/home.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css" type="text/css" media="all">
     <title>Pricipal Los roperos</title>
 </head>
     <body>
         <%- include('./partials/header') %>
 
-        <main>
-
-        </main>
+        
+        <div class="container products-wrapper">
+            <div class = "row">
+                <div class ="col-12">
+                  <h2 class = "products-tittle">NUEVA TEMPORADA</h2>
+                </div>
+    <!-- SHOW NUEVA TEMPORADA PRODUCTS -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <section class = "product-box">
+                      <a href="/products/detail/¿?">
+                            <figure class="product-box_image">
+                              <img src= "/images/products/¿?" alt= "imagen de producto">
+                            </figure>
+                            <article class="product-box_data">
+                                <h3>Final Price</h3>
+                                <span>Discount % off</span>
+                                <p>PRODUCT NAME</p>
+                            </article>
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div> 
+        
         <%- include('./partials/footer') %>
     </body>
     
