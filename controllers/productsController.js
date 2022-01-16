@@ -13,7 +13,7 @@ const category = products.filter(function(product){
 const productsController = {
     // ---- Muesta todos los productos disponibles (No funciona al 100%) ---- //
     Index: (req,res) =>{
-        res.render("./products")
+        res.render("./products",{products})
     },
     
     home: (req,res) => {

@@ -1,9 +1,17 @@
+const fs = require('fs');
 const path = require('path');
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
     //home: (req,res) => {res.render("home")}, Ya no se usa.
     index: (req,res) => {
-        res.render("home")
+        const season = products.filter( p => p.status === "Season");
+
+        const inSale= products.filter( p => p.status === "In-sale");
+        res.render("home", {season,inSale})
     },
     carrito : (req,res) => {
         //res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
