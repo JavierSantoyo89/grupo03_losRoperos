@@ -10,7 +10,7 @@ const productsController = require('../controllers/productsController');
 
 // ---- Rutas dedicadas para productos ---- //
 router.get('/',productsController.Index);
-router.get('/:id',productsController.detalle); 
+router.get('/detail/:id',productsController.detalle); 
 
 // ---- Rutas para agregar producto ---- //
 router.get('/add',productsController.home);
