@@ -8,6 +8,7 @@
     "price": 1000,
     "category": "stock",
     "status": "In-sale",
+    "discount":30,
     "count": 10,
     "description": "",
     "img": "1.jpg"
@@ -22,6 +23,7 @@
     "price":1000,
     "category": "stock",
     "status": "Season",
+    "discount":0,
     "count": 10000,
     "description": "Eso cabron!!!",
     "img": "1.jpg"
@@ -36,6 +38,7 @@
     "price":1000,
     "category": "stock",
     "status": "Season",
+    "discount":0,
     "count": 10000,
     "description": "Eso cabron!!!",
     "img": "1.jpg"
@@ -50,6 +53,7 @@
     "price":1000,
     "category": "stock",
     "status": "In-sale",
+    "discount":30,
     "count": 10000,
     "description": "Eso cabron!!!",
     "img": "1.jpg"
@@ -64,6 +68,7 @@
     "price":1000,
     "category": "stock",
     "status": "Season",
+    "discount":0,
     "count": 10000,
     "description": "Eso cabron!!!",
     "img": "1.jpg"
@@ -78,6 +83,7 @@
     "price":1000,
     "category": "stock",
     "status": "In-sale",
+    "discount":30,
     "count": 10000,
     "description": "Eso cabron!!!",
     "img": "1.jpg"
@@ -92,6 +98,7 @@
     "price":1000,
     "category": "stock",
     "status": "Season",
+    "discount":0,
     "count": 10000,
     "description": "Eso cabron!!!",
     "img": "1.jpg"
@@ -106,6 +113,7 @@
     "price":1989,
     "category": "stock",
     "status": "In-sale",
+    "discount":30,
     "count": 10000,
     "description": "Eso cabron!!!",
     "img": "1.jpg"

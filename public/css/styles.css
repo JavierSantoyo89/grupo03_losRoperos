@@ -120,7 +120,7 @@ header div {
     
     background-color: #FFFFFF;
     width: 100%;
-    
+    height: 100%;
 }
 
 .anuncio{
@@ -128,7 +128,7 @@ header div {
     flex-direction: column;
     background: var(--anuncio-background);
     width: 80%;
-    height: 100%;
+    height: 50%;
     margin-right: 10%;
     margin-left:10%;
     align-items: center;

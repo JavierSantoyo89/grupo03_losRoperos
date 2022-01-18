@@ -33,7 +33,7 @@ const productsController = {
     },
 
     // ---- Muestra la vista de agregar producto (Done) ---- //
-    addProduct: (req,res) => {
+    Create: (req,res) => {
         let newProduct = {
             name: req.body.name,
             model: req.body.model,
@@ -45,7 +45,7 @@ const productsController = {
         //res.send('Ya jalo por aqui')
         //res.send(newProduct);
         //res.render('addProduct')
-        res.redirect('../')
+        res.render("CreateProduct")
     },
     update: (req,res) => {
         let id = req.params.id;

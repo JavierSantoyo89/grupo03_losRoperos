@@ -13,8 +13,8 @@ router.get('/',productsController.Index);
 router.get('/detail/:id',productsController.detalle); 
 
 // ---- Rutas para agregar producto ---- //
-router.get('/add',productsController.home);
-router.post('/add',productsController.addProduct);
+router.get('/create',productsController.Create);
+router.post('/create',productsController.Create);
 
 // ---- Rutas para update ---- //
 router.get('/update/:id',productsController.update);

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar nuevo producto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/home.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
+</head>
+    <body id="Bodys">
+
+        <!-------------------------------------------------------------------------- Cabezal -------------------------------------------------------------------------->
+        <%-include ("./partials/header.ejs") %>
+        
+        <!-------------------------------------------------------------------------- Banner --------------------------------------------------------------------------->
+        <%-include ("./partials/banner.ejs") %>
+        
+        <!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
+            <main>
+                <div class="container products-wrapper">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="products-title">Formulario de creación de productos</h2>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <form action="/products" method="POST" enctype="multipart/form-data">
+                            <div class="row product-detail">
+                                <div class="col-12 col-md-6">
+                                    <label for="name" class="form-label">Nombre del producto:</label>
+                                    <input type="text" id="name" name="name" placeholder="Ej: Pantalon cool" class="form-input">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="price" class="form-label">Precio del producto:</label>
+                                    <input type="number" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="discount" class="form-label">Descuento:</label>
+                                    <input type="number" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="category" class="form-label">Categoría:</label>
+                                    <select name="category" id="category" class="form-input">
+                                        <option value="">Elegí</option>
+                                        <option value="in-sale">En oferta</option>
+                                        <option value="season">Nueva Temporada</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="description" class="form-label">Descipción:</label>
+                                    <textarea name="description" id="description" class="form-input"></textarea>
+                                </div>
+                      <div class="col-12">
+                                    <label for="imagen" class="form-label">Sube la imagen:</label>
+                                    <input type="file" name="img" id="file">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="buy-now-button">Guardar producto</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            
+                </div>
+                
+            </main>
+        
+        <!-------------------------------------------------------------------------- Footer -------------------------------------------------------------------------->
+        <%-include ("./partials/footer.ejs")%>
+
+    </body>
+   <!-- http://localhost:1689/product/add -->
+ </html>
+ 
