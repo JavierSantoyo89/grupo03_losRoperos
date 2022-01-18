@@ -13,7 +13,7 @@ const category = products.filter(function(product){
 const productsController = {
     // ---- Muesta todos los productos disponibles (No funciona al 100%) ---- //
     Index: (req,res) =>{
-        res.render("./products",{products})
+        res.render("products",{products})
     },
     
     home: (req,res) => {
@@ -25,10 +25,11 @@ const productsController = {
     detalle: (req,res) => {
         //res.send('detalle')
        // res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
-		let id = req.params.id
+		const id = req.params.id;
+        let product = products.find(product => product.id == id)
 		//let product = products.find(product => product.id == id)
         //res.render('products',{product, toThousand});
-        res.send("entras en el sitio del articulo " + id)
+        res.render("detail",{product, toThousand} )
     },
 
     // ---- Muestra la vista de agregar producto (Done) ---- //

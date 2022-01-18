@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
-    <title>Detalle del producto</title>
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/home.css" type="text/css" media="all">
+    <title>Todos los Productos</title>
 </head>
 <body >
 
@@ -23,18 +25,32 @@
 <!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
     <main>
 
-        <article class="container">
-              <img class = "imgProduct" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=736&q=80" width="300">
-
-                <p><strong>Nombre: </strong><%=product.name%></p>
-                <p><strong>Modelo: </strong><%= product.model %></p>
-                <p><strong>Marca: </strong><%= product.marca %></p>
-                <p><strong>Existencias: </strong><%= product.count %></p>
-                <p><strong>Descripcion: </strong><%= product.description %></p>
-            
-                <input  id="BtnAgreagarCarrito" type="button" value="agregarCarrito">
-        </article>
-
+        <div class="container products-wrapper">
+            <div class = "row">
+                <div class ="col-12">
+                  <h2 class = "products-tittle">Todos los Productos</h2>
+                </div>
+    <!-- SHOW ALL PRODUCTS -->
+                
+                <% for (const product of products) { %>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <section class = "product-box">
+                            <a href="/products/detail/<%= product.id %>">
+                                  <figure class="product-box_image">
+                                    <img src= "/images/products/<%= product.img %> " alt= "imagen de producto">
+                                  </figure>
+                                  <article class="product-box_data">
+                                      <h3><%= product.price %></h3>
+                                      
+                                      <p><%= product.name %></p>
+                                  </article>
+                              </a>
+                          </section>
+                      </div>
+                    
+                <% } %>               
+            </div>
+        </div> 
     </main>
 <!-- 'http://localhost:1689/detalle/1' -->
 <!-------------------------------------------------------------------------- Footer -------------------------------------------------------------------------->
