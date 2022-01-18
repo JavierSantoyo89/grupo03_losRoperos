@@ -9,6 +9,7 @@ const router = express.Router();
 router.get('/',mainController.index);
 router.get('/carrito', mainController.carrito);
 router.get('/search', mainController.buscador);
+router.get('/invite', mainController.invite)
 
 
 router.get('/pruebasession',mainController.numeroVisitas);

@@ -29,6 +29,9 @@ const mainController = {
         }
         req.session.numeroVisitas ++;
         res.send('Sesion tiene el numero: ' + req.session.numeroVisitas)*/
+    },
+    invite: (req,res)=>{
+        res.render("invite")
     }
     
 }
