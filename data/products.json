@@ -9,8 +9,8 @@
     "category": "stock",
     "status": "In-sale",
     "count": 10,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque urna sagittis tortor hendrerit consectetur.",
-    "img": ""
+    "description": "",
+    "img": "1.jpg"
 },
 {
     "id": 2,
@@ -24,7 +24,7 @@
     "status": "Season",
     "count": 10000,
     "description": "Eso cabron!!!",
-    "img": ""
+    "img": "1.jpg"
 },
 {
     "id": 3,
@@ -38,7 +38,7 @@
     "status": "Season",
     "count": 10000,
     "description": "Eso cabron!!!",
-    "img": ""
+    "img": "1.jpg"
 },
 {
     "id": 4,
@@ -52,7 +52,7 @@
     "status": "In-sale",
     "count": 10000,
     "description": "Eso cabron!!!",
-    "img": ""
+    "img": "1.jpg"
 },
 {
     "id": 5,
@@ -66,7 +66,7 @@
     "status": "Season",
     "count": 10000,
     "description": "Eso cabron!!!",
-    "img": ""
+    "img": "1.jpg"
 },
 {
     "id": 6,
@@ -80,7 +80,7 @@
     "status": "In-sale",
     "count": 10000,
     "description": "Eso cabron!!!",
-    "img": ""
+    "img": "1.jpg"
 },
 {
     "id": 7,
@@ -94,7 +94,7 @@
     "status": "Season",
     "count": 10000,
     "description": "Eso cabron!!!",
-    "img": ""
+    "img": "1.jpg"
 },
 {
     "id": 8,
@@ -108,6 +108,6 @@
     "status": "In-sale",
     "count": 10000,
     "description": "Eso cabron!!!",
-    "img": ""
+    "img": "1.jpg"
 }
 ]

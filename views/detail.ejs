@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="../css/detail.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/bootstrap-grid.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/home.css" >
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css" >
+    <link rel="stylesheet" href="/css/styles.css" >
     <title>Detalle producto</title>
 </head>
     <body>
@@ -23,13 +23,13 @@
      <div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Detalle del producto: <%= product.name %></h2>
+				<h2 class="products-title"><%= product.name %></h2>
 			</div>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<div class="col-12 col-lg-8">
-					<img src="/images/products/<%= product.image %>" alt="product image" class="product-detail-img">
+					<img src="/images/products/<%= product.img %>" alt="product image" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= product.description %>
 					</p>
