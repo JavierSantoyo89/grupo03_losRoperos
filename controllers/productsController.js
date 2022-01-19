@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -40,10 +40,41 @@ const productsController = {
         //res.render('addProduct')
         res.render("CreateProduct")
     },
-    update: (req,res) => {
+    Edit: (req,res) => {
         let id = req.params.id;
-        res.render('updateProduct')
+        let productToEdit = products.find(product => product.id == id)
+		
+
+        res.render('EditProduct',{productToEdit})
         //res.send('Funciono el controlador de actualizar' + id + 'Por metodo put!!!')
+    },
+    Update: (req,res) => {
+        let id = req.params.id;
+		let productToEdit = products.find(product => product.id == id)
+
+		productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+			img: productToEdit.img,
+		};
+        // nuevoArray
+		
+		let newProducts = products.map(p => {
+			if (p.id == productToEdit.id) {
+        // const n = {}
+        // n.id = productToEdit.id
+        // otras propiedades
+      
+				return p = {...productToEdit};
+			}
+			return p;
+		})
+    fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+    
+    products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		
+    res.redirect('/');
+
     },
     delete: (req,res) => {
         let id = req.params.id;
@@ -55,11 +86,11 @@ const productsController = {
     let newProduct = {
         id: products[products.length - 1].id + 1,
         ...req.body,
-        img: ""//req.file.filename
+        img: "1.jpg"//req.file.filename
     };
     products.push(newProduct)
 
-	fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+	fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ''));
 
 	res.redirect('/products/');
     }

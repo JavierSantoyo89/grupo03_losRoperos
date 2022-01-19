@@ -17,9 +17,9 @@ router.get('/create',productsController.Create);
 
 router.post('/',productsController.Store);
 
-// ---- Rutas para update ---- //
-router.get('/update/:id',productsController.update);
-router.put('/update',productsController.update);
+// ---- Rutas para Editar ---- //
+router.get('/edit/:id',productsController.Edit);
+router.put('/edit/:id',productsController.Update);
 
 // ---- Rutas para delete ---- //
 router.get('/delete/:id',productsController.delete);

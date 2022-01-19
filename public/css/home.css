@@ -14,6 +14,11 @@
     box-sizing: border-box;
 }
 
+input,
+textarea {
+  font-family: inherit;
+  text-align: start;
+}
 
 .products-wrapper {
     margin-top: 30px;
@@ -204,6 +209,13 @@
 }
 
 /*====== Formularios ======*/
+textarea.form-input {
+  min-height: 140px;
+  resize: vertical;
+  padding: 15px;
+  text-align: start;
+
+}
 .form-label {
   display: inline-block;
   font-size: 1.6em;
@@ -222,11 +234,7 @@
   padding: 0 15px;
 }
 
-textarea.form-input {
-  min-height: 140px;
-  resize: vertical;
-  padding: 15px;
-}
+
 
 
 
