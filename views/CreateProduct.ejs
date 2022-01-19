@@ -30,11 +30,23 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <form action="/products" method="POST" enctype="multipart/form-data">
+                        <form action="/products" method="post"  >
                             <div class="row product-detail">
                                 <div class="col-12 col-md-6">
                                     <label for="name" class="form-label">Nombre del producto:</label>
                                     <input type="text" id="name" name="name" placeholder="Ej: Pantalon cool" class="form-input">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="model" class="form-label">Modelo del producto:</label>
+                                    <input type="text" id="model" name="model" placeholder="Ej: DSL5000" class="form-input">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="brand" class="form-label">Marca del producto:</label>
+                                    <input type="text" id="brand" name="brand" placeholder="Ej: Pull y Bear" class="form-input">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="color" class="form-label">Color del producto:</label>
+                                    <input type="text" id="color" name="color" placeholder="Ej: Rojo" class="form-input">
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="price" class="form-label">Precio del producto:</label>
@@ -45,11 +57,20 @@
                                     <input type="number" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <label for="category" class="form-label">Categoría:</label>
-                                    <select name="category" id="category" class="form-input">
+                                    <label for="size" class="form-label">Talla:</label>
+                                    <select name="size" id="size" class="form-input">
                                         <option value="">Elegí</option>
-                                        <option value="in-sale">En oferta</option>
-                                        <option value="season">Nueva Temporada</option>
+                                        <option value="Ch">Chica</option>
+                                        <option value="M">Mediana</option>
+                                        <option value="G">Grande</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="status" class="form-label">Status:</label>
+                                    <select name="status" id="status" class="form-input">
+                                        <option value="">Elegí</option>
+                                        <option value="In-sale">En oferta</option>
+                                        <option value="Season">Nueva Temporada</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
@@ -57,7 +78,7 @@
                                     <textarea name="description" id="description" class="form-input"></textarea>
                                 </div>
                       <div class="col-12">
-                                    <label for="imagen" class="form-label">Sube la imagen:</label>
+                                    <label for="img" class="form-label">Sube la imagen:</label>
                                     <input type="file" name="img" id="file">
                                 </div>
                                 <div class="col-12">

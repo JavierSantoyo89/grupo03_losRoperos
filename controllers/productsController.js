@@ -34,14 +34,7 @@ const productsController = {
 
     // ---- Muestra la vista de agregar producto (Done) ---- //
     Create: (req,res) => {
-        let newProduct = {
-            name: req.body.name,
-            model: req.body.model,
-            marca: req.body.marca,
-            category: req.body.category,
-            count: req.body.count,
-            description: req.body.description
-        }
+       
         //res.send('Ya jalo por aqui')
         //res.send(newProduct);
         //res.render('addProduct')
@@ -56,6 +49,19 @@ const productsController = {
         let id = req.params.id;
         res.render('deleteProduct')
         //res.send('Funciono el controllador delete ' + id)
+    },
+    Store: (req,res) => {
+     
+    let newProduct = {
+        id: products[products.length - 1].id + 1,
+        ...req.body,
+        img: ""//req.file.filename
+    };
+    products.push(newProduct)
+
+	fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
+	res.redirect('/products/');
     }
 };
 

@@ -14,7 +14,8 @@ router.get('/detail/:id',productsController.detalle);
 
 // ---- Rutas para agregar producto ---- //
 router.get('/create',productsController.Create);
-router.post('/create',productsController.Create);
+
+router.post('/',productsController.Store);
 
 // ---- Rutas para update ---- //
 router.get('/update/:id',productsController.update);
