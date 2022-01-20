@@ -78,7 +78,11 @@ const productsController = {
     },
     delete: (req,res) => {
         let id = req.params.id;
-        res.render('deleteProduct')
+		let finalProducts = products.filter(product => product.id != id);
+		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+        products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		res.redirect('/products');
+        
         //res.send('Funciono el controllador delete ' + id)
     },
     Store: (req,res) => {

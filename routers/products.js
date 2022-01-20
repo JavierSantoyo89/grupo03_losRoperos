@@ -22,8 +22,7 @@ router.get('/edit/:id',productsController.Edit);
 router.put('/edit/:id',productsController.Update);
 
 // ---- Rutas para delete ---- //
-router.get('/delete/:id',productsController.delete);
-router.delete('/delete',productsController.delete);
+router.delete('/delete/:id',productsController.delete);
 
 
 
