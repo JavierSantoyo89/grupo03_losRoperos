@@ -32,6 +32,9 @@ const mainController = {
     },
     invite: (req,res)=>{
         res.render("invite")
+    },
+    Pruebapi:(req,res)=>{
+       return res.json('Jalo esta mierda!!!');
     }
     
 }
