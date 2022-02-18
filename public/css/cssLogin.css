@@ -76,6 +76,10 @@ color: #fff;
 background: rgba(0,0,0,0.3);
 }
 
+.danger{
+    color:red;
+}
+
 .link_Login {
     text-decoration: none;
     color:#fff;
