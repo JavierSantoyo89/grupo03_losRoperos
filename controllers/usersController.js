@@ -1,4 +1,4 @@
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 const { redirect } = require('express/lib/response');
 const fs =require('fs')
 const path = require('path');
@@ -14,43 +14,51 @@ const usersController = {
     },
     ProcessLogin: (req,res) =>{
         let errors = validationResult(req); // --------------- Lee el archivo JSON de usuarios ------- //
-        if(errors.isEmpty){
+        
+        // Si no hay errores de validación
+        if(errors.isEmpty()){
             let userJSON = fs.readFileSync('./data/user.json', {encoding: 'utf-8'});
             let users;
-                    if (userJSON == ""){
-                        users = [];
-                    }else{
-                        users= JSON.parse(userJSON);
-                        console.log(users);  // ------------------------------------ //
-                    }
-                for(let i=0; i<users.length; i++){
-                    if (users[i].email == req.body.email){
-                        let pass = req.body.password
-                        console.log(users[i].email);
-                        console.log(users[i].password);
-                        console.log(req.body.password);
-                        console.log(users[i].user);
-                        console.log(req.body.user); //? ---------- hasta aqui funciona ------- //
-                        //var usuarioALogearse = users[i].user
-                        var usuarioALogearse = undefined
-                       /* if (bcrypt.compareSync(req.body.password, users[i].password)){ //? --- Como no funciona el IF no carga la variable usuarioALogaerse y te manda a undefined --- //
-                            var usuarioALogearse = users[i];
-                            console.log(usuarioALogearse + 'en variable');
-                            break;
-                        }*/
-                    }
-                }
 
-                if(usuarioALogearse == undefined){
-                   //res.render('home')
-                   //return res.render('login', {errors: [{msg: 'Credenciales invalidas'}]});
-                   console.log("Usuario a logaerse no capturado")
+            if (userJSON == ""){
+                users = [];
+            }
+            else{
+                users= JSON.parse(userJSON);
+                console.log(users);  // ------------------------------------ //
+            }
+
+            for(let i=0; i<users.length; i++){
+                if (users[i].email == req.body.email){
+                    let pass = req.body.password
+                    console.log(users[i].email);
+                    console.log(users[i].password);
+                    console.log(req.body.password);
+                    console.log(users[i].user);
+                    console.log(req.body.user); //? ---------- hasta aqui funciona ------- //
+                    //var usuarioALogearse = users[i].user
+                    var usuarioALogearse = undefined
+                    /* if (bcrypt.compareSync(req.body.password, users[i].password)){ //? --- Como no funciona el IF no carga la variable usuarioALogaerse y te manda a undefined --- //
+                        var usuarioALogearse = users[i];
+                        console.log(usuarioALogearse + 'en variable');
+                        break;
+                    }*/
                 }
-        req.session.usuarioLogieado = usuarioALogearse;
-        res.send('../')
-        }else{
-            return res.render('login', {errors: errors.errors});
-            console,log(errors)
+            }
+
+            if(usuarioALogearse == undefined){
+                //res.render('home')
+                //return res.render('login', {errors: [{msg: 'Credenciales invalidas'}]});
+                console.log("Usuario a logaerse no capturado")
+            }
+
+            req.session.usuarioLogieado = usuarioALogearse;
+            res.send('../')
+        }
+
+        // Si sí hay errores de verificación
+        else{
+            res.render('login', {errors: errors.array() });
         }
 
     },
@@ -68,4 +76,5 @@ const usersController = {
         }
 
     }
+    
     module.exports=usersController;

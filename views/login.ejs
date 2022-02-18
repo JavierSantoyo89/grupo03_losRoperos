@@ -29,18 +29,21 @@
             <% } %>
 
 
-
-
             <form class="login_Formulario" method="POST" action="/user/login">
-                <h1>Login</h1>    
+                <h1>Login</h1> 
+                <% if (locals && locals.errors) {%>
+                    <% errors.forEach(error => { %> 
+                        <p class="feedback is-danger"> <%= error.msg %> </p>
+                    <% }) %>
+                <% } %> 
                 <div class="contenedor_Login">
                     <div class="input_contenedor_Login">
                         <i class="fas fa-user icon_Login"></i>
-                        <input type="text" placeholder="Nombre de Usuario" name='user' required>
+                        <input type="text" placeholder="Nombre de Usuario" name='user'>
                     </div>
                         <div class="input_contenedor_Login">
                             <i class="fas fa-envelope icon_Login"></i>
-                            <input type="text" placeholder="Correo Electronico" name ='email' required>    
+                            <input type="text" placeholder="Correo Electronico" name ='email'>    
                         </div>
                             <div class="input_contenedor_Login">
                                 <i class="fas fa-key icon_Login"></i>
