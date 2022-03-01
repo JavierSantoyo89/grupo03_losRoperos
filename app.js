@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const  path = require('path');
 const session = require('express-session');
-let tblProduct = require('./data/models/image')
+let tbl = require('./data/models/product')
 
 // ------- Para poder usar metodo PUT & DELETE ------- //
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
@@ -42,7 +42,7 @@ app.use((req,res,next)=>{
 // ------- levantar servidor ------- //
 app.listen(1689,()=>{
     console.log('Servidor funcionando en http://localhost:1689');
-    console.log(tblProduct);
+    console.log(tbl);
 });
 
 /*
