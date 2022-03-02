@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) =>{
     let alias = 'images';
-    let columns =  {
+    let cols =  {
         idImage:{
             type: DataTypes.INTEGER, 
             primarykey: true
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) =>{
         tableName: 'image',
         timestamps: false
     }
-    let user = sequelize.define(alias,columns, config);
+    let user = sequelize.define(alias,cols, config);
 
     return user;
 }

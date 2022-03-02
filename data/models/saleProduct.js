@@ -3,8 +3,7 @@ module.exports = (sequelize, DataTypes) =>{
     let columns =  {
         idsaleProduct:{
             type: DataTypes.INTEGER, 
-            primarykey: true,
-            autoIncrement: true
+            primarykey: true
             },
         idProduct:{
             type: DataTypes.INTEGER

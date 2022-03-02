@@ -3,8 +3,7 @@ module.exports = (sequelize, DataTypes) =>{
     let columns =  {
         idProduct:{
             type: DataTypes.INTEGER, 
-            primarykey: true,
-            autoIncrement: true
+            primarykey: true
             },
         name:{
             type: DataTypes.STRING(100)
@@ -41,7 +40,7 @@ module.exports = (sequelize, DataTypes) =>{
         tableName: 'product',
         timestamps: false
     }
-    let user = sequelize.define(alias,columns, config);
+    let user = sequelize.define(alias,columns,config);
 
     return user;
 }

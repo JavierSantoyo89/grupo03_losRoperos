@@ -3,8 +3,7 @@ module.exports = (sequelize, DataTypes) =>{
     let columns =  {
         idsale:{
             type: DataTypes.INTEGER, 
-            primarykey: true,
-            autoIncrement: true
+            primarykey: true
             },
         price:{
             type: DataTypes.DOUBLE
@@ -16,14 +15,14 @@ module.exports = (sequelize, DataTypes) =>{
             type: DataTypes.DOUBLE
             },
         datatimeSale:{
-            type: DataTypes.DATATIME
+            type: DataTypes.DATE
             },
         idUser:{
             type: DataTypes.INTEGER, 
             },
     };
     let config ={
-        tableName: 'SALE',
+        tableName: 'sale',
         timestamps: false
     }
     let user = sequelize.define(alias,columns, config);
