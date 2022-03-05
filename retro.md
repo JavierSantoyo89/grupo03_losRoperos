@@ -67,3 +67,16 @@ Retrospectiva:
 5.	Dejar de hacer…
 -	Dejar de lado el proyecto.
 
+Sprint - 4
+ - Retro en clase 14/01/21 ![retro sprint 4](https://user-images.githubusercontent.com/85984516/149613924-fe45a597-c7d8-4665-8da3-12520371f08e.png)
+
+Sprint - 5
+ - No se completo por problemas laborales y enfermos de Covid, se esta regularizando el sprint.
+Sprint - 6
+
+- Link Trello (public) [Trello](https://trello.com/b/OADMaL3W)
+- Fuente de datos de usuarios y productos: los archivos JSON (Done)
+- CRUD de productos y usuarios: (Done)
+- Crear base de datos (losRoperosDB) (Done)
+- Crear diagrama de la base de datos (Done)
+- Crear script de las tablas (Done)
