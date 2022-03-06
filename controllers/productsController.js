@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+let db = require('../data/models')
+
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -13,7 +15,16 @@ const category = products.filter(function(product){
 const productsController = {
     // ---- Muesta todos los productos disponibles (No funciona al 100%) ---- //
     Index: (req,res) =>{
-        res.render("products",{products})
+        db.products.findAll()
+            .then(function (products) {
+                res.render('products',{products:products})
+                console.log('Entro a la DB y saco datos');
+            })
+            .catch(function (error) {
+              console.log(error);  
+            })
+        //res.render("products",{products})
+        
     },
     
     home: (req,res) => {
@@ -30,6 +41,8 @@ const productsController = {
 		//let product = products.find(product => product.id == id)
         //res.render('products',{product, toThousand});
         res.render("detail",{product, toThousand} )
+
+        
     },
 
     // ---- Muestra la vista de agregar producto (Done) ---- //
