@@ -1,0 +1,79 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title> Registro usuario </title>
+</head>
+
+<body class='registro_Body'>
+    <%-include ("./partials/header.ejs")%>
+    <%-include ("./partials/banner.ejs")%>
+    <div class="registro_Contenedor_Global">
+    <form action="/user/register" method="POST" class="registro_Form_Registro">
+           <h2 class="registro_H2">Registro de Usuario</h2>
+       <input class="registro_input-formulario" type="text" name="name" placeholder="Nombre y apellido" required>
+            <input class="registro_input-formulario" type="text" name="user" placeholder="Nombre de usuario"required>
+            <input class="registro_input-formulario" type="email" name="email" placeholder="E-mail"required>
+            <br>
+            <br>
+            <label class="checkbox_Registro" for="birth_date" id='registro_cumpleaños'><b><h4>Fecha de nacimiento</h4></b></label>
+            <input class="registro_input-formulario" type="date" name="birth_date" id="birth_date">
+            <input class="registro_input-formulario" type="text" name="addres" placeholder="Domicilio">
+           <br>
+            <h4 class="registro_H4">Perfil del Usuario</h4>
+            <br>
+            <div class="registro_Profile">
+                <input type="radio" name="profile" value="buy" id="registro_Buy">
+                <label class="checkbox_Registro" for="buy">Comprador</label>
+                <input type="radio" name="profile" value="sell" id="registro_Sell">
+                <label class="checkbox_Registro"for="sell">Vendedor</label>
+            </div>
+            <br>
+            <h5 class="registro_H5">Intereses</h5>
+            <div class="registro_Intereses">
+                <div>
+                    <input type="checkbox" name="interests" value="a" id="a">
+                    <label class="checkbox_Registro" for="a">Casual</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="b" id="b">
+                    <label class="checkbox_Registro" for="b">Caballero</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="c" id="c">
+                    <label class="checkbox_Registro" for="c">Dama</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="d" id="d">
+                    <label class="checkbox_Registro" for="d">Zapato</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="interests" value="e" id="e">
+                    <label class="checkbox_Registro" for="e">tenis</label>
+                </div>
+            </div>
+            <br>
+            <h4 class="registro_H4">Elegí tu foto de usuario</h4>
+            <input class="registro_Input-formulario" type="file" name="avatar">
+            <br>
+            <br>
+            <input class="registro_Contraseña" type="password" name="pass" placeholder="Elegí tu contraseña">
+            <input class="registro_Contraseña" type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
+            <br>
+            <br>
+            <input class="registro_Input-casilla" type="submit" value="Enviar">
+            <input class="registro_Input-casilla" type="reset" value="Borrar">
+            <br>
+            <br>
+        </form>
+    </div>
+<%-include ("./partials/footer.ejs")%>          
+</body>
+
+
+</html>
