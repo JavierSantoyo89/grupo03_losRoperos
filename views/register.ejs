@@ -14,9 +14,10 @@
     <%-include ("./partials/header.ejs")%>
     <%-include ("./partials/banner.ejs")%>
     <div class="registro_Contenedor_Global">
-    <form action="/user/register" method="POST" class="registro_Form_Registro">
-           <h2 class="registro_H2">Registro de Usuario</h2>
-       <input class="registro_input-formulario" type="text" name="name" placeholder="Nombre y apellido" required>
+    <form action="/user/register" method="POST" enctype = "multipart/form-data" class="registro_Form_Registro">
+            <h2 class="registro_H2">Registro de Usuario</h2>
+            <input class="registro_input-formulario" type="text" name="name" placeholder="Nombre" required>
+            <input class="registro_input-formulario" type="text" name="apellido" placeholder="Apellido" required>
             <input class="registro_input-formulario" type="text" name="user" placeholder="Nombre de usuario"required>
             <input class="registro_input-formulario" type="email" name="email" placeholder="E-mail"required>
             <br>
@@ -51,10 +52,6 @@
                 <div>
                     <input type="checkbox" name="interests" value="d" id="d">
                     <label class="checkbox_Registro" for="d">Zapato</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="interests" value="e" id="e">
-                    <label class="checkbox_Registro" for="e">tenis</label>
                 </div>
             </div>
             <br>
