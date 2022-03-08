@@ -75,10 +75,12 @@ const usersController = {
             res.send(req.body)
         },
     processRegister: (req,res) => {
-        return res.send({
-            body: req.body,
-            file: req.file
-        })
+      const resultValidation = validationResult(req);
+      
+      
+      if(resultValidation.errors.length > 0){
+          return res.render ('register',{errors: resultValidation.mapped()})
+      }
     }
 
     }

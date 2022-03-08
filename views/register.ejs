@@ -9,22 +9,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title> Registro usuario </title>
 </head>
-
 <body class='registro_Body'>
     <%-include ("./partials/header.ejs")%>
     <%-include ("./partials/banner.ejs")%>
     <div class="registro_Contenedor_Global">
     <form action="/user/register" method="POST" enctype = "multipart/form-data" class="registro_Form_Registro">
             <h2 class="registro_H2">Registro de Usuario</h2>
-            <input class="registro_input-formulario" type="text" name="name" placeholder="Nombre" required>
-            <input class="registro_input-formulario" type="text" name="apellido" placeholder="Apellido" required>
-            <input class="registro_input-formulario" type="text" name="user" placeholder="Nombre de usuario"required>
-            <input class="registro_input-formulario" type="email" name="email" placeholder="E-mail"required>
+            <input class="registro_input-formulario" type="text" name="firstName" placeholder="Nombre" >
+            <% if (locals.errors && errors.firstName) { %>
+                <p style="color: red"><%= errors.firstName.msg %></p>
+            <% } %>
+            <input class="registro_input-formulario" type="text" name="lastName" placeholder="Apellido" >
+            <% if (locals.errors && errors.lastName) { %>
+                <p style="color: red"><%= errors.lastName.msg %></p>
+            <% } %>
+            <input class="registro_input-formulario" type="text" name="user" placeholder="Nombre de usuario">
+            <% if (locals.errors && errors.user) { %>
+                <p style="color: red"><%= errors.user.msg %></p>
+            <% } %>
+            <input class="registro_input-formulario" type="email" name="email" placeholder="E-mail">
+            <% if (locals.errors && errors.email) { %>
+                <p style="color: red"><%= errors.email.msg %></p>
+            <% } %>
             <br>
             <br>
             <label class="checkbox_Registro" for="birth_date" id='registro_cumpleaños'><b><h4>Fecha de nacimiento</h4></b></label>
             <input class="registro_input-formulario" type="date" name="birth_date" id="birth_date">
-            <input class="registro_input-formulario" type="text" name="addres" placeholder="Domicilio">
+            <input class="registro_input-formulario" type="text" name="address" placeholder="Domicilio">
+            <% if (locals.errors && errors.address) { %>
+                <p style="color: red"><%= errors.address.msg %></p>
+            <% } %>
            <br>
             <h4 class="registro_H4">Perfil del Usuario</h4>
             <br>

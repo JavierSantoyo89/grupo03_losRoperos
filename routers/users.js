@@ -11,13 +11,20 @@ const storage = multer.diskStorage({
         cb(null, './public/images/users');
     },
     filename: (req,file,cb) => {
-        console.log(file)
         let filename = `${Date.now()}_img${path.extname(file.originalname)}`;
         cb(null,filename)
     }
 })
 
 const uploadFile = multer({storage})
+
+const validations = [
+    body('firstName').notEmpty().withMessage('Falta el nombre'),
+    body('lastName').notEmpty().withMessage('Falta tu apellido'),
+    body('user').notEmpty().withMessage('Falta tu nombre de usuario'),
+    body('email').notEmpty().withMessage('Falta tu correo'),
+    body('address').notEmpty().withMessage('Falta tu dirección'),
+]
 
 
 // ************ Controller Require ************
@@ -30,7 +37,7 @@ routerUsers.get('/login',usersController.login);
 routerUsers.post('/login', validateLogin, usersController.ProcessLogin);
 
 routerUsers.get('/register',usersController.registro);
-routerUsers.post('/register', uploadFile.single('avatar') ,usersController.processRegister)
+routerUsers.post('/register', uploadFile.single('avatar'), validations ,usersController.processRegister)
 // routerUsers.post('/login', validateLogin, usersController.validarUser)
 
 
