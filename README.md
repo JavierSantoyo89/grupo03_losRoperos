@@ -36,4 +36,9 @@ Licenciado en tecnologías de Información con experiencia en bases de datos rel
 
 
 #### Backup & Restore DB
+
+Si creaste el diagrama y pasarlo a DB
+https://www.youtube.com/watch?v=hfE0_Mme32k
+
+Como crear Backup y Restore en BD de MySQL
 https://www.youtube.com/watch?v=6kPIiY4La8Q
