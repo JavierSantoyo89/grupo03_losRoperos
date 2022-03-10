@@ -13,7 +13,7 @@ router.get('/',productsController.Index);
 router.get('/detail/:id',productsController.detalle); 
 
 // ---- Rutas para agregar producto ---- //
-router.get('/create',productsController.Create);
+router.get('/addproduct',productsController.Create);
 
 router.post('/',productsController.Store);
 

@@ -59,7 +59,7 @@ Estructura del sitio
         /user/register             // Vista registro //
     Product:
         /product/[id]               // Vista detalle de x's producto //
-        /product/add                // Vista agregar productos //
+        /product/addproduct         // Vista agregar productos //
         /product/update/[id]        // Vista para actualizar x's producto //
         /product/delete/[id]        // Borra registro de x's producto //
 
