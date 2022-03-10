@@ -41,38 +41,7 @@
             <% if (locals.errors && errors.address) { %>
                 <p style="color: red"><%= errors.address.msg %></p>
             <% } %>
-           <br>
-            <h4 class="registro_H4">Perfil del Usuario</h4>
-            <br>
-            <div class="registro_Profile">
-                <input type="radio" name="profile" value="buy" id="registro_Buy">
-                <label class="checkbox_Registro" for="buy">Comprador</label>
-                <input type="radio" name="profile" value="sell" id="registro_Sell">
-                <label class="checkbox_Registro"for="sell">Vendedor</label>
-            </div>
-            <br>
-            <h5 class="registro_H5">Intereses</h5>
-            <div class="registro_Intereses">
-                <div>
-                    <input type="checkbox" name="interests" value="a" id="a">
-                    <label class="checkbox_Registro" for="a">Casual</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="interests" value="b" id="b">
-                    <label class="checkbox_Registro" for="b">Caballero</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="interests" value="c" id="c">
-                    <label class="checkbox_Registro" for="c">Dama</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="interests" value="d" id="d">
-                    <label class="checkbox_Registro" for="d">Zapato</label>
-                </div>
-            </div>
-            <br>
-            <h4 class="registro_H4">Elegí tu foto de usuario</h4>
-            <input class="registro_Input-formulario" type="file" name="avatar">
+
             <% if (locals.errors && errors.avatar) { %>
                 <p style="color: red"><%= errors.avatar.msg %></p>
             <% } %>
