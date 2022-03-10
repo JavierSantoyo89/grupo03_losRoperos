@@ -30,6 +30,7 @@ const validateRegister = require('../middlewares/user/validateRegister')
 routerUsers.get('/login',usersController.login);
 routerUsers.post('/login', validateLogin, usersController.ProcessLogin);
 
+// ---- Rutas dedicadas a new user's ---- //
 routerUsers.get('/register',usersController.registro);
 routerUsers.post('/register', uploadFile.single('avatar'), validateRegister ,usersController.processRegister)
 // routerUsers.post('/login', validateLogin, usersController.validarUser)

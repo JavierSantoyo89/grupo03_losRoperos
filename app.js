@@ -53,9 +53,10 @@ Estructura del sitio
         /                               // Vista home //
         /search                         // Vista busqueda //
         /carrito                        // Vista de carrito de compras //
+        /privacidad                    // Vista de politica de privacidad //
     User:
         /user/login                 // Vista login //
-        /user/register              // Vista registro //
+        /user/register             // Vista registro //
     Product:
         /product/[id]               // Vista detalle de x's producto //
         /product/add                // Vista agregar productos //
