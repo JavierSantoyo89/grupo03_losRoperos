@@ -1,4 +1,5 @@
 const { body } = require('express-validator')
+const fs = require('fs');
 
 const validateLogin = [
     body('user')

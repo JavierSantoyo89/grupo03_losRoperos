@@ -18,35 +18,12 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({storage})
 
-const validations = [
-    body('firstName').notEmpty().withMessage('Falta el nombre'),
-    body('lastName').notEmpty().withMessage('Falta tu apellido'),
-    body('user').notEmpty().withMessage('Falta tu nombre de usuario'),
-    body('email')
-    .notEmpty().withMessage('Falta tu correo').bail()
-    .isEmail().withMessage('Debes escribir un formato de correo valido'),
-    body('address').notEmpty().withMessage('Falta tu dirección'),
-    body('avatar')
-    .custom((value,{ req }) => {
-        let acceptedExtensions = ['.jpg','.png','.gif']
-        let file = req.file;
-        
-        if(!file){
-            throw new Error ('Tienes que subir una imagen')
-        }else{
-            let fileExtension = path.extname(file.originalname)
-            if(!acceptedExtensions.includes(fileExtension)){
-                throw new Error ('Las extensiones de archivo permitidas son '+ acceptedExtensions.join(',') )
-            }
-        }
-        return true
-    })
-]
 
 
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
 const validateLogin = require('../middlewares/validateLogin');
+const validateRegister = require('../middlewares/validateRegister')
 
 
 // ---- Rutas dedicadas a user's ---- //
@@ -54,7 +31,7 @@ routerUsers.get('/login',usersController.login);
 routerUsers.post('/login', validateLogin, usersController.ProcessLogin);
 
 routerUsers.get('/register',usersController.registro);
-routerUsers.post('/register', uploadFile.single('avatar'), validations ,usersController.processRegister)
+routerUsers.post('/register', uploadFile.single('avatar'), validateRegister ,usersController.processRegister)
 // routerUsers.post('/login', validateLogin, usersController.validarUser)
 
 
