@@ -1,7 +1,6 @@
 // ************ Require's ************
 const express = require('express');
 const routerUsers = express.Router();
-const { body } = require('express-validator')
 const multer = require('multer');
 const path = require('path')
 
@@ -22,8 +21,9 @@ const uploadFile = multer({storage})
 
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
-const validateLogin = require('../middlewares/validateLogin');
-const validateRegister = require('../middlewares/validateRegister')
+// ************ Middleware's Require ************
+const validateLogin = require('../middlewares/user/validateLogin');
+const validateRegister = require('../middlewares/user/validateRegister')
 
 
 // ---- Rutas dedicadas a user's ---- //

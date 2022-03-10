@@ -35,6 +35,9 @@ const mainController = {
     },
     Pruebapi:(req,res)=>{
        return res.json('Jalo esta mierda!!!');
+    },
+    avisoPrivacidad: (req,res)=>{
+        res.render("avisoPrivasidad");
     }
     
 }
