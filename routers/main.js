@@ -9,9 +9,15 @@ const router = express.Router();
 router.get('/',mainController.index);
 router.get('/carrito', mainController.carrito);
 router.get('/search', mainController.buscador);
-router.get('/invite', mainController.invite)
 router.get('/pruebapi', mainController.Pruebapi)
+
+// ---- Rutas dedicadas para navegacion general en FOOTER ---- //
 router.get('/privacidad',mainController.avisoPrivacidad)
+router.get('/contacto',mainController.contacto);
+router.get('/faq',mainController.FAQ);
+router.get('/invite',mainController.invitar)
+router.get('/nosotros',mainController.nosotros);
+router.get('/tiendas',mainController.tiendas)
 
 
 

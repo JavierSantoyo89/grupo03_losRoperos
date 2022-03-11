@@ -53,10 +53,17 @@ Estructura del sitio
         /                               // Vista home //
         /search                         // Vista busqueda //
         /carrito                        // Vista de carrito de compras //
-        /privacidad                    // Vista de politica de privacidad //
+        /privacidad                     // Vista de politica de privacidad //
+        /tiendas                        // Vista de tiendas donde se habla de franquisias
+        /contacto                       // Contacto de todos para contrataciones
+        /faq                            // Preguntas comnes
+        /invite                         // invitar a conocernos
+        /nosotros                       // Historia de la tienda(NO de nosotros los programadores)
+    
     User:
         /user/login                 // Vista login //
         /user/register             // Vista registro //
+  
     Product:
         /product/[id]               // Vista detalle de x's producto //
         /product/addproduct         // Vista agregar productos //

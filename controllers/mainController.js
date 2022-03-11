@@ -30,16 +30,27 @@ const mainController = {
         req.session.numeroVisitas ++;
         res.send('Sesion tiene el numero: ' + req.session.numeroVisitas)*/
     },
-    invite: (req,res)=>{
-        res.render("invite")
-    },
     Pruebapi:(req,res)=>{
        return res.json('Jalo esta mierda!!!');
     },
     avisoPrivacidad: (req,res)=>{
-        res.render("avisoPrivasidad");
+        res.render("../views/viewsFooter/aviso_privacidad");
+    },
+    nosotros:(req,res)=>{
+        res.render("../views/viewsFooter/nosotros");
+    },
+    tiendas:(req,res)=>{
+        res.render('../views/viewsFooter/tiendas')
+    },
+    invitar:(req,res)=>{
+        res.render('../views/viewsFooter/invitar')
+    },
+    FAQ:(req,res)=>{
+        res.render('../views/viewsFooter/faq')
+    },
+    contacto:(req,res)=>{
+        res.render('../views/viewsFooter/contacto')
     }
-    
 }
 
 module.exports = mainController;
