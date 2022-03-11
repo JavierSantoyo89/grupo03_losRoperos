@@ -41,13 +41,10 @@ const productsController = {
 		//let product = products.find(product => product.id == id)
         //res.render('products',{product, toThousand});
         res.render("detail",{product, toThousand} )
-
-        
     },
 
     // ---- Muestra la vista de agregar producto (Done) ---- //
-    Create: (req,res) => {
-       
+    Create:(req,res) => {
         //res.send('Ya jalo por aqui')
         //res.send(newProduct);
         //res.render('addProduct')
@@ -57,7 +54,6 @@ const productsController = {
         let id = req.params.id;
         let productToEdit = products.find(product => product.id == id)
 		
-
         res.render('EditProduct',{productToEdit})
         //res.send('Funciono el controlador de actualizar' + id + 'Por metodo put!!!')
     },
