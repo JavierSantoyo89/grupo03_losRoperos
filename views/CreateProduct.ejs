@@ -34,31 +34,31 @@
                             <div class="row product-detail">
                                 <div class="col-12 col-md-6">
                                     <label for="name" class="form-label">Nombre del producto:</label>
-                                    <input type="text" id="name" name="name" placeholder="Ej: Pantalon cool" class="form-input">
+                                    <input type="text" id="name" name="name" placeholder="Ej: Pantalon cool" required class="form-input">
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="model" class="form-label">Modelo del producto:</label>
-                                    <input type="text" id="model" name="model" placeholder="Ej: DSL5000" class="form-input">
+                                    <input type="text" id="model" name="model" placeholder="Ej: DSL5000" required class="form-input">
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="brand" class="form-label">Marca del producto:</label>
-                                    <input type="text" id="brand" name="brand" placeholder="Ej: Pull y Bear" class="form-input">
+                                    <input type="text" id="brand" name="brand" placeholder="Ej: Pull y Bear" required class="form-input">
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="color" class="form-label">Color del producto:</label>
-                                    <input type="text" id="color" name="color" placeholder="Ej: Rojo" class="form-input">
+                                    <input type="text" id="color" name="color" placeholder="Ej: Rojo" required class="form-input">
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="price" class="form-label">Precio del producto:</label>
-                                    <input type="number" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+                                    <input type="number" id="price" name="price" placeholder="Ej: 5678" required class="form-input">
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="discount" class="form-label">Descuento:</label>
                                     <input type="number" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <label for="size" class="form-label">Talla:</label>
-                                    <select name="size" id="size" class="form-input">
+                                    <label for="size" class="form-label" >Talla:</label>
+                                    <select name="size" id="size" required class="form-input">
                                         <option value="">Elegí</option>
                                         <option value="Ch">Chica</option>
                                         <option value="M">Mediana</option>
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="status" class="form-label">Status:</label>
-                                    <select name="status" id="status" class="form-input">
+                                    <select name="status" id="status" required class="form-input">
                                         <option value="">Elegí</option>
                                         <option value="In-sale">En oferta</option>
                                         <option value="Season">Nueva Temporada</option>
@@ -75,11 +75,11 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="description" class="form-label">Descripción:</label>
-                                    <textarea name="description" id="description" class="form-input"></textarea>
+                                    <textarea name="description" id="description" required class="form-input"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <label for="img" class="form-label">Sube la imagen:</label>
-                                    <input type="file" name="img" id="file" accept=".jpg, .jpeg, .png">
+                                    <input type="file" name="img" id="file" required accept=".jpg, .jpeg, .png">
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="buy-now-button">Guardar producto</button>
@@ -96,6 +96,6 @@
         <%-include ("./partials/footer.ejs")%>
 
     </body>
-   <!-- http://localhost:1689/product/add -->
+   <!-- http://localhost:1689/product/newproduct-->
  </html>
  

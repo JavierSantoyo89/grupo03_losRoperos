@@ -8,12 +8,17 @@ const router = express.Router();
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
+// ************ Middlewares *************
+const validateNewProduct = require('../middlewares/products/validateNewProduct')
+
 // ---- Rutas dedicadas para productos ---- //
 router.get('/',productsController.Index);
 router.get('/detail/:id',productsController.detalle); 
 
 // ---- Rutas para agregar producto ---- //
 router.get('/newproduct',productsController.Create);
+router.post('/newproduct',validateNewProduct,productsController.Create);
+
 
 router.post('/',productsController.Store);
 

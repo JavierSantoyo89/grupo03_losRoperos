@@ -27,3 +27,4 @@ const validateRegister = [
 ]
 
 module.exports = validateRegister;
+                           //!-- Falta ver como imprimir los errores en la vista -->
