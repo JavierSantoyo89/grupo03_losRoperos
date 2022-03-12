@@ -1,7 +1,7 @@
 # grupo03_losRoperos
 
 ## Acerca de
-TODO
+Tienda en linea donde puedes comprar ropa para dama y caballero.
 
 ## Integrantes:
 
