@@ -67,6 +67,13 @@ Retrospectiva:
 5.	Dejar de hacer…
 -	Dejar de lado el proyecto.
 
+Inspiracion:
+https://listado.mercadolibre.com.mx/ropa-caballero#D[A:ropa%20caballero]
+https://vertiche.mx/
+https://www.shasa.com/
+https://www.quarry.com.mx/
+https://www.cyamoda.com/
+
 Sprint - 4
  - Retro en clase 14/01/21 ![retro sprint 4](https://user-images.githubusercontent.com/85984516/149613924-fe45a597-c7d8-4665-8da3-12520371f08e.png)
 
