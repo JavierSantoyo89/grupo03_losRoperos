@@ -10,11 +10,13 @@ let tbl = require('./data/models/product')
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 app.use(methodOverride('_method'));
 
-// ------- Cadena para llamar middlewares ------- //
-        var logMiddleware = require('./middlewares/logmiddleware');
-        app.use(logMiddleware);
-        app.use(session({secret: 'Secreto!!!'})); // para iniciar session
+// ------- Cadena para llamar middlewares(Globales) ------- //
 
+// ------- Cadena para llamar el middleware de registro de pag visitadas por parte del usuario(Global) --------- //
+    var logMiddleware = require('./middlewares/logmiddleware');
+        app.use(logMiddleware);
+// ------- Cadena para llamar express session(Global) ----------- //
+        app.use(session({secret: 'Secreto!!!'})); // para iniciar session
 // ------- Template engine ------- //
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname,'/views'));
@@ -49,25 +51,25 @@ app.listen(1689,()=>{
 /*
 
 Estructura del sitio
-    Home:
-        /                               // Vista home //
-        /search                         // Vista busqueda //
-        /carrito                        // Vista de carrito de compras //
-        /privacidad                     // Vista de politica de privacidad //
-        /tiendas                        // Vista de tiendas donde se habla de franquisias
-        /contacto                       // Contacto de todos para contrataciones
-        /faq                            // Preguntas comnes
-        /invite                         // invitar a conocernos
-        /nosotros                       // Historia de la tienda(NO de nosotros los programadores)
+    Home:                                  Permisos:                        Detalle:
+        /                               Invitado/usuario               // Vista home //
+        /search                         Invitado/usuario               // Vista busqueda //
+        /carrito                        Invitado/usuario               // Vista de carrito de compras //
+        /privacidad                     Invitado/usuario               // Vista de politica de privacidad //
+        /tiendas                        Invitado/usuario               // Vista de tiendas donde se habla de franquisias
+        /contacto                       Invitado/usuario               // Contacto de todos para contrataciones
+        /faq                            Invitado/usuario               // Preguntas comnes
+        /invite                         Invitado/usuario               // invitar a conocernos
+        /nosotros                       Invitado/usuario               // Historia de la tienda(NO de nosotros los programadores)
     
     User:
-        /user/login                 // Vista login //
-        /user/register             // Vista registro //
+        /user/login                     Invitado/usuario               // Vista login //
+        /user/register                  Invitado/usuario               // Vista registro //
   
     Product:
-        /product/[id]               // Vista detalle de x's producto //
-        /product/newproduct         // Vista agregar productos //
-        /product/update/[id]        // Vista para actualizar x's producto //
-        /product/delete/[id]        // Borra registro de x's producto //
+        /product/[id]                   Invitado/usuario               // Vista detalle de x's producto //
+        /product/newproduct             usuario                        // Vista agregar productos //
+        /product/update/[id]            usuario                        // Vista para actualizar x's producto //
+        /product/delete/[id]            usuario                        // Borra registro de x's producto //
 
 */

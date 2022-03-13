@@ -2,19 +2,19 @@ const { validationResult } = require('express-validator');
 const { redirect } = require('express/lib/response');
 const fs =require('fs')
 const path = require('path');
-
 var bcrypt = require('bcrypt');
 
 
 //const userJSON = path.join(__dirname, '../data/User.json');
 
 const usersController = {
+
+    // ************ Controlers of Login(Get/POST) ************** //
     login: (req,res) => {
         res.render('login')
     },
     ProcessLogin: (req,res) =>{
         let errors = validationResult(req); // --------------- Lee el archivo JSON de usuarios ------- //
-        
         // Si no hay errores de validación
         if(errors.isEmpty()){
             let userJSON = fs.readFileSync('./data/user.json', {encoding: 'utf-8'});
@@ -25,7 +25,7 @@ const usersController = {
             }
             else{
                 users= JSON.parse(userJSON);
-                console.log(users);  // ------------------------------------ //
+                console.log(users);  
             }
 
             for(let i=0; i<users.length; i++){
@@ -45,7 +45,6 @@ const usersController = {
                     }*/
                 }
             }
-
             if(usuarioALogearse == undefined){
                 //res.render('home')
                 //return res.render('login', {errors: [{msg: 'Credenciales invalidas'}]});
@@ -62,32 +61,31 @@ const usersController = {
         }
 
     },
+
+
+    // ************ Controlers of Login(Get/POST) ************** //
     registro: (req,res) => {
         res.render("register")
-    },
+    }
+    /*,
     createUser: (req,res) => {
         /*let newUser = {
             FirstName: req.body.name,
             LastName:req.body.,
             Date:"16/03/1989",
             mail:"javier.santoyo@yahoo.com",
-            Password:*/
+            Password:
             res.send(req.body)
-        },
+        }*/,
     processRegister: (req,res) => {
       const resultValidation = validationResult(req);
-      
-      
       if(resultValidation.errors.length > 0){
           return res.render ('register',{errors: resultValidation.mapped(),
             oldData: req.body
-        
         })
-      }
-
+    }
       return res.send('Todo correcto')
     }
-
-    }
+}
     
-    module.exports=usersController;
+module.exports=usersController;
