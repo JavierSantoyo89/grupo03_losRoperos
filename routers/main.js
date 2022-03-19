@@ -17,7 +17,8 @@ router.get('/contacto',mainController.contacto);
 router.get('/faq',mainController.FAQ);
 router.get('/invite',mainController.invitar)
 router.get('/nosotros',mainController.nosotros);
-router.get('/tiendas',mainController.tiendas)
+router.get('/tiendas',mainController.tiendas);
+router.get('/noautorizado',mainController.noautorizado);
 
 
 

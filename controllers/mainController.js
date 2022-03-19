@@ -16,6 +16,10 @@ const mainController = {
     carrito : (req,res) => {
         //res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
         res.render('carrito')
+    }, 
+    noautorizado : (req,res) => {
+        //res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
+        res.render('noAutorizado')
     },
     buscador: (req,res) =>{
         let busqueda = req.query.buscador

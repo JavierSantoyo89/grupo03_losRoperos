@@ -5,6 +5,8 @@ const  path = require('path');
 const session = require('express-session');
 let tbl = require('./data/models/product')
 
+const cookieParser = require('cookie-parser');// Intruccion para poder usar cookies
+app.use(cookieParser())
 
 // ------- Para poder usar metodo PUT & DELETE ------- //
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
@@ -33,6 +35,7 @@ const routes = require('./routers/main');
 const routerProduct = require('./routers/products');
 const routerUser = require('./routers/users');
 const { log } = require('console');
+
 app.use('/',routes);
 app.use('/products',routerProduct);
 app.use('/user',routerUser);

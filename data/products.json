@@ -1,1 +1,94 @@
-[{"id":1,"name":"chaqueta retro","model":"chaqueton","brand":"Louis Vuitron","size":"Ch","color":"red","price":1000,"status":"In-sale","discount":30,"description":"","img":"1.jpg"},{"id":2,"name":"Camisa Cool","model":"Esta","brand":"mierda!!!","color":"red","price":"1000","discount":"","size":"Ch","status":"In-sale","description":"Hola","img":"1.jpg"},{"id":3,"name":"Jalo","model":"Esta","brand":"mierda!!!","size":"Ch","color":"red","price":1000,"status":"Season","discount":"","description":"Eso cabron!!!","img":"1.jpg"},{"id":4,"name":"Jalo","model":"Esta","brand":"mierda!!!","size":"Ch","color":"red","price":1000,"storage":"stock","status":"In-sale","discount":30,"description":"Eso cabron!!!","img":"1.jpg"},{"id":5,"name":"Jalo","model":"Esta","brand":"mierda!!!","size":"Ch","color":"red","price":1000,"status":"Season","discount":"","description":"Eso cabron!!!","img":"1.jpg"},{"id":6,"name":"Jalo","model":"Esta","brand":"mierda!!!","size":"Ch","color":"red","price":1000,"status":"In-sale","discount":"","description":"Eso cabron!!!","img":"1.jpg"},{"id":7,"name":"Jalo","model":"Esta","brand":"mierda!!!","size":"Ch","color":"red","price":1000,"status":"Season","discount":"","description":"Eso cabron!!!","img":"1.jpg"},{"id":8,"name":"Camisa Cool","model":"DSL321456","brand":"PULL AND BEAR","color":"ROJO","price":"1200","discount":"15","size":"M","status":"Season","description":"Hola Probando esto","img":"1.jpg"}]
+[
+ {
+  "id": 1,
+  "name": "chaqueta retro",
+  "model": "chaqueton",
+  "brand": "Louis Vuitron",
+  "size": "Ch",
+  "color": "red",
+  "price": 1000,
+  "status": "In-sale",
+  "discount": 30,
+  "description": "",
+  "img": "1.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Camisa Cool",
+  "model": "Esta",
+  "brand": "mierda!!!",
+  "color": "red",
+  "price": "1000",
+  "discount": "",
+  "size": "Ch",
+  "status": "In-sale",
+  "description": "Hola",
+  "img": "1.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Jalo",
+  "model": "Esta",
+  "brand": "mierda!!!",
+  "size": "Ch",
+  "color": "red",
+  "price": 1000,
+  "status": "Season",
+  "discount": "",
+  "description": "Eso cabron!!!",
+  "img": "1.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Jalo",
+  "model": "Esta",
+  "brand": "mierda!!!",
+  "size": "Ch",
+  "color": "red",
+  "price": 1000,
+  "storage": "stock",
+  "status": "In-sale",
+  "discount": 30,
+  "description": "Eso cabron!!!",
+  "img": "1.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Jalo",
+  "model": "Esta",
+  "brand": "mierda!!!",
+  "size": "Ch",
+  "color": "red",
+  "price": 1000,
+  "status": "Season",
+  "discount": "",
+  "description": "Eso cabron!!!",
+  "img": "1.jpg"
+ },
+ {
+  "id": 6,
+  "name": "Jalo",
+  "model": "Esta",
+  "brand": "mierda!!!",
+  "size": "Ch",
+  "color": "red",
+  "price": 1000,
+  "status": "In-sale",
+  "discount": "",
+  "description": "Eso cabron!!!",
+  "img": "1.jpg"
+ },
+ {
+  "id": 8,
+  "name": "Camisa Cool",
+  "model": "DSL321456",
+  "brand": "PULL AND BEAR",
+  "color": "ROJO",
+  "price": "1200",
+  "discount": "15",
+  "size": "M",
+  "status": "Season",
+  "description": "Hola Probando esto",
+  "img": "1.jpg"
+ }
+]

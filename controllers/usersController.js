@@ -3,6 +3,7 @@ const { redirect } = require('express/lib/response');
 const fs =require('fs')
 const path = require('path');
 var bcrypt = require('bcrypt');
+const { Console } = require('console');
 
 
 //const userJSON = path.join(__dirname, '../data/User.json');
@@ -45,21 +46,28 @@ const usersController = {
                     }*/
                 }
             }
-            if(usuarioALogearse == undefined){
+            /*if(usuarioALogearse == undefined){
                 //res.render('home')
                 //return res.render('login', {errors: [{msg: 'Credenciales invalidas'}]});
                 console.log("Usuario a logaerse no capturado")
             }
 
             req.session.usuarioLogieado = usuarioALogearse;
-            res.send('../')
+            res.send('../')*/
         }
-
         // Si sí hay errores de verificación
         else{
             res.render('login', {errors: errors.array() });
         }
-
+         req.session.usuarioALogearse = usuarioALogearse;
+        if(req.body.Chk_recordarme != undefined){
+           
+            res.cookie('recordarme', 'prueba', {maxAge:60000} )
+            console.log('Entre el if pero no se crea la cookie')
+            console.log(req.cookies);
+        }else{
+            console.log('algo fallo')
+        }
     },
 
 
