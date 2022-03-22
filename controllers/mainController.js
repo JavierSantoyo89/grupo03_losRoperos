@@ -47,13 +47,16 @@ const mainController = {
         res.render('../views/viewsFooter/tiendas')
     },
     invitar:(req,res)=>{
-        res.render('../views/viewsFooter/invitar')
+        res.render('../views/viewsFooter/invitar.ejs')
     },
     FAQ:(req,res)=>{
         res.render('../views/viewsFooter/faq')
     },
     contacto:(req,res)=>{
         res.render('../views/viewsFooter/contacto')
+    },
+    construccion:(req,res)=>{
+        res.render('../views/viewsFooter/restero.ejs')
     }
 }
 

@@ -16,9 +16,13 @@ router.get('/privacidad',mainController.avisoPrivacidad)
 router.get('/contacto',mainController.contacto);
 router.get('/faq',mainController.FAQ);
 router.get('/invite',mainController.invitar)
+router.post('/invite',mainController.invitar)
 router.get('/nosotros',mainController.nosotros);
 router.get('/tiendas',mainController.tiendas);
 router.get('/noautorizado',mainController.noautorizado);
+router.get('/rastreo',mainController.construccion)
+
+
 
 
 

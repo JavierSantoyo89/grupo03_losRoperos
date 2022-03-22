@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-   
-    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
-    <title>Invita a un amigo</title>
+    <link rel="stylesheet" href="../css/rastreo.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
+    <title>Rasteo del pedido</title>
 </head>
     <body>
         <!-------------------------------------------------------------------------- Cabezal -------------------------------------------------------------------------->
@@ -22,14 +22,9 @@
         <%-include ("../partials/banner.ejs") %>
         
         <!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
-        <main>
-            <form action="/partials/viewsFooter/invitar.php"   method="post">
-                <label for="email">Ingresa correo: </label>
-                <input type="email" name="email">
-                <br>
-                <input type="submit" name="enviar" value="Enviar">
-                <input type="reset" name="reset" value="Reset">
-            </Form>
+        <main class="rastreo__main">
+                    <img class="rastreo__img" src="/images/Enconstruccion.png" alt="Foto 'En cosntruccion'">
+                   
         </main>
         
         <!-------------------------------------------------------------------------- Fotter ----------------------------------------------------------------------------->
