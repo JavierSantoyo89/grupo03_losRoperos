@@ -1,3 +1,4 @@
+const res = require('express/lib/response');
 const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -40,9 +41,6 @@ const mainController = {
     avisoPrivacidad: (req,res)=>{
         res.render("../views/viewsFooter/aviso_privacidad");
     },
-    nosotros:(req,res)=>{
-        res.render("../views/viewsFooter/nosotros");
-    },
     tiendas:(req,res)=>{
         res.render('../views/viewsFooter/tiendas')
     },
@@ -57,6 +55,8 @@ const mainController = {
     },
     construccion:(req,res)=>{
         res.render('../views/viewsFooter/restero.ejs')
+    }, acerca: (req,res)=>{
+        res.render('../views/viewsFooter/AcerdaDe.ejs')
     }
 }
 
