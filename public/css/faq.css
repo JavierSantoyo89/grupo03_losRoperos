@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.faq__principal{
+    background: black;
+}
+
+.faq__title{
+color: grey;
+}
+
+.faq__card{
+background-color: brown;
+     color: rgb(13, 255, 0);
+}
+
+.faq__question{
+color: blue;
+}
+
+#faq__answer1,
+#faq__answer2,
+#faq__answer3,
+#faq__answer4,
+#faq__answer5,
+#faq__answer6,
+#faq__answer7{
+    display: none;   
+}

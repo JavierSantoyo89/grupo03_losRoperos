@@ -10,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="../css/home.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/faq.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/bootstrap-grid.min.css" type="text/css" media="all">
-    <title>Invita a un amigo</title>
+    <!-- <link rel="stylesheet" href="../css/bootstrap-grid.min.css" type="text/css" media="all">-->
+    <title>Preguntas frecuentes</title>
 </head>
     <body>
         <!-------------------------------------------------------------------------- Cabezal -------------------------------------------------------------------------->
@@ -23,15 +23,48 @@
         <%-include ("../partials/banner.ejs") %>
         
         <!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
-        <main>
-                <t1>Contacto</t1>
+        <body>
+        <main class="faq__principal">
 
-                <p>contrataciones </p>
+            <h1 class="faq_title">FAQ</h1>
+                <div class="faq__card">
+                    <a id="pregunta1" onclick="showAnswer1()"><h2 class="faq__question">¿Quiénes somos?</h2></a>
+                        <p id="faq__answer1">Los roperos SA de CV, somo una empresa dedicada al cliente brindando servicio de compra-venta de productos textiles al público en general, siempre manteniendo un código de ética y privacidad reciproca.</p>
+                </div>
+                <div class="faq__card">
+                    <a id="pregunta2" onclick="showAnswer2()"><h2 class="faq__question">¿Cómo puedo obtener mi factura electrónica?</h2></a>
+                        <p id="faq__answer2">Para obtener su factura electrónica se requiere ticket de compra o numero de compra y los datos fiscales del cliente, con ello favor de mandarlo a facturacion@losroperos.com</p>
+                </div>
+                <div class="faq__card">
+                    <a id="pregunta3" onclick="showAnswer3()"><h2 class="faq__question">¿Hasta cuándo puedo facturar mi compra?</h2></a>
+                        <p id="faq__answer3">Se marca como tiempo limite hasta el ultimo día del mes durante la fecha de compra registrada en el ticket y numero de compra.</p>
+                </div>
+                <div class="faq__card">
+                    <a id="pregunta4" onclick="showAnswer4()"><h2 class="faq__question">¿Puedo hacer devoluciones?</h2></a>
+                        <p id="faq__answer4">Se tiene que evaluar si el producto tiene daño o no, de no ser así se tiene un plazo de 30 días a partir de la compra para hacer efectiva la devolución.</p>
+                </div>
+                <div class="faq__card">
+                    <a id="pregunta5" onclick="showAnswer5()"><h2 class="faq__question">¿Aceptan pagos de diferentes países al origen (MXN)?</h2></a>
+                        <p id="faq__answer5">Si, se realiza la conversión dependiendo de la moneda del cliente basado en el tipo de cambio descrito en el banco Banorte</p>
+                </div>
+                <div class="faq__card">
+                    <a id="pregunta6" onclick="showAnswer6()"><h2 class="faq__question">¿Cuál es su dirección fiscal?</h2></a>
+                        <p id="faq__answer6">Estamos en Av. los roperos #404, colonia Textiles, Mty, N.L. Mexico CP 66440</p>
+                </div>
+                <div class="faq__card">
+                    <a id="pregunta7" onclick="showAnswer7()"><h2 class="faq__question">Horarios de atención:</h2></a>
+                        <p id="faq__answer7">Cuando llegue hasta que salga.</p>
+                </div>
+                
+                    <p>Cualquier duda extra, favor de escribirnos al correo: latoso@losroperos.com</p>
+
         </main>
-        
+    </body>
         <!-------------------------------------------------------------------------- Fotter ----------------------------------------------------------------------------->
        
         <%- include('../partials/footer') %>
+
+        <script src="../js/faq.js"></script>
     </body>
     
 </html>
