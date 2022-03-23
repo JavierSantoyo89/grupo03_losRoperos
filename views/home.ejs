@@ -17,62 +17,21 @@
 </head>
     <body>
         <%- include('./partials/header') %>
-
-        
-        <div class="container products-wrapper">
-            <div class = "row">
-                <div class ="col-12">
-                  <h2 class = "products-tittle">NUEVA TEMPORADA</h2>
-                </div>
-    <!-- SHOW NUEVA TEMPORADA PRODUCTS -->
-                
-                <% for (const product of season) { %>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <section class = "product-box">
-                            <a href="/products/detail/<%= product.id %>">
-                                  <figure class="product-box_image">
-                                    <img src= "/images/products/<%= product.img %> " alt= "imagen de producto"  width="150px" >
-                                  </figure>
-                                  <article class="product-box_data">                           
-                                      <p><%= product.price %></p>
-                                      <h3><%= product.name %></h3>
-
-                                  </article>
-                              </a>
-                          </section>
-                      </div>
-                    
-                <% } %>               
-            </div>
-        </div> 
-
-        <div class="container products-wrapper">
-            <div class = "row">
-                <div class ="col-12">
-                  <h2 class = "products-tittle">OFERTAS</h2>
-                </div>
-    <!-- SHOW INSALE PRODUCTS -->
-                
-                <% for (const product of inSale) { %>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <section class = "product-box">
-                            <a href="/products/detail/<%= product.id %>">
-                                  <figure class="product-box_image">
-                                    <img src= "/images/products/<%= product.img %> " alt= "imagen de producto" width="150px">
-                                  </figure>
-                                  <article class="product-box_data">
-                                        <p><%= product.price %></p>
-                                      <h3><%= product.name %></h3>
-                                      
-                                     
-                                  </article>
-                              </a>
-                          </section>
-                      </div>
-                    
-                <% } %>               
-            </div>
-        </div> 
+            <Div>
+                <h2>Listado de productos</h2>
+                    <ul>
+                        <% for (let i =0; i< products.length; i++){ %>
+                            <li>
+                                <a href="/products/detail/<%=products[i].id %>" ><img src="/images/products/<%=products[i].imgProduct%>.jpg" alt="Foto de producto"  width="150px" > </a>
+                                <br>
+                                <%=products[i].name %>
+                                <br>
+                                <%=products[i].price %>                               
+                            </li>
+                        <% } %>
+                    </ul>                        
+                </Div>
+    
         <%- include('./partials/footer') %>
     </body>
     

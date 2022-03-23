@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) =>{
-    let alias = 'users';
+    let alias = 'Users'; // siempre al incio en mayus, y plural //
     let columns =  {
         idUser:{
             type: DataTypes.INTEGER, 
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) =>{
         tableName: 'user',
         timestamps: false
     }
-    let user = sequelize.define(alias,columns, config);
+    let user = sequelize.define(alias,columns, config); // nombre de let debe ser igual al return. //
 
     return user;
 }

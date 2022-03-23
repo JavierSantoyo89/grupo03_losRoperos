@@ -71,7 +71,7 @@ Estructura del sitio
   
     Product:
         /product/[id]                   Invitado/usuario               // Vista detalle de x's producto //
-        /product/newproduct             usuario                        // Vista agregar productos //
+        /product/new                    usuario                        // Vista agregar productos //
         /product/update/[id]            usuario                        // Vista para actualizar x's producto //
         /product/delete/[id]            usuario                        // Borra registro de x's producto //
 

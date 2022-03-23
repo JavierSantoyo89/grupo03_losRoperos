@@ -1,29 +1,30 @@
-const { error, log } = require('console');
 const res = require('express/lib/response');
 const fs = require('fs');
 const path = require('path');
-//const productsFilePath = path.join(__dirname, '../data/products.json');
-//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-let db =require('../data/models') //---- Manda llamar la base de datos ----//
 
 const mainController = {
+    //home: (req,res) => {res.render("home")}, Ya no se usa.
     index: (req,res) => {
-       db.Products.findAll()
-            .then(function(products){
-            res.render("home", {products:products})
-        // Se muestran todos los articulos registrados en la BD //
-        })
+        const season = products.filter( p => p.status === "Season");
+
+        const inSale= products.filter( p => p.status === "In-sale");
+        res.render("home", {season,inSale})
     },
     carrito : (req,res) => {
+        //res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
         res.render('carrito')
     }, 
     noautorizado : (req,res) => {
+        //res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
         res.render('noAutorizado')
     },
     buscador: (req,res) =>{
         let busqueda = req.query.buscador
+        //res.send("Este animal busco " & busqueda)
         res.render("search")
     },
     numeroVisitas: (req,res)=>{

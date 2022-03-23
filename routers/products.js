@@ -17,8 +17,8 @@ router.get('/',productsController.Index);
 router.get('/detail/:id',productsController.detalle); 
 
 // ---- Rutas para agregar producto ---- //
-router.get('/newproduct',userAuth, productsController.Create);
-router.post('/newproduct',userAuth, validateNewProduct,productsController.Create);
+router.get('/new', productsController.Create);
+router.post('/new', validateNewProduct,productsController.Create);
 
 
 router.post('/',productsController.Store);

@@ -1,0 +1,53 @@
+/* ---------- Seteo ---------- */
+:root{
+    --colorTexto : #d6d6d6;
+    --colorFondoContenido: #000000cc;
+    --colorFondo: #56FA5A;
+}
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    background: var(--colorFondo);
+}
+
+.avisoPrivacidad__main{
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--colorFondoContenido);
+    color: var(--colorTexto);
+    margin-left: 10%;
+    margin-top: 2%;
+    width: 80vw;
+    align-self: center;  
+    height: 100%;/*160%*/
+    border-radius: 10px;
+    padding:15px;
+    box-shadow:0 0 2px 0, inherit;
+   /* z-index: -1;*/
+}
+.avisoPrivacidad__a{
+    display: flex;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.avisoPrivacidad__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+/*
+.avisoPrivacidad__p{
+    background-color: var(--colorContenido);
+    color: var(--colorTexto);
+   
+    display: flex;
+    /*justify-content: center;
+}
+*/

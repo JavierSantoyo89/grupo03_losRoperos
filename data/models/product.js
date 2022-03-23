@@ -1,9 +1,9 @@
 module.exports = (sequelize, DataTypes) =>{
-    let alias = 'products';
+    let alias = 'Products';
     let columns =  {
-        idProduct:{
+        id:{
             type: DataTypes.INTEGER, 
-            primarykey: true
+            primaryKey: true
             },
         name:{
             type: DataTypes.STRING(100)
@@ -26,21 +26,21 @@ module.exports = (sequelize, DataTypes) =>{
         price:{
             type: DataTypes.DOUBLE
             },
-        DescriptionProduct:{
+        decriptionProduct:{
             type: DataTypes.INTEGER(255)
             },
-        datatimeProduct:{
-            type: DataTypes.DATE
+        nameStatus:{
+            type: DataTypes.INTEGER(255)
             },
-        idStatus:{
-            type: DataTypes.INTEGER, 
-            },
+        imgProduct:{
+            type: DataTypes.STRING(45)
+        }
     };
     let config ={
         tableName: 'product',
         timestamps: false
     }
-    let user = sequelize.define(alias,columns,config);
+    let product = sequelize.define(alias,columns,config);
 
-    return user;
+    return product;
 }
