@@ -11,7 +11,8 @@
     box-sizing: border-box;
 }
 body{
-    background: var(--colorFondo);
+    background: url('/images/BG_Triplay.jpg');
+    background-size:100vw 100vh;
 }
 
 .avisoPrivacidad__main{
