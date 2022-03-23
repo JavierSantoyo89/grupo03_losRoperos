@@ -2,8 +2,6 @@ const { error, log } = require('console');
 const res = require('express/lib/response');
 const fs = require('fs');
 const path = require('path');
-//const productsFilePath = path.join(__dirname, '../data/products.json');
-//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let db =require('../data/models') //---- Manda llamar la base de datos ----//
@@ -28,11 +26,6 @@ const mainController = {
     },
     numeroVisitas: (req,res)=>{
         res.render("PruebaPago")
-/*if(req.session.numeroVisitas == undefined) {
-            req.session.numeroVisitas =0
-        }
-        req.session.numeroVisitas ++;
-        res.send('Sesion tiene el numero: ' + req.session.numeroVisitas)*/
     },
     Pruebapi:(req,res)=>{
        return res.json('Jalo esta mierda!!!');

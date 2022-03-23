@@ -20,7 +20,10 @@ router.get('/detail/:id',productsController.detalle);
 router.get('/new',userAuth, productsController.Create);
 router.post('/new', userAuth, validateNewProduct,productsController.Create);
 
-// ---- Rutas para editar por determinado ID ---- //
+
+router.post('/',productsController.Store);
+
+// ---- Rutas para Editar ---- //
 router.get('/edit/:id', userAuth,productsController.Edit);
 router.put('/edit/:id', userAuth,productsController.Update);
 

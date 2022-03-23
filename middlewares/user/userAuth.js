@@ -1,6 +1,7 @@
 function userAuth (req, res, next){
-  
+            req.session.usuarioALogearse = 'javier'
         if (req.session.usuarioALogearse != undefined){
+            console.log(req.session)
             res.render('home')
         }else{
             //res.send('Requiere permisos para verlo animal')

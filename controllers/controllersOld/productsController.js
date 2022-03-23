@@ -1,4 +1,3 @@
-const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
 
@@ -14,31 +13,41 @@ const category = products.filter(function(product){
 })
 
 const productsController = {
-    // ---- Muesta todos los productos disponibles (Funciona al 100%) ---- //
+    // ---- Muesta todos los productos disponibles (No funciona al 100%) ---- //
     Index: (req,res) =>{
-        db.Products.findAll()
+        db.products.findAll()
             .then(function (products) {
                 res.render('products',{products:products})
                 console.log('Entro a la DB y saco datos');
             })
             .catch(function (error) {
               console.log(error);  
-            }) 
-    },// ---- Muesta el detalle de un producto ( Done )
-    detalle: (req,res) => {
-		const id = req.params.id;
-        console.log(id)
-        db.Products.findByPk(id)        // .findByPk(req.params.id)
-            .then(function (products) {
-
-                 res.render("detail",{products:products} )
             })
+        //res.render("products",{products})
+        
     },
+    
     new: (req,res) => {
+        //res.send('Web de productos')
         res.render("addProduct")
     },
+    
+    // ---- Muesta el detalle de un producto ( Done )
+    detalle: (req,res) => {
+        //res.send('detalle')
+       // res.sendFile(path.join(__dirname,'../views/carrito.ejs'));
+		const id = req.params.id;
+        let product = products.find(product => product.id == id)
+		//let product = products.find(product => product.id == id)
+        //res.render('products',{product, toThousand});
+        res.render("detail",{product, toThousand} )
+    },
+
     // ---- Muestra la vista de agregar producto (Done) ---- //
     Create:(req,res) => {
+        //res.send('Ya jalo por aqui')
+        //res.send(newProduct);
+        //res.render('addProduct')
         res.render("CreateProduct")
     },
     Edit: (req,res) => {
@@ -84,6 +93,19 @@ const productsController = {
 		res.redirect('/products');
         
         //res.send('Funciono el controllador delete ' + id)
+    },
+    Store: (req,res) => {
+     
+    let newProduct = {
+        id: products[products.length - 1].id + 1,
+        ...req.body,
+        img: "1.jpg"//req.file.filename
+    };
+    products.push(newProduct)
+
+	fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ''));
+
+	res.redirect('/products/');
     }
 };
 

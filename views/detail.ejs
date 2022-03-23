@@ -23,34 +23,34 @@
      <div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title"><%= product.name %></h2>
+				<h2 class="products-title"><%= products.name %></h2>
 			</div>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<div class="col-12 col-lg-8">
-					<img src="/images/products/<%= product.img %>" alt="product image" class="product-detail-img">
+					<img src="/images/products/<%= products.imgProduct %>.jpg" alt="product image" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= product.description %>
+						<%= products.description %>
 					</p>
 				</div>
 				<div class="col-12 col-lg-4">
 					<article class="product-detail-info">
-						<h2 class="product-detail-title"><%= product.name %></h2>
-						<% if(product.discount > 0) { 
-							let finalPrice = (product.price * ((100 - product.discount) / 100)).toFixed(0)
+						<h2 class="product-detail-title"><%= products.name %></h2>
+						<% if(products.discount > 0) { 
+							let finalPrice = (products.price * ((100 - products.discount) / 100)).toFixed(0)
 						%>
 							<p class="product-detail-price small">
-								<span>$<%= toThousand(product.price) %></span>
+								<span>$<%= products.price %></span>
 								/
-								<b><%= product.discount %>% OFF</b>
+								<b><%= products.discount %>% OFF</b>
 							</p>
 							<p class="product-detail-price">
-								$<%= toThousand(finalPrice) %>
+								$<%= finalPrice %>
 							</p>
 						<% } else { %>
 							<p class="product-detail-price">
-								$<%= toThousand(product.price) %>
+								$<%= products.price %>
 							</p>
 						<% } %>
 
@@ -68,8 +68,8 @@
 						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
 						<hr>
 
-						<a href="/products/edit/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-						<form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+						<a href="/products/edit/<%= products.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+						<form action="/products/delete/<%= products.id %>?_method=DELETE" method="POST" style="display: inline-flex">
 							<button type="submit" class="action-button delete">ELIMINAR</button>
 						</form>
 					</article>
