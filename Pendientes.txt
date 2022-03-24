@@ -2,7 +2,7 @@ Carpeta                 Archivo                         Error/Faltante
 
 Controllers             ProductsController              Update: Lograr que actualice el registro
 Controllers             ProductsController              Delete: Lograr que borre el registro
-
+Controllers             ProductsController              CreateProduct: No guarda el la foto en la carpeta.
 
 
 

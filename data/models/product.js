@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) =>{
     let columns =  {
         id:{
             type: DataTypes.INTEGER, 
-            primaryKey: true
+            primaryKey: true,
+            autoincremental: true
             },
         name:{
             type: DataTypes.STRING(100)

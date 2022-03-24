@@ -31,15 +31,30 @@ const productsController = {
             .then(function (products) {
                  res.render("detail",{products:products} )
             })
-    },// *---- Muestra la vista de agregar producto (Done) ---- //
+    },// *---- Muestra la vista de agregar un nuevo producto (Done) ---- //
     NewProduct:(req,res) => {
         res.render("CreateProduct")
-
+    },
+    CreateProduct: (req,res)=>{
+        db.Products.create({
+            name: req.body.name,
+            model: req.body.model,
+            brand: req.body.brand,
+            size: req.body.size,
+            color: req.body.color,
+            amount: req.body.amount,
+            price: req.body.price,
+            decriptionProduct: req.body.description,
+            nameStatus: req.body.status,
+            imgProduct: req.body.img
+        })
+        res.redirect('/')
+    },
         // ?------------------------------------------------------------------------------- //
         // *---------------- controladores de la vista de editar producto ----------------* //
         // ?------------------------------------------------------------------------------- //
         
-    },// *---- Muesta el detalle a modificar un producto ( Funciona al 100% ) ---- //
+    // *---- Muesta el detalle a modificar un producto ( Funciona al 100% ) ---- //
     Edit: (req,res) => {
         let id = req.params.id;
         db.Products.findByPk(id)
