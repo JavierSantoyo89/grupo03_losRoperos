@@ -17,15 +17,15 @@ router.get('/',productsController.Index);
 router.get('/detail/:id',productsController.detalle); 
 
 // ---- Rutas para agregar producto ---- //
-router.get('/new',userAuth, productsController.Create);
-router.post('/new', userAuth, validateNewProduct,productsController.Create);
+router.get('/new',  productsController.NewProduct);
+router.post('/new',  validateNewProduct,productsController.NewProduct);
 
 // ---- Rutas para editar por determinado ID ---- //
-router.get('/edit/:id', userAuth,productsController.Edit);
-router.put('/edit/:id', userAuth,productsController.Update);
+router.get('/edit/:id', productsController.Edit);
+router.post('/edit/:id', productsController.Update);
 
 // ---- Rutas para delete ---- //
-router.delete('/delete/:id',userAuth,productsController.delete);
+router.delete('/delete/:id',productsController.delete);
 
 
 

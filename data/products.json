@@ -14,28 +14,15 @@
  },
  {
   "id": 2,
-  "name": "Camisa Cool",
-  "model": "Esta",
-  "brand": "mierda!!!",
+  "name": "chaqueton2",
+  "model": "prada",
+  "brand": "prada2",
   "color": "red",
-  "price": "1000",
+  "price": "1989",
   "discount": "",
   "size": "Ch",
-  "status": "In-sale",
-  "description": "Hola",
-  "img": "1.jpg"
- },
- {
-  "id": 3,
-  "name": "Jalo",
-  "model": "Esta",
-  "brand": "mierda!!!",
-  "size": "Ch",
-  "color": "red",
-  "price": 1000,
   "status": "Season",
-  "discount": "",
-  "description": "Eso cabron!!!",
+  "description": "Lo que sea",
   "img": "1.jpg"
  },
  {

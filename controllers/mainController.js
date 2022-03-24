@@ -7,6 +7,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let db =require('../data/models') //---- Manda llamar la base de datos ----//
 
 const mainController = {
+    // *---- Muesta todos los productos en el index ( Funciona al 100% ) ---- //
     index: (req,res) => {
        db.Products.findAll()
             .then(function(products){
@@ -17,18 +18,20 @@ const mainController = {
     carrito : (req,res) => {
         res.render('carrito')
     }, 
-    noautorizado : (req,res) => {
-        res.render('noAutorizado')
-    },
+    
     buscador: (req,res) =>{
         let busqueda = req.query.buscador
         res.render("search")
+    }, 
+
+        // ?------------------------------------------------------------------------------- //
+        // *----------------           Vistas generales, falta CSS        ----------------* //
+        // ?------------------------------------------------------------------------------- //
+    noautorizado : (req,res) => {
+        res.render('noAutorizado')
     },
     numeroVisitas: (req,res)=>{
         res.render("PruebaPago")
-    },
-    Pruebapi:(req,res)=>{
-       return res.json('Jalo esta mierda!!!');
     },
     avisoPrivacidad: (req,res)=>{
         res.render("../views/viewsFooter/aviso_privacidad");

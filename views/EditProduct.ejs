@@ -26,12 +26,12 @@
                 <div class="container products-wrapper">
                     <div class="row">
                       <div class="col-12">
-                        <h2 class="products-title">Estás editando: <i><%= productToEdit.name %></i></h2>
+                        <h2 class="products-title">Estás editando: <i><%= products.name %></i></h2>
                       </div>
                     </div>
                     <div class="col-12">
                       <form
-                        action="/products/edit/<%= productToEdit.id %>?_method=PUT"
+                        action="/products/edit/<%= products.id %>?_method=PUT"
                         method="POST"
                       >
                         <div class="row product-detail">
@@ -43,7 +43,7 @@
                               name="name"
                               placeholder="Ej: Zapatillas Reebok"
                               class="form-input"
-                              value="<%= productToEdit.name %>"
+                              value="<%= products.name %>"
                             />
                           </div>
                           <div class="col-12 col-md-6">
@@ -54,7 +54,7 @@
                               name="model"
                               placeholder="Ej: Zapatillas Reebok"
                               class="form-input"
-                              value="<%= productToEdit.model %>"
+                              value="<%= products.model %>"
                             />
                           </div>
                           <div class="col-12 col-md-6">
@@ -65,7 +65,7 @@
                               name="brand"
                               placeholder="Ej: Zapatillas Reebok"
                               class="form-input"
-                              value="<%= productToEdit.brand %>"
+                              value="<%= products.brand %>"
                             />
                           </div>
                           <div class="col-12 col-md-6">
@@ -76,7 +76,7 @@
                               name="color"
                               placeholder="Ej: Zapatillas Reebok"
                               class="form-input"
-                              value="<%= productToEdit.color %>"
+                              value="<%= products.color %>"
                             />
                           </div>
                           <div class="col-12 col-md-6">
@@ -87,7 +87,7 @@
                               name="price"
                               placeholder="Ej: 5678"
                               class="form-input"
-                              value="<%= productToEdit.price %>"
+                              value="<%= products.price %>"
                             />
                           </div>
                           
@@ -99,7 +99,7 @@
                               name="discount"
                               placeholder="Ej: 15"
                               class="form-input"
-                              value="<%= productToEdit.discount %>"
+                              value="<%= products.discount %>"
                             />
                           </div>
                           <div class="col-12 col-md-6">
@@ -126,7 +126,7 @@
                           <div class="col-12">
                             <label for="description" class="form-label">Descripción:</label>
                             <textarea name="description" id="description" class="form-input">
-                                <%= productToEdit.description %></textarea>
+                                <%= products.description %></textarea>
                           </div>
                           <div class="col-12">
                             <label for="img" class="form-label">Sube la imagen:</label>

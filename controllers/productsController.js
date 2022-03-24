@@ -24,30 +24,30 @@ const productsController = {
             .catch(function (error) {
               console.log(error);  
             }) 
-    },// ---- Muesta el detalle de un producto ( Done )
+    },// *---- Muesta el detalle de un producto ( Funciona al 100% ) ---- //
     detalle: (req,res) => {
-		const id = req.params.id;
-        console.log(id)
-        db.Products.findByPk(id)        // .findByPk(req.params.id)
+		let id = req.params.id;
+        db.Products.findByPk(id)
             .then(function (products) {
-
                  res.render("detail",{products:products} )
             })
-    },
-    new: (req,res) => {
-        res.render("addProduct")
-    },
-    // ---- Muestra la vista de agregar producto (Done) ---- //
-    Create:(req,res) => {
+    },// *---- Muestra la vista de agregar producto (Done) ---- //
+    NewProduct:(req,res) => {
         res.render("CreateProduct")
-    },
+
+        // ?------------------------------------------------------------------------------- //
+        // *---------------- controladores de la vista de editar producto ----------------* //
+        // ?------------------------------------------------------------------------------- //
+        
+    },// *---- Muesta el detalle a modificar un producto ( Funciona al 100% ) ---- //
     Edit: (req,res) => {
         let id = req.params.id;
-        let productToEdit = products.find(product => product.id == id)
-		
-        res.render('EditProduct',{productToEdit})
-        //res.send('Funciono el controlador de actualizar' + id + 'Por metodo put!!!')
-    },
+        db.Products.findByPk(id)
+                .then(function (products) {
+                    res.render('EditProduct',{products:products})
+                })
+ 
+    },// !---- Revisar codigo para que al hacer put sobreescriba el articulo ----//
     Update: (req,res) => {
         let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id)
@@ -76,6 +76,11 @@ const productsController = {
     res.redirect('/');
 
     },
+
+        // -------------------------------------------------------------------------------- //
+        /* ---------------- controlador de la vista de borrado de producto ---------------- */
+        // -------------------------------------------------------------------------------- //
+// !---- Revisar codigo para hacer que borre el producto el articulo ----//
     delete: (req,res) => {
         let id = req.params.id;
 		let finalProducts = products.filter(product => product.id != id);

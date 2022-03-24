@@ -9,7 +9,6 @@ const router = express.Router();
 router.get('/',mainController.index);
 router.get('/carrito', mainController.carrito);
 router.get('/search', mainController.buscador);
-router.get('/pruebapi', mainController.Pruebapi)
 
 // ---- Rutas dedicadas para navegacion general en FOOTER ---- //
 router.get('/privacidad',mainController.avisoPrivacidad)
