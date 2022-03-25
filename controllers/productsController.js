@@ -15,7 +15,10 @@ const category = products.filter(function(product){
 })
 
 const productsController = {
-    // ---- Muesta todos los productos disponibles (Funciona al 100%) ---- //
+            // ?---------------------------------------------------------------------------------------- //
+            // *------------- Controladores para mostar todos los productos y detalle del miso---------* //
+            // ?---------------------------------------------------------------------------------------- //
+    //* ---- Muesta todos los productos disponibles (Funciona al 100%) ---- //
     Index: (req,res) =>{
         db.Products.findAll()
             .then(function (products) {
@@ -25,17 +28,24 @@ const productsController = {
             .catch(function (error) {
               console.log(error);  
             }) 
-    },// *---- Muesta el detalle de un producto ( Funciona al 100% ) ---- //
+    },
+    // *---- Muesta el detalle de un producto ( Funciona al 100% ) ---- //
     detalle: (req,res) => {
 		let id = req.params.id;
         db.Products.findByPk(id)
             .then(function (products) {
                  res.render("detail",{products:products} )
             })
-    },// *---- Muestra la vista de agregar un nuevo producto (Done) ---- //
+            // ?------------------------------------------------------------------------------- //
+            // *------------- Controladores de la vista de crear nuevo producto --------------* //
+            // ?------------------------------------------------------------------------------- //
+            
+    },
+    // *---- Muestra la vista de agregar un nuevo producto (Done) ---- //
     NewProduct:(req,res) => {
         res.render("CreateProduct")
     },
+    // * ---- Controlador para realizar el Insert en la BD (Done) ---- //
     CreateProduct: (req,res)=>{
             let productoImagen = req.body;
             productoImagen.imgProduct = req.file.filename
@@ -48,7 +58,7 @@ const productsController = {
                 brand: req.body.brand,
                 size: req.body.size,
                 color: req.body.color,
-                amount: req.body.amount,
+                discount: req.body.discount,
                 price: req.body.price,
                 decriptionProduct: req.body.description,
                 nameStatus: req.body.status,
@@ -66,42 +76,45 @@ const productsController = {
         // ?------------------------------------------------------------------------------- //
         
     // *---- Muesta el detalle a modificar un producto ( Funciona al 100% ) ---- //
-    Edit: 
-    (req,res) => {
+    Edit: (req,res) => {
 		let id = req.params.id;
         db.Products.findByPk(id)
             .then(function (products) {
                 res.render('EditProduct',{products:products} )
             })
  
-    },// !---- Revisar codigo para que al hacer put sobreescriba el articulo ----//
+    },
+    // *---- Controlador para hacer un UPDATE en la BD por su Id (Funciona al 100%) ----//
     Update: (req,res) => {
         let id = req.params.id;
+        let productoImagen = req.body;
+        productoImagen.imgProduct = req.file.filename;
+            console.log('el nombre de la imagen en el controlador update ' + req.file.filename);
+
             db.Products.update({
                 name: req.body.name,
                 model: req.body.model,
                 brand: req.body.brand,
                 size: req.body.size,
                 color: req.body.color,
-                amount: req.body.amount,
+                discount: req.body.discount,
                 price: req.body.price,
                 decriptionProduct: req.body.description,
                 nameStatus: req.body.status,
-                imgProduct: req.body.imgProduct
+                imgProduct: req.file.filename
             },
             {
-                Where: {
-                    id:req.params.id
+                where:{
+                    id: req.params.id
                 }
             })
                 res.redirect('/products/edit/' + req.params.id)
-		},
+	},
 
-        // -------------------------------------------------------------------------------- //
-        /* ---------------- controlador de la vista de borrado de producto ---------------- */
-        // -------------------------------------------------------------------------------- //
+        //? --------------------------------------------------------------------------------- //
+        //* ---------------- controlador de la vista de borrado de producto ---------------- *//
+        //? --------------------------------------------------------------------------------- //
 // *---- Borrar producto (Done) ----//
-   
     delete: (req,res) =>{
         db.Products.destroy({
             where:{

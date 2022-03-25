@@ -24,7 +24,7 @@ router.post('/new',validateNewProduct,multerProductUpdate,productsController.Cre
 
 // ---- Rutas para editar por determinado ID ---- //
 router.get('/edit/:id', productsController.Edit);
-router.post('/edit/:id', productsController.Update);
+router.post('/edit/:id',multerProductUpdate, productsController.Update);
 
 // ---- Rutas para delete ---- //
 router.post('/delete/:id',productsController.delete);

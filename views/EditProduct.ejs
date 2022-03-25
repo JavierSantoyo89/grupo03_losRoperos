@@ -32,7 +32,7 @@
                     <div class="col-12">
                       <form
                         action="/products/edit/<%= products.id %>"
-                        method="POST"
+                        method="POST"  enctype="multipart/form-data" 
                       >
                         <div class="row product-detail">
                           <div class="col-12 col-md-6">
@@ -130,7 +130,7 @@
                           </div>
                           <div class="col-12">
                             <label for="img" class="form-label">Sube la imagen:</label>
-                            <input type="file" name="img" id="file">
+                            <input type="file" name="imgProduct" id="file" required accept=".jpg">
                         </div>
                           <div class="col-12">
                             <button type="submit" class="buy-now-button">
@@ -148,6 +148,6 @@
         <%- include('partials/footer') %>
 
     </body>
-   <!-- http://localhost:1689/product/add -->
+   <!-- http://localhost:1689/product/new -->
  </html>
  

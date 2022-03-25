@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) =>{
         color:{
             type: DataTypes.STRING(100)
             },
-        amount:{
-            type: DataTypes.STRING(100)
+        discount:{
+            type: DataTypes.INTEGER
         },
         price:{
             type: DataTypes.DOUBLE
