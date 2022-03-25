@@ -106,7 +106,7 @@
                             <label for="size" class="form-label">Talla:</label>
                            
                             <select name="size" id="size" class="form-input">
-                                <option value="">Elegí</option>
+                                <option value="<%= products.size %>"><%= products.size %></option>
                                 <option value="Ch">Chica</option>
                                 <option value="M">Mediana</option>
                                 <option value="G">Grande</option>
@@ -116,17 +116,17 @@
                           <div class="col-12 col-md-6">
                             <label for="status" class="form-label">Categoría:</label>
                             <select name="status" id="status" class="form-input">
-                                <option value="">Elegí</option>
+                                <option value="<%= products.discount %>"><%= products.status %></option>
                                 <option value="In-sale">En oferta</option>
                                 <option value="Season">Nueva Temporada</option>
-                             
                             </select>
                           </div>
               
                           <div class="col-12">
                             <label for="description" class="form-label">Descripción:</label>
-                            <textarea name="description" id="description" class="form-input">
-                                <%= products.description %></textarea>
+                           <textarea name="description"  id="description" class="form-input">
+                                <%= products.decriptionProduct %></textarea>
+                             <!--<input type="text" name="description"  id="description" class="form-input" value="<%= products.decriptionProduct %>"/> (Este jala sin Tab's) -->
                           </div>
                           <div class="col-12">
                             <label for="img" class="form-label">Sube la imagen:</label>
