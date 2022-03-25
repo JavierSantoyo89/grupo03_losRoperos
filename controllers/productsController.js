@@ -1,6 +1,7 @@
 const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer')
 
 let db = require('../data/models')
 
@@ -36,19 +37,29 @@ const productsController = {
         res.render("CreateProduct")
     },
     CreateProduct: (req,res)=>{
-        db.Products.create({
-            name: req.body.name,
-            model: req.body.model,
-            brand: req.body.brand,
-            size: req.body.size,
-            color: req.body.color,
-            amount: req.body.amount,
-            price: req.body.price,
-            decriptionProduct: req.body.description,
-            nameStatus: req.body.status,
-            imgProduct: req.body.img
-        })
+            let productoImagen = req.body;
+            productoImagen.imgProduct = req.file.filename
+
+        if (req.file){
+            db.Products.create({
+            
+                name: req.body.name,
+                model: req.body.model,
+                brand: req.body.brand,
+                size: req.body.size,
+                color: req.body.color,
+                amount: req.body.amount,
+                price: req.body.price,
+                decriptionProduct: req.body.description,
+                nameStatus: req.body.status,
+                imgProduct: req.file.filename
+            })
+        console.log('el nombre de la imagen en el controlador ' + req.params.imgProduct);
         res.redirect('/')
+        }else{
+            res.render('home')
+        }
+
     },
         // ?------------------------------------------------------------------------------- //
         // *---------------- controladores de la vista de editar producto ----------------* //
@@ -76,7 +87,7 @@ const productsController = {
                 price: req.body.price,
                 decriptionProduct: req.body.description,
                 nameStatus: req.body.status,
-                imgProduct: req.body.img
+                imgProduct: req.body.imgProduct
             },
             {
                 Where: {
@@ -89,16 +100,8 @@ const productsController = {
         // -------------------------------------------------------------------------------- //
         /* ---------------- controlador de la vista de borrado de producto ---------------- */
         // -------------------------------------------------------------------------------- //
-// !---- Revisar codigo para hacer que borre el producto el articulo ----//
-    vistaDelete: (req,res) => {
-     let id = req.params.id;
-        db.Products.findByPk(id)
-            .then(function (products) {
-                res.render('deleteProduct',{products:products} )
-            })
-             
-        //res.send('Funciono el controllador delete ' + id)
-    },
+// *---- Borrar producto (Done) ----//
+   
     delete: (req,res) =>{
         db.Products.destroy({
             where:{
