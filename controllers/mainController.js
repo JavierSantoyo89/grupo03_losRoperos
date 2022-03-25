@@ -13,6 +13,7 @@ const mainController = {
             .then(function(products){
             res.render("home", {products:products})
         // Se muestran todos los articulos registrados en la BD //
+                
         })
     },
     carrito : (req,res) => {

@@ -4,19 +4,9 @@ const routerUsers = express.Router();
 const multer = require('multer');
 const path = require('path')
 
-// ************ Multer ************
-const storage = multer.diskStorage({
-    destination: (req,file,cb) => {
-        cb(null, './public/images/users');
-    },
-    filename: (req,file,cb) => {
-        let filename = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null,filename)
-    }
-})
 
-const uploadFile = multer({storage})
-
+// ************ Middlewares *************
+const multerUser = require('../middlewares/user/multerUser')
 
 
 // ************ Controller Require ************
@@ -31,7 +21,7 @@ routerUsers.post('/login',validateLogin, usersController.ProcessLogin);
 
 // ---- Rutas dedicadas a new user's ---- //
 routerUsers.get('/register',usersController.registro);
-routerUsers.post('/register', uploadFile.single('avatar'), validateRegister ,usersController.processRegister)
+routerUsers.post('/register', multerUser, validateRegister ,usersController.processRegister)
 // routerUsers.post('/login', validateLogin, usersController.validarUser)
 
 

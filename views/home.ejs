@@ -21,13 +21,23 @@
                 <h2>Listado de productos</h2>
                     <ul>
                         <% for (let i =0; i< products.length; i++){ %>
-                            <li>
-                                <a href="/products/detail/<%=products[i].id %>" ><img src="/images/products/<%=products[i].imgProduct%>" alt="Foto de producto"  width="150px" > </a>
-                                <br>
-                                <%=products[i].name %>
-                                <br>
-                                <%=products[i].price %>                               
-                            </li>
+                            <% if (products[i].imgProduct !== ''){ %>
+                                    <li>
+                                        <a href="/products/detail/<%=products[i].id %>" ><img src="/images/products/<%=products[i].imgProduct%>" alt="Foto de producto"  width="150px" > </a>
+                                        <br>
+                                        <%=products[i].name %>
+                                        <br>
+                                        <%=products[i].price %>                               
+                                </li>
+                                <% }else{ %>
+                                    <li>
+                                        <a href="/products/detail/<%=products[i].id %>" ><img src="/images/products/noImgDefault.jpg" alt="Foto de producto"  width="150px" > </a>
+                                        <br>
+                                        <%=products[i].name %>
+                                        <br>
+                                        <%=products[i].price %>                               
+                                    </li>
+                             <% } %>    
                         <% } %>
                     </ul>                        
                 </Div>
