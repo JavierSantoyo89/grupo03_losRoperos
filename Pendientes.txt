@@ -9,3 +9,15 @@ Controllers             ProductsController              CreateProduct: No guarda
 
 
 Falta CSS general y Marco?
+
+
+EditProduct:
+<label for="brand" class="form-label">Marca del producto:</label>
+                            <input
+                              type="text"
+                              id="brand"
+                              name="brand"
+                              placeholder="Ej: Zapatillas Reebok"
+                              class="form-input"
+                              value="<%= products.brand %>"
+                            />

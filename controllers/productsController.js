@@ -55,42 +55,36 @@ const productsController = {
         // ?------------------------------------------------------------------------------- //
         
     // *---- Muesta el detalle a modificar un producto ( Funciona al 100% ) ---- //
-    Edit: (req,res) => {
-        let id = req.params.id;
+    Edit: 
+    (req,res) => {
+		let id = req.params.id;
         db.Products.findByPk(id)
-                .then(function (products) {
-                    res.render('EditProduct',{products:products})
-                })
+            .then(function (products) {
+                res.render('EditProduct',{products:products} )
+            })
  
     },// !---- Revisar codigo para que al hacer put sobreescriba el articulo ----//
     Update: (req,res) => {
         let id = req.params.id;
-		let productToEdit = products.find(product => product.id == id)
-
-		productToEdit = {
-			id: productToEdit.id,
-			...req.body,
-			img: productToEdit.img,
-		};
-        // nuevoArray
-		
-		let newProducts = products.map(p => {
-			if (p.id == productToEdit.id) {
-        // const n = {}
-        // n.id = productToEdit.id
-        // otras propiedades
-      
-				return p = {...productToEdit};
-			}
-			return p;
-		})
-    fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-    
-    products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		
-    res.redirect('/');
-
-    },
+            db.Products.update({
+                name: req.body.name,
+                model: req.body.model,
+                brand: req.body.brand,
+                size: req.body.size,
+                color: req.body.color,
+                amount: req.body.amount,
+                price: req.body.price,
+                decriptionProduct: req.body.description,
+                nameStatus: req.body.status,
+                imgProduct: req.body.img
+            },
+            {
+                Where: {
+                    id:req.params.id
+                }
+            })
+                res.redirect('/products/edit/' + req.params.id)
+		},
 
         // -------------------------------------------------------------------------------- //
         /* ---------------- controlador de la vista de borrado de producto ---------------- */
