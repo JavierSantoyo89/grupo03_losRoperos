@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/cssAddProduct.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/cssAddProduct.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
 </head>
     <body id="Bodys">
 
@@ -23,26 +23,12 @@
         <!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
             <main>
                 <div id="AddProductDiv">
-                    <form class="ProductForm" action="/product/delete?_method=DELETE" method="POST">
+                    <form class="ProductForm" action="/product/delete/<%= products.id %>" method="POST">
 
-                        <p>formato para borrar el producto </p>
-                            
-                        <label for="name"> Name: </label>
-                        <input name="name" type="text" required>
-                        <label for="model"> Model: </label>
-                        <input name="model" type="text" required>
-                        <label for="marca"> Marca: </label>
-                        <input name="marca" type="text" required>
-                        <label for="category"> Categria: </label>
-                        <input name="category" type="text" required>
-                        <label for="count"> Cantidad: </label>
-                        <input name="count" type="number" required>
-                        <label for="description"> Descripcion: </label>
-                        <input name="description" type="text" required>
-                            
+                        <h1>formato para borrar el producto <%= products.name %></h1>
+                           <img href='<%= products.imgProduct%>'>
                         <div id="AddProductBottones"></div>
-                            <button name="Enviar" type="submit">Cargar</button>
-                            <button name="Clear" type="reset">Reiniciar</button>
+                            <button name="Enviar" type="submit">Borrar</button>
                         </div>
                     </form>
 

@@ -69,9 +69,17 @@
 						<hr>
 
 						<a href="/products/edit/<%= products.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-						<form action="/products/delete/<%= products.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
+						<form action="/products/delete/<%= products.id %>" method="POST" class="ProductForm" style="display: inline-flex" >
+
+							<!--<form  action="/product/delete/<%= products.id %>" method="POST">-->
+								<div id="AddProductBottones"></div>
+									<button name="Enviar" type="submit" class="action-button delete">ELIMINAR</button>
+								</div>
 						</form>
+
+							<!-- <button type="submit" class="action-button delete">ELIMINAR</button> 
+							<a href="/products/delete/<%= products.id %>" class="action-button delete  class="action-button delete">ELIMINAR</a>-->
+						
 					</article>
 				</div>
 			</div>

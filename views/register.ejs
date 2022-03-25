@@ -38,6 +38,7 @@
             <label class="checkbox_Registro" for="birth_date" id='registro_cumpleaños'><b><h4>Fecha de nacimiento</h4></b></label>
             <input class="registro_input-formulario" type="date" name="birth_date" id="birth_date">
             <input class="registro_input-formulario" type="text" name="address" placeholder="Domicilio">
+            <input type="file" name="avatar" accept=".jpg"
             <% if (locals.errors && errors.address) { %>
                 <p style="color: red"><%= errors.address.msg %></p>
             <% } %>

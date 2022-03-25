@@ -90,14 +90,22 @@ const productsController = {
         /* ---------------- controlador de la vista de borrado de producto ---------------- */
         // -------------------------------------------------------------------------------- //
 // !---- Revisar codigo para hacer que borre el producto el articulo ----//
-    delete: (req,res) => {
-        let id = req.params.id;
-		let finalProducts = products.filter(product => product.id != id);
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-        products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.redirect('/products');
-        
+    vistaDelete: (req,res) => {
+     let id = req.params.id;
+        db.Products.findByPk(id)
+            .then(function (products) {
+                res.render('deleteProduct',{products:products} )
+            })
+             
         //res.send('Funciono el controllador delete ' + id)
+    },
+    delete: (req,res) =>{
+        db.Products.destroy({
+            where:{
+                id: req.params.id
+            }
+        })
+        res.redirect('/')
     }
 };
 
