@@ -48,21 +48,20 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product` (
-  `idProduct` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `model` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `brand` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `size` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `color` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `amount` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `discount` int DEFAULT NULL,
   `price` double DEFAULT NULL,
   `decriptionProduct` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `nameStatus` varchar(100) DEFAULT NULL,
-  `datatimeProduct` datetime DEFAULT NULL,
-  `idStatus` int DEFAULT NULL,
-  KEY `fk_product_image_idx` (`idProduct`),
-  CONSTRAINT `fk_image_product` FOREIGN KEY (`idProduct`) REFERENCES `image` (`idImage`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `imgProduct` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_product_image_idx` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,6 +70,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (11,'biybbi','Cam01','rgmvtmip','M','verde',NULL,8,'k  kjk','In-sale',''),(12,'wergwme','Cam01','yibti','Ch','blanco',NULL,6,'jmkmmjk','Season',''),(13,'wergwme','reigcpwrimg','yibti','M','melon',NULL,45454,'545454','In-sale',''),(14,'cafetera3','Nestle','rgmvtmip','M','blanco',NULL,13,'jimii','Season',''),(15,'biybbi','reigcpwrimg','yibti','M','blanco',NULL,1,'iooo','Season',''),(19,'cafetera3','Cam01','Ni idea3','Ch','Red3',NULL,7,'.op,.p,.','In-sale',''),(20,'cafetera3','Cam01','Ni idea3','Ch','Red3',NULL,7,'.op,.p,.','In-sale',''),(21,'wergwme','Cam01','Ni idea3','Ch','verde',NULL,6,'mounmnu','In-sale',''),(22,'biybbi','reigcpwrimg','yibti','Ch','Red3',NULL,11,'omoio','In-sale',''),(23,'estoy enojado','De aqui3','yibti','Ch','verde',NULL,9,'oioumnu','Season',''),(24,'wergwme','Cam01','Ni idea3','M','Red3',NULL,1,',ijmmpo','In-sale',''),(25,'..vhoe.he',',rcwc',',wrowgc','M',',xgiorgc',NULL,135,'ewrcger','Season',''),(26,'ybub','Cam01','ubbu','Ch','verde',NULL,120,'yumnui','In-sale','Product1648192173851.jpg'),(27,'omvhrrem,','omiomim','oomiop','Ch','opmopi',NULL,8,'oopomn','In-sale','Product1648192381482.jpg'),(28,'Prueba mañanera...','Prada','Pull & Bear','M','Cafe',NULL,3000,'Prueba mañanera...','In-sale','Product1648228167592.jpg'),(29,'Prueba tarde1','Prueba tard1','Prueba tarde 1','M','Violeta',10,2022,'                                Prueba tarde...','In-sale','Product1648242518505.jpg');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,11 +114,7 @@ CREATE TABLE `saleproduct` (
   `idSaleProduct` int NOT NULL,
   `idProduct` int NOT NULL,
   `idSale` int NOT NULL,
-  PRIMARY KEY (`idSaleProduct`),
-  KEY `fk_saleproduct_sale_idsale_idx` (`idSale`),
-  KEY `fk_saleProduct_product_idx` (`idProduct`),
-  CONSTRAINT `fk_saleProduct_product` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_saleproduct_sale_idsale` FOREIGN KEY (`idSale`) REFERENCES `sale` (`idSale`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`idSaleProduct`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -147,7 +143,6 @@ CREATE TABLE `user` (
   `password` varchar(100) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `datatimeUser` datetime DEFAULT NULL,
   `idImageUser` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`idUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -179,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-10  2:01:20
+-- Dump completed on 2022-03-25 18:19:43
