@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) =>{
         idUser:{
             type: DataTypes.INTEGER, 
             primarykey: true,
+            autoincrement: true
             },
         firstName:{
             type: DataTypes.STRING
@@ -11,13 +12,19 @@ module.exports = (sequelize, DataTypes) =>{
         lastName:{
             type: DataTypes.STRING
             },
-        birthday:{
+        userName:{
             type: DataTypes.STRING
-            },
-        address:{
+        },
+        email:{
+            type: DataTypes.STRING
+        },
+        password:{
+            type: DataTypes.STRING
+        },
+        birthday:{
             type: DataTypes.DATE
             },
-        datatimeUser:{
+        address:{
             type: DataTypes.DATE
             },
         IdReference:{
