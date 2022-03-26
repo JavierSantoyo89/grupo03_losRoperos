@@ -27,29 +27,28 @@ const usersController = {
             console.log('El pass es: ' + pass);
     },
 
+            // ?---------------------------------------------------------------------------------------- //
+            // *--------------------------- Controladores para agregar usuarios -----------------------* //
+            // ?---------------------------------------------------------------------------------------- //
 
-    // ************ Controlers of Login(Get/POST) ************** //
+    // ************ Controller vista registrar usuario (Done) ************** //
     registro: (req,res) => {
         res.render("register")
-    }
-    /*,
-    createUser: (req,res) => {
-        /*let newUser = {
-            FirstName: req.body.name,
-            LastName:req.body.,
-            Date:"16/03/1989",
-            mail:"javier.santoyo@yahoo.com",
-            Password:
-            res.send(req.body)
-        }*/,
+    },
+     // ************ Controller accion registrar usuario (Done) ************** //
     processRegister: (req,res) => {
-      const resultValidation = validationResult(req);
-      if(resultValidation.errors.length > 0){
-          return res.render ('register',{errors: resultValidation.mapped(),
-            oldData: req.body
-        })
-    }
-      return res.send('Todo correcto')
+        //console.log("el nombre del avatar en controlador es: " + req.file.filename);
+            db.Users.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                userName: req.body.user,
+                email: req.body.email,
+                password: req.body.pass,
+                birthday: req.body.birth_date,
+                address: req.body.address, 
+                IdImageUser: req.file.filename
+            })
+            res.redirect('/')
     }
 }
     

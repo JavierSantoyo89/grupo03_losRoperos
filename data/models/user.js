@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) =>{
     let columns =  {
         idUser:{
             type: DataTypes.INTEGER, 
-            primarykey: true,
-            autoincrement: true
+            //primarykey: true,
+            //autoincrement: true
             },
         firstName:{
             type: DataTypes.STRING
@@ -27,8 +27,8 @@ module.exports = (sequelize, DataTypes) =>{
         address:{
             type: DataTypes.DATE
             },
-        IdReference:{
-            type: DataTypes.INTEGER
+        IdImageUser:{
+            type: DataTypes.STRING
         }
     };
     let config ={

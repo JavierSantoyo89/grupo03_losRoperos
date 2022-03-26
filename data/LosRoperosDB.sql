@@ -88,9 +88,7 @@ CREATE TABLE `sale` (
   `priceSold` double DEFAULT NULL,
   `dataTimeSale` datetime DEFAULT NULL,
   `idUser` int DEFAULT NULL,
-  PRIMARY KEY (`idSale`),
-  KEY `fk_sale_user_idUser_idx` (`idUser`),
-  CONSTRAINT `fk_sale_user_idUser` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`idSale`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,7 +133,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `idUser` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `firstName` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `lastName` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `userName` varchar(100) DEFAULT NULL,
@@ -144,8 +142,8 @@ CREATE TABLE `user` (
   `birthday` date DEFAULT NULL,
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `idImageUser` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  PRIMARY KEY (`idUser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +152,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'Javier','Santoyo',NULL,NULL,'123',NULL,'Invalid date',NULL),(2,'Javier','Santoyo',NULL,'javier.santoyo@yahoo.com',NULL,NULL,'Invalid date','User1648260523318.jpg'),(3,'Javier','Santoyo','JavierSantoyo','javier.santoyo@yahoo.com','123','2014-01-01','Invalid date','User1648260687262.jpg');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-25 18:19:43
+-- Dump completed on 2022-03-25 20:13:10

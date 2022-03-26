@@ -16,7 +16,7 @@ const category = products.filter(function(product){
 
 const productsController = {
             // ?---------------------------------------------------------------------------------------- //
-            // *------------- Controladores para mostar todos los productos y detalle del miso---------* //
+            // *----------- Controladores para mostar todos los productos y detalle del mismo ---------* //
             // ?---------------------------------------------------------------------------------------- //
     //* ---- Muesta todos los productos disponibles (Funciona al 100%) ---- //
     Index: (req,res) =>{
