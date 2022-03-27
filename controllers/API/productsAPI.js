@@ -8,7 +8,7 @@ let db = require('../../data/models');
 
 const productsAPI = {
     
-    // **************** Muestra todos los productos en formato JSON **************** //
+    // **************** Muestra todos los productos en formato JSON (Done) **************** //
     ProductsAll: (req,res) =>{
         db.Products.findAll()
             .then(products=>{
@@ -18,7 +18,28 @@ const productsAPI = {
                     status: 200
                 });
             })
-    }
+    },
+    // *************** Muestra el detalle del producto en funcion de su ID en formato JSON (Done) **************** //
+    ProductId: (req,res) =>{
+        db.Products.findByPk(req.params.id)
+            .then(products=>{
+                return res.status(200).json({
+                    total: products.length,
+                    data: products,
+                    status: 200
+                });
+            })
+    },
+    //  *************** Carga a la BD mediante la API (Done)  ***************  //
+    CreateProductAPI: (req,res)=>{
+        db.Products.create(req.body)
+            .then(products=>{
+                return res.status(200).json({
+                    data: products,
+                    status: 200
+                })
+            })
+}
 
 }
 
