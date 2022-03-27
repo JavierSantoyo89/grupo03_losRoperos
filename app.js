@@ -35,6 +35,7 @@ const routes = require('./routers/main');
 const routerProduct = require('./routers/products');
 const routerUser = require('./routers/users');
 const { log } = require('console');
+const req = require('express/lib/request');
 
 app.use('/',routes);
 app.use('/products',routerProduct);
@@ -44,6 +45,7 @@ app.use('/user',routerUser);
 app.use((req,res,next)=>{
     res.status(404).render('not-found')
 })
+
 
 // ------- levantar servidor ------- //
 app.listen(1689,()=>{

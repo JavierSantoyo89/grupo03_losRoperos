@@ -34,4 +34,6 @@ routerUsers.get('/:id',UsersAPI.UserId) // * http://localhost:1689/user/{id} * /
 routerUsers.post('/new_user_api',UsersAPI.new_user_api) // * http://localhost:1689/user/new_user_api * //
 routerUsers.delete('/delete_api/:id',UsersAPI.delete_api) // * http://localhost:1689/user/delete_api/{id} * //
 
+routerUsers.post('/pruebalogeo',UsersAPI.PruebaLogeo) // * http://localhost:1689/user/ * //
+
 module.exports = routerUsers;

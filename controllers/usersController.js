@@ -16,15 +16,24 @@ const usersController = {
         res.render('login')
     },
     ProcessLogin: (req,res) =>{
+        let errors = validationResult(req);
+        let mails = req.boby.email
+        if (errors.isEmpty()){
+           
+        }else{
+            return res.render('login',{errors: errors.errors});
+        }
+
+
         /*let mail = req.params.id;
         db.Users.findByPk(id)
             .then(function (Users) {
                  res.render("detail",{Users:Users} )
             })*/
-            let email =  req.body.email;
-            let pass = req.body.password;
-            console.log('El correo es: ' + email);
-            console.log('El pass es: ' + pass);
+            req.session.mail =  req.body.email;
+            req.session.password = req.body.password;
+            console.log('El correo es: ' + req.session.mail);
+            console.log('El pass es: ' + req.session.password);
     },
 
             // ?---------------------------------------------------------------------------------------- //

@@ -26,6 +26,20 @@ const UsersAPI ={
 
             })
     },
+    PruebaLogeo:(req,res)=>{
+        db.Users.findAll(req.body.email)
+            .then(user=>{
+                return res.status(200).json({
+                    data: user,
+                    status: 200,
+                    SearchById: 'Ok'
+                })
+            })
+
+
+
+
+    },
     //  *************** Carga desde la BD un usuario mediante la API (Done)  ***************  //
     UserId: (req,res) =>{
         db.Users.findAll({
