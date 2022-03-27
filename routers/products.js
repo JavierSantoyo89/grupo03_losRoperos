@@ -36,6 +36,7 @@ router.post('/delete/:id',productsController.delete);
 router.get('/all',productsAPI.ProductsAll) // * http://localhost:1689/products/all * //
 router.get('/:id',productsAPI.ProductId) // * http://localhost:1689/products/{id} * //
 router.post('/new_api',productsAPI.CreateProductAPI) // * http://localhost:1689/products/new_api * //
+router.delete('/delete_api/:id',productsAPI.delete_api) // * http://localhost:1689/products/delete_api/{id} * //
 
 
 module.exports = router;

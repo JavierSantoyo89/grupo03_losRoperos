@@ -15,7 +15,8 @@ const productsAPI = {
                 return res.status(200).json({
                     total: products.length,
                     data: products,
-                    status: 200
+                    status: 200,
+                    Search: 'Ok'
                 });
             })
     },
@@ -26,7 +27,8 @@ const productsAPI = {
                 return res.status(200).json({
                     total: products.length,
                     data: products,
-                    status: 200
+                    status: 200,
+                    SearchById: 'Ok'
                 });
             })
     },
@@ -36,10 +38,20 @@ const productsAPI = {
             .then(products=>{
                 return res.status(200).json({
                     data: products,
-                    status: 200
+                    status: 200,
+                    Created: 'Ok'
                 })
             })
-}
+    },
+    //  *************** Borra un registo de laBD mediente la API     //  ***************  //
+    delete_api: (req,res) =>{
+        db.Products.destroy({
+            where: {id: req.params.id}
+        })
+        .then(response =>{
+            return res.json(response)
+        })
+    }
 
 }
 
