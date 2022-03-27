@@ -2,6 +2,8 @@ const { error, log } = require('console');
 const res = require('express/lib/response');
 const fs = require('fs');
 const path = require('path');
+const Sequelize = require("Sequelize");
+const Op = Sequelize.Op;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let db =require('../data/models') //---- Manda llamar la base de datos ----//
@@ -19,10 +21,8 @@ const mainController = {
     carrito : (req,res) => {
         res.render('carrito')
     }, 
-    
+    // *---- Muestra los productos buscados por titulo.  ( Funciona al 100% ) ---- //
     buscador: (req,res) =>{
-        let busqueda = req.query.buscador
-        search:(req,res) =>{
             db.Products.findAll({
                 where:  {
                     name: {
@@ -30,13 +30,14 @@ const mainController = {
                           }
                         }
             })
-                .then(products=>{
-                    return res.status(200).json({ searchLength: products.length, data: products, search: 'Ok'});
-                })
-        }
-
-        res.render("search")
-    }, 
+            .then(function (products) {
+                res.render('search',{products:products})
+                console.log('Entro a la DB y saco datos');
+            })
+            .catch(function (error) {
+              console.log(error);  
+            }) 
+        }, 
 
         // ?------------------------------------------------------------------------------- //
         // *----------------           Vistas generales, falta CSS        ----------------* //

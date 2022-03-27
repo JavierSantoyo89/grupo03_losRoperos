@@ -10,22 +10,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
-    <title>Detalle del producto</title>
+    <title>Detalle del producto buscado</title>
 </head>
-<body >
-
-<!-------------------------------------------------------------------------- Cabezal -------------------------------------------------------------------------->
-<%-include ("./partials/header.ejs") %>
-
-<!-------------------------------------------------------------------------- Banner --------------------------------------------------------------------------->
-<%-include ("./partials/banner.ejs") %>
-
-<!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
-    <main>
-<p>Falta aprender a trabajar con base de datos para aplicar las busquedas.</p>
-    </main>
-<!-------------------------------------------------------------------------- Footer -------------------------------------------------------------------------->
-<%-include ("./partials/footer.ejs")%>
-
-</body>
+<title>Pricipal Los roperos</title>
+</head>
+    <body>
+        <%- include('./partials/header') %>
+            <Div>
+                <h2>Producto buscado</h2>
+                    <ul>
+                        <% for (let i =0; i< products.length; i++){ %>
+                            <% if (products[i].imgProduct !== ''){ %>
+                                    <li>
+                                        <a href="/products/detail/<%=products[i].id %>" ><img src="/images/products/<%=products[i].imgProduct%>" alt="Foto de producto"  width="150px" > </a>
+                                        <br>
+                                        <%=products[i].name %>
+                                        <br>
+                                        <%=products[i].price %>                               
+                                </li>
+                                <% }else{ %>
+                                    <li>
+                                        <a href="/products/detail/<%=products[i].id %>" ><img src="/images/products/noImgDefault.jpg" alt="Foto de producto"  width="150px" > </a>
+                                        <br>
+                                        <%=products[i].name %>
+                                        <br>
+                                        <%=products[i].price %>                               
+                                    </li>
+                             <% } %>    
+                        <% } %>
+                    </ul>                        
+                </Div>
+    
+        <%- include('./partials/footer') %>
+    </body>
+    
 </html>
