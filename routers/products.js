@@ -9,6 +9,9 @@ const router = express.Router();
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
+// ************ Controller API ************
+const productsAPI = require('../controllers/API/productsAPI');
+
 // ************ Middlewares *************
 const validateNewProduct = require('../middlewares/products/validateNewProduct')
 const userAuth = require('../middlewares/user/userAuth') // Validad que el usuario esta loggeado
@@ -28,6 +31,9 @@ router.post('/edit/:id',multerProductUpdate, productsController.Update);
 
 // ---- Rutas para delete ---- //
 router.post('/delete/:id',productsController.delete);
+
+// ---- Rutas de API REST ---- //
+router.get('/all',productsAPI.ProductsAll)
 
 
 
