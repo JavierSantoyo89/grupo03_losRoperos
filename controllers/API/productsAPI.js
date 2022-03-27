@@ -44,7 +44,7 @@ const productsAPI = {
                 })
             })
     },
-    //  *************** Borra un registo de laBD mediente la API     //  ***************  //
+    //  *************** Borra un registo de la BD mediente la API  ***************  //
     delete_api: (req,res) =>{
         db.Products.destroy({
             where: {id: req.params.id}
