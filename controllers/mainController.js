@@ -22,6 +22,19 @@ const mainController = {
     
     buscador: (req,res) =>{
         let busqueda = req.query.buscador
+        search:(req,res) =>{
+            db.Products.findAll({
+                where:  {
+                    name: {
+                      [Op.like]: '%' + req.query.buscador + '%'
+                          }
+                        }
+            })
+                .then(products=>{
+                    return res.status(200).json({ searchLength: products.length, data: products, search: 'Ok'});
+                })
+        }
+
         res.render("search")
     }, 
 

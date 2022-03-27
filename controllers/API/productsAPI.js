@@ -5,6 +5,7 @@ const multer = require('multer');
 
 // **************** Llamada a la BD **************** //
 let db = require('../../data/models');
+let Op = db.Sequelize.Op;
 
 const productsAPI = {
     
@@ -16,7 +17,7 @@ const productsAPI = {
                     total: products.length,
                     data: products,
                     status: 200,
-                    Search: 'Ok'
+                    SearchAll: 'Ok'
                 });
             })
     },
@@ -25,13 +26,13 @@ const productsAPI = {
         db.Products.findByPk(req.params.id)
             .then(products=>{
                 return res.status(200).json({
-                    total: products.length,
                     data: products,
                     status: 200,
                     SearchById: 'Ok'
                 });
             })
     },
+    
     //  *************** Carga a la BD mediante la API (Done)  ***************  //
     CreateProductAPI: (req,res)=>{
         db.Products.create(req.body)
@@ -52,7 +53,6 @@ const productsAPI = {
             return res.json(response)
         })
     }
-
 }
 
 module.exports = productsAPI
