@@ -67,6 +67,9 @@ const mainController = {
         res.render('../views/viewsFooter/restero.ejs')
     }, acerca: (req,res)=>{
         res.render('../views/viewsFooter/AcerdaDe.ejs')
+    },
+    doc_api:(req,res)=>{
+        res.render('../views/viewsFooter/DocsAPI.ejs')
     }
 }
 

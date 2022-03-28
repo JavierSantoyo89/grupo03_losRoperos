@@ -21,6 +21,7 @@ router.get('/tiendas',mainController.tiendas);
 router.get('/noautorizado',mainController.noautorizado);
 router.get('/rastreo',mainController.construccion)
 router.get('/acerca',mainController.acerca)
+router.get('/doc_api',mainController.doc_api)
 
 // ---- Rutas de API REST ---- //
 router.get('/search_api',mainAPI.search)
