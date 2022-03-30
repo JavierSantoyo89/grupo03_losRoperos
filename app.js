@@ -66,15 +66,16 @@ Estructura del sitio
         /faq                            Invitado/usuario               // Preguntas comnes
         /invite                         Invitado/usuario               // invitar a conocernos
         /nosotros                       Invitado/usuario               // Historia de la tienda(NO de nosotros los programadores)
+        /rastreo                        Invitado/usuario               // Se supone que se activaria un sistema de rastreo del producto(Externo)
     
     User:
         /user/login                     Invitado/usuario               // Vista login //
         /user/register                  Invitado/usuario               // Vista registro //
   
     Product:
-        /product/[id]                   Invitado/usuario               // Vista detalle de x's producto //
-        /product/new                    usuario                        // Vista agregar productos //
-        /product/update/[id]            usuario                        // Vista para actualizar x's producto //
-        /product/delete/[id]            usuario                        // Borra registro de x's producto //
+        /products/detail/{id}           Invitado/usuario               // Vista detalle de x's producto //
+        /products/new                   usuario                        // Vista agregar productos //
+        /products/edit/{id}             usuario                        // Vista para actualizar x's producto //
+        /product/delete/{id}            usuario                        // Borra registro de x's producto //
 
 */
