@@ -8,6 +8,7 @@ const router = express.Router();
 
 // ---- Rutas dedicadas para navegacion general ---- //
 router.get('/',mainController.index);
+
 router.get('/carrito', mainController.carrito);
 
 router.get('/search', mainController.buscador);

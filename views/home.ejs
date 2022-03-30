@@ -24,52 +24,54 @@
                 </div>
     <!-- SHOW NUEVA TEMPORADA PRODUCTS -->
                 
-                <% for (let i =0; i< products.length; i++) { %>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <section class = "product-box">
-                            <a href="/products/detail/<%=products[i].id %>" >
-                                  <figure class="product-box_image">
-                                    <img src="/images/products/<%=products[i].imgProduct%>" alt="Foto de producto"  width="150px" > 
-                                  </figure>
-                                  <article class="product-box_data">                           
-                                      <p><%= products[i].price %></p>
-                                      <h3><%= products[i].name %></h3>
+    <% for (const product of season) { %>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <section class = "product-box">
+                <a href="/products/detail/<%= product.id %>">
+                      <figure class="product-box_image">
+                        <img src= "/images/products/<%= product.imgProduct %> " alt= "Falta Imagen"  width="150px" >
+                      </figure>
+                      <article class="product-box_data">                           
+                          <p><%= product.price %></p>
+                          <h3><%= product.name %></h3>
 
-                                  </article>
-                              </a>
-                          </section>
-                      </div>
-                    
-                <% } %>               
+                      </article>
+                  </a>
+              </section>
+          </div>
+        
+    <% } %>          
             </div>
         </div> 
+        
         <div class="container products-wrapper">
             <div class = "row">
                 <div class ="col-12">
-                  <h2 class = "products-tittle">OFERTAS</h2>
+                  <h2 class = "products-tittle">En Oferta</h2>
                 </div>
-    <!-- SHOW INSALE PRODUCTS -->
+          <!-- SHOW NUEVA TEMPORADA PRODUCTS -->
                 
-                <% for (let i =0; i< products.length; i++) { %>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <section class = "product-box">
-                            <a href="/products/detail/<%=products[i].id %>" >
-                                  <figure class="product-box_image">
-                                    <img src="/images/products/<%=products[i].imgProduct%>" alt="Foto de producto"  width="150px" > 
-                                  </figure>
-                                  <article class="product-box_data">
-                                        <p><%= products[i].price %></p>
-                                      <h3><%= products[i].name %></h3>
-                                      
-                                     
-                                  </article>
-                              </a>
-                          </section>
-                      </div>
-                    
-                <% } %>               
+          <% for (const product of inSale) { %>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <section class = "product-box">
+                <a href="/products/detail/<%= product.id %>">
+                      <figure class="product-box_image">
+                        <img src= "/images/products/<%= product.imgProduct %> " alt= "Falta imagen"  width="150px" >
+                      </figure>
+                      <article class="product-box_data">                           
+                          <p><%= product.price %></p>
+                          <h3><%= product.name %></h3>
+          
+                      </article>
+                  </a>
+              </section>
+          </div>
+          
+          <% } %>          
             </div>
-        </div> 
+          </div>   
+              
+    
            
     
         <%- include('./partials/footer') %>

@@ -8,15 +8,47 @@ const Op = Sequelize.Op;
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let db =require('../data/models') //---- Manda llamar la base de datos ----//
 
+
 const mainController = {
     // *---- Muesta todos los productos en el index ( Funciona al 100% ) ---- //
     index: (req,res) => {
-       db.Products.findAll()
-            .then(function(products){
-            res.render("home", {products:products})
+        var season = db.Products.findAll({
+            where:{
+                nameStatus:'Season'
+            }
+        });
+
+        var inSale = db.Products.findAll({
+            where:{
+                nameStatus:'In-sale'
+            }
+        });
+
+        Promise.all([season,inSale])
+            .then(function([season,inSale]){
+                res.render('home',{season:season, inSale,inSale})
+            })
+      
+             //db.Products.findAll()
+           // .then(function(products){
+           // res.render("home", {products:products})
         // Se muestran todos los articulos registrados en la BD //
                 
-        })
+       // })
+    },
+    inSale: (req,res) => {
+        const season = db.Products.findAll({
+            where:{
+                nameStatus:'In-sale'
+            }
+        }).then((inSale) => {
+            res.send(inSale)
+            
+            
+        }).catch(function (error) {
+            console.log(error);  
+          })
+       ;
     },
     carrito : (req,res) => {
         res.render('carrito')
