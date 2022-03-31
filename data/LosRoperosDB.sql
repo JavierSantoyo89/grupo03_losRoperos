@@ -61,7 +61,7 @@ CREATE TABLE `product` (
   `imgProduct` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_image_idx` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (11,'biybbi','Cam01','rgmvtmip','M','verde',NULL,8,'k  kjk','In-sale',''),(12,'wergwme','Cam01','yibti','Ch','blanco',NULL,6,'jmkmmjk','Season',''),(13,'wergwme','reigcpwrimg','yibti','M','melon',NULL,45454,'545454','In-sale',''),(14,'cafetera3','Nestle','rgmvtmip','M','blanco',NULL,13,'jimii','Season',''),(15,'biybbi','reigcpwrimg','yibti','M','blanco',NULL,1,'iooo','Season',''),(19,'cafetera3','Cam01','Ni idea3','Ch','Red3',NULL,7,'.op,.p,.','In-sale',''),(20,'cafetera3','Cam01','Ni idea3','Ch','Red3',NULL,7,'.op,.p,.','In-sale',''),(21,'wergwme','Cam01','Ni idea3','Ch','verde',NULL,6,'mounmnu','In-sale',''),(22,'biybbi','reigcpwrimg','yibti','Ch','Red3',NULL,11,'omoio','In-sale',''),(23,'estoy enojado','De aqui3','yibti','Ch','verde',NULL,9,'oioumnu','Season',''),(24,'wergwme','Cam01','Ni idea3','M','Red3',NULL,1,',ijmmpo','In-sale',''),(25,'..vhoe.he',',rcwc',',wrowgc','M',',xgiorgc',NULL,135,'ewrcger','Season',''),(26,'ybub','Cam01','ubbu','Ch','verde',NULL,120,'yumnui','In-sale','Product1648192173851.jpg'),(27,'omvhrrem,','omiomim','oomiop','Ch','opmopi',NULL,8,'oopomn','In-sale','Product1648192381482.jpg'),(28,'Prueba mañanera...','Prada','Pull & Bear','M','Cafe',NULL,3000,'Prueba mañanera...','In-sale','Product1648228167592.jpg'),(29,'Prueba tarde1','Prueba tard1','Prueba tarde 1','M','Violeta',10,2022,'                                Prueba tarde...','In-sale','Product1648242518505.jpg');
+INSERT INTO `product` VALUES (14,'cafetera3','Nestle','rgmvtmip','M','blanco',NULL,13,'jimii','Season',''),(15,'biybbi','reigcpwrimg','yibti','M','blanco',NULL,1,'iooo','Season',''),(19,'cafetera3','Cam01','Ni idea3','Ch','Red3',NULL,7,'.op,.p,.','In-sale',''),(20,'cafetera3','Cam01','Ni idea3','Ch','Red3',NULL,7,'.op,.p,.','In-sale',''),(21,'wergwme','Cam01','Ni idea3','Ch','verde',NULL,6,'mounmnu','In-sale',''),(22,'biybbi','reigcpwrimg','yibti','Ch','Red3',NULL,11,'omoio','In-sale',''),(23,'estoy enojado','De aqui3','yibti','Ch','verde',NULL,9,'oioumnu','Season',''),(24,'wergwme','Cam01','Ni idea3','M','Red3',NULL,1,',ijmmpo','In-sale',''),(25,'..vhoe.he',',rcwc',',wrowgc','M',',xgiorgc',NULL,135,'ewrcger','Season',''),(26,'ybub','Cam01','ubbu','Ch','verde',NULL,120,'yumnui','In-sale','Product1648192173851.jpg'),(27,'omvhrrem,','omiomim','oomiop','Ch','opmopi',NULL,8,'oopomn','In-sale','Product1648192381482.jpg'),(28,'Prueba mañanera...','Prada','Pull & Bear','M','Cafe',NULL,3000,'Prueba mañanera...','In-sale','Product1648228167592.jpg'),(29,'Prueba tarde1','Prueba tard1','Prueba tarde 1','M','Violeta',10,2022,'                                Prueba tarde...','In-sale','Product1648242518505.jpg'),(30,'Prueba nocturna API 1','Prueba nocturna API 1','Prueba nocturna API 1','G','Azul',20,9000,'Prueba nocturna API...','Nueva temporada',''),(31,'Prueba nocturna API 1','Prueba nocturna API 1','Prueba nocturna API 1','G','Azul',20,9000,'Prueba nocturna API...','Nueva temporada',''),(32,'Prueba nocturna API 2','Prueba nocturna API 2','Prueba nocturna API 2','ch','Azulado',10,1000,'Prueba nocturna API2...','In Sale',''),(33,'Prueba nocturna API 2','Prueba nocturna API 2','Prueba nocturna API 2','ch','Azulado',10,1000,'Prueba nocturna API2...','In Sale',''),(34,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,''),(35,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,''),(36,'Prueba dominguera API 2','Prueba dominguera API 2','Prueba dominguera API 2','ch','Azulado',10,1000,'Prueba dominguera API2...','In Sale',''),(37,'Prueba de dia','DSETF65685','Pulg','M','gris',10,1000,'Prueba de alta de producto de dia.','Season','Product1648668020956.jpg');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +143,7 @@ CREATE TABLE `user` (
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `idImageUser` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +152,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Javier','Santoyo',NULL,NULL,'123',NULL,'Invalid date',NULL),(2,'Javier','Santoyo',NULL,'javier.santoyo@yahoo.com',NULL,NULL,'Invalid date','User1648260523318.jpg'),(3,'Javier','Santoyo','JavierSantoyo','javier.santoyo@yahoo.com','123','2014-01-01','Invalid date','User1648260687262.jpg');
+INSERT INTO `user` VALUES (3,'Javier','Santoyo','JavierSantoyo','javier.santoyo@yahoo.com','123','2014-01-01','Invalid date','User1648260687262.jpg'),(4,'Karen','Reyes','qwerty','wergcew@sdfv.com','123','2020-02-20','Invalid date',NULL),(5,'Micky','Miau Miau','Tom Cat','wergcew@sdfv.com','123','2020-02-20','Invalid date',NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-25 20:13:10
+-- Dump completed on 2022-03-31  1:31:30

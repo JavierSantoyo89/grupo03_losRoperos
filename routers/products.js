@@ -16,6 +16,7 @@ const productsAPI = require('../controllers/API/productsAPI');
 const validateNewProduct = require('../middlewares/products/validateNewProduct')
 const userAuth = require('../middlewares/user/userAuth') // Validad que el usuario esta loggeado
 const multerProductUpdate = require('../middlewares/products/multerProductUpload')
+const multerS3 = require('../middlewares/products/multerS3ProductUploadAWS')
 
 // ---- Rutas dedicadas para productos ---- //
 router.get('/',productsController.Index);
@@ -23,7 +24,7 @@ router.get('/detail/:id',productsController.detalle);
 
 // ---- Rutas para agregar producto ---- //
 router.get('/new',  productsController.NewProduct);
-router.post('/new',validateNewProduct,multerProductUpdate,productsController.CreateProduct);
+router.post('/new',validateNewProduct, multerProductUpdate,productsController.CreateProduct);
 
 // ---- Rutas para editar por determinado ID ---- //
 router.get('/edit/:id', productsController.Edit);

@@ -43,7 +43,7 @@ const UsersAPI ={
     //  *************** Carga desde la BD un usuario mediante la API (Done)  ***************  //
     UserId: (req,res) =>{
         db.Users.findAll({
-            where: {idUser: req.params.id}
+            where: {id: req.params.id}
         })
             .then(user=>{
                 return res.status(200).json({
@@ -67,7 +67,7 @@ const UsersAPI ={
     //  *************** Borra un usuarios de la BD mediente la API  ***************  //
     delete_api: (req,res)=>{
         db.Users.destroy({
-            where: {idUser: req.params.id}
+            where: {id: req.params.id}
         })
         .then(response =>{
             return res.json(response)

@@ -118,13 +118,14 @@ const productsController = {
         //* ---------------- controlador de la vista de borrado de producto ---------------- *//
         //? --------------------------------------------------------------------------------- //
 // *---- Borrar producto (Done) ----//
-    delete: (req,res) =>{
-        db.Products.destroy({
+    delete: async (req,res) =>{
+        await db.Products.destroy({
             where:{
                 id: req.params.id
             }
         })
-        res.redirect('/')
+
+        res.redirect('/?message=borrado')
     }
 };
 

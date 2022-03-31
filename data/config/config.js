@@ -1,23 +1,23 @@
 module.exports ={
   "development": {
     "username": "root",
-    "password": "Qwerty1234",
-    "database": "losroperosdb",
-    "host": "losroperosdb.c9xdkhofgtjy.us-east-2.rds.amazonaws.com",
+    "password": '',
+    "database": "LosRoperosDB",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": '',
+    "database": "LosRoperosDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "password": "Qwerty1234",
+    "database": "losroperosdb",
+    "host": "losroperosdb.c9xdkhofgtjy.us-east-2.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }

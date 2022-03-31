@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JavierSantoyo89/grupo03_losRoperos#readme",
   "dependencies": {
+    "aws-sdk": "^2.1104.0",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
@@ -27,6 +28,7 @@
     "method": "^2.0.0",
     "method-override": "^3.0.0",
     "multer": "^1.4.4",
+    "multer-s3": "^2.10.0",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
     "override": "^0.0.1",
