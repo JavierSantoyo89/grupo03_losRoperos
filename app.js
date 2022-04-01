@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const  path = require('path');
 const session = require('express-session');
-let tbl = require('./data/models/product')
+const cookieParser = require('cookie-parser')
 
 const cookieParser = require('cookie-parser');// Intruccion para poder usar cookies
 app.use(cookieParser())
@@ -29,6 +29,9 @@ app.use(express.static(__dirname + '/public'));
 // ---- Configuracion previa para usar metodos post, put & delete ---- //
 app.use(express.urlencoded({ extended: false})); // convierte el form a objeto literal
 app.use(express.json()); // convierte a JSON
+
+
+app.use(cookieParser());
 
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');

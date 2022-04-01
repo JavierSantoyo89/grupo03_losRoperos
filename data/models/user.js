@@ -2,9 +2,9 @@ module.exports = (sequelize, DataTypes) =>{
     let alias = 'Users'; // siempre al incio en mayus, y plural //
     
     let columns =  {
-        idUser:{
+        id:{
             type: DataTypes.INTEGER, 
-            primarykey: true,
+            primaryKey: true,
             autoincrement: true
             },
         firstName:{
@@ -41,6 +41,6 @@ module.exports = (sequelize, DataTypes) =>{
         timestamps: false
     }
     let user = sequelize.define(alias,columns, config); // nombre de let debe ser igual al return. //
-user.removeAttribute('id');
+
     return user;
 }

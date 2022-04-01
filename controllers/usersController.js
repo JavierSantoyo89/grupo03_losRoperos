@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const { redirect } = require('express/lib/response');
+const { redirect, cookie } = require('express/lib/response');
 const fs =require('fs')
 const path = require('path');
 var bcrypt = require('bcrypt');
@@ -55,8 +55,8 @@ const usersController = {
                 password: req.body.pass,
                 birthday: req.body.birth_date,
                 address: req.body.address, 
-                IdImageUser: req.file.filename
-            })
+                IdImageUser: req.file.filename,
+               })
             res.redirect('/')
     }
 }
