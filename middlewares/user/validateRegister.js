@@ -1,5 +1,5 @@
 const { body } = require('express-validator')
-
+const path = require('path')
 
 const validateRegister = [
     body('firstName').notEmpty().withMessage('Falta el nombre'),
@@ -8,7 +8,9 @@ const validateRegister = [
     body('email')
     .notEmpty().withMessage('Falta tu correo').bail()
     .isEmail().withMessage('Debes escribir un formato de correo valido'),
+    body('pass').notEmpty().withMessage('Falta contraseña'),
     body('address').notEmpty().withMessage('Falta tu dirección'),
+    body('birth_date').notEmpty().withMessage('Falta fecha de nacimiento'),
     body('avatar')
     .custom((value,{ req }) => {
         let acceptedExtensions = ['.jpg','.png','.gif']
@@ -16,12 +18,16 @@ const validateRegister = [
         
         if(!file){
             throw new Error ('Tienes que subir una imagen')
-        }else{
-            let fileExtension = path.extname(file.originalname)
-            if(!acceptedExtensions.includes(fileExtension)){
+        } else {
+
+            let fileExtensions = path.extname(file.originalname)
+            if(acceptedExtensions.includes(fileExtension)){
+            
                 throw new Error ('Las extensiones de archivo permitidas son '+ acceptedExtensions.join(',') )
+                
             }
         }
+        
         return true
     })
 ]

@@ -32,16 +32,25 @@
                 <p style="color: red"><%= errors.email.msg %></p>
             <% } %>
             <input class="registro_Contraseña" type="password" name="pass" placeholder="Elegí tu contraseña">
+            <% if (locals.errors && errors.pass) { %>
+                <p style="color: red"><%= errors.pass.msg %></p>
+            <% } %>
             <input class="registro_Contraseña" type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
             <br>
             <br>
             <label class="checkbox_Registro" for="birth_date" id='registro_cumpleaños'><b><h4>Fecha de nacimiento</h4></b></label>
             <input class="registro_input-formulario" type="date" name="birth_date" id="birth_date">
+            <% if (locals.errors && errors.birth_date) { %>
+                <p style="color: red"><%= errors.birth_date.msg %></p>
+            <% } %>
             <input class="registro_input-formulario" type="text" name="address" placeholder="Domicilio">
-            <input type="file" name="avatar" accept=".jpg">
+            
             <% if (locals.errors && errors.address) { %>
                 <p style="color: red"><%= errors.address.msg %></p>
             <% } %>
+            <br>
+            <br>
+            <input type="file" name="avatar" >
             <% if (locals.errors && errors.avatar) { %>
                 <p style="color: red"><%= errors.avatar.msg %></p>
             <% } %>

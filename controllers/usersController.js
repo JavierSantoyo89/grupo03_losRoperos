@@ -47,19 +47,27 @@ const usersController = {
      // ************ Controller accion registrar usuario (Done) ************** //
     processRegister: (req,res) => {
         //console.log("el nombre del avatar en controlador es: " + req.file.filename);
-            db.Users.create({
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                userName: req.body.user,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.pass,10),
-                birthday: req.body.birth_date,
-                address: req.body.address, 
-                IdImageUser:req.file.filename
-               })
+        const resultValidation = validationResult(req)
+
+        if(resultValidation.errors.length > 0){
+            return res.render('register' , {errors: resultValidation.mapped()})
+            
+        }
+            
                
             res.redirect('/')
     }
 }
     
 module.exports=usersController;
+
+/*db.Users.create({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    userName: req.body.user,
+    email: req.body.email,
+    password: bcrypt.hashSync(req.body.pass,10),
+    birthday: req.body.birth_date,
+    address: req.body.address, 
+    IdImageUser:req.file
+   }) */
