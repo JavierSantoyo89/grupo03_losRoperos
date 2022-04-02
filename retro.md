@@ -79,6 +79,7 @@ Sprint - 4
 
 Sprint - 5
  - No se completo por problemas laborales y enfermos de Covid, se esta regularizando el sprint.
+
 Sprint - 6
 
 - Link Trello (public) [Trello](https://trello.com/b/OADMaL3W)
@@ -87,3 +88,18 @@ Sprint - 6
 - Crear base de datos (losRoperosDB) (Done)
 - Crear diagrama de la base de datos (Done)
 - Crear script de las tablas (Done)
+
+Sprint - 7
+
+- Link Trello (public) [Trello](https://trello.com/b/OADMaL3W)
+- Comenzar a hacer(
+>   Revisar bvalidaciones (FrontEnd)
+>   Revisar bvalidaciones (BackEnd).
+- Hacer más
+>   Practicar la comunicacion  entre los miiembre
+- Continuar haciendo
+>   Mantener el promedio de push en git
+- Hacer menos.
+>   Dejar de lado los pendiente
+- Dejar de hacer.
+>   No concentrarse en el proyecto.
