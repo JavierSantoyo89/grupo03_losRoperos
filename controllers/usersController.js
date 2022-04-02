@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator');
 const { redirect, cookie } = require('express/lib/response');
 const fs =require('fs')
 const path = require('path');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 const { Console } = require('console');
 
 let db = require('../data/models')
@@ -17,7 +17,6 @@ const usersController = {
     },
     ProcessLogin: (req,res) =>{
         let errors = validationResult(req);
-        let mails = req.boby.email
         if (errors.isEmpty()){
            
         }else{
@@ -34,6 +33,7 @@ const usersController = {
             req.session.password = req.body.password;
             console.log('El correo es: ' + req.session.mail);
             console.log('El pass es: ' + req.session.password);
+            res.cookie('mailPrueba',req.session.mail,{maxAge: 3000})
     },
 
             // ?---------------------------------------------------------------------------------------- //
@@ -52,11 +52,12 @@ const usersController = {
                 lastName: req.body.lastName,
                 userName: req.body.user,
                 email: req.body.email,
-                password: req.body.pass,
+                password: bcrypt.hashSync(req.body.pass,10),
                 birthday: req.body.birth_date,
                 address: req.body.address, 
-                IdImageUser: req.file.filename,
+                IdImageUser:req.file.filename
                })
+               
             res.redirect('/')
     }
 }

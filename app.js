@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const  path = require('path');
 const session = require('express-session');
-const cookieParser = require('cookie-parser')
 
 const cookieParser = require('cookie-parser');// Intruccion para poder usar cookies
 app.use(cookieParser())
