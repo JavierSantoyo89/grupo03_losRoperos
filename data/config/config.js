@@ -1,7 +1,7 @@
 module.exports ={
   "development": {
     "username": "root",
-    "password": '12345',
+    "password": '',
     "database": "LosRoperosDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -15,9 +15,9 @@ module.exports ={
   },
   "production": {
     "username": "root",
-    "password": "Qwerty1234",
+    "password": "",
     "database": "losroperosdb",
-    "host": "losroperosdb.c9xdkhofgtjy.us-east-2.rds.amazonaws.com",
+    "host": "",
     "dialect": "mysql"
   }
 }
