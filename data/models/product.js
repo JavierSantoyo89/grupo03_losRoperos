@@ -1,40 +1,40 @@
-module.exports = (sequelize, DataTypes) =>{
+module.exports = (sequelize, dataTypes) =>{
     let alias = 'Products';
     let columns =  {
         id:{
-            type: DataTypes.INTEGER, 
+            type: dataTypes.INTEGER, 
             primaryKey: true,
-            autoincremental: true
+            autoIncrement: true
             },
         name:{
-            type: DataTypes.STRING(100)
+            type: dataTypes.STRING(100)
             },
         model:{
-            type: DataTypes.STRING(100)
+            type: dataTypes.STRING(100)
             },
         brand:{
-            type: DataTypes.STRING(100)
+            type: dataTypes.STRING(100)
             },
         size:{
-            type: DataTypes.STRING(100)
+            type: dataTypes.STRING(100)
             },
         color:{
-            type: DataTypes.STRING(100)
+            type: dataTypes.STRING(100)
             },
         discount:{
-            type: DataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         price:{
-            type: DataTypes.DOUBLE
+            type: dataTypes.DOUBLE
             },
         decriptionProduct:{
-            type: DataTypes.INTEGER(255)
+            type: dataTypes.INTEGER(255)
             },
         nameStatus:{
-            type: DataTypes.INTEGER(255)
+            type: dataTypes.INTEGER(255)
             },
         imgProduct:{
-            type: DataTypes.STRING(45)
+            type: dataTypes.STRING(45)
         }
     };
     let config ={

@@ -36,20 +36,7 @@ const mainController = {
                 
        // })
     },
-    inSale: (req,res) => {
-        const season = db.Products.findAll({
-            where:{
-                nameStatus:'In-sale'
-            }
-        }).then((inSale) => {
-            res.send(inSale)
-            
-            
-        }).catch(function (error) {
-            console.log(error);  
-          })
-       ;
-    },
+ 
     carrito : (req,res) => {
         res.render('carrito')
     }, 

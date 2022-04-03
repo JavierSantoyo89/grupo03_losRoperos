@@ -50,13 +50,34 @@ const usersController = {
         const resultValidation = validationResult(req)
 
         if(resultValidation.errors.length > 0){
-            return res.render('register' , {errors: resultValidation.mapped()})
+            return res.render('register' , 
+            {errors: resultValidation.mapped(), 
+            oldData: req.body
+        });
             
         }
+
+        db.Users.create({
+            
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            userName: req.body.user,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.pass,10),
+            birthday: req.body.birth_date,
+            address: req.body.address, 
+            IdImageUser:req.file.filename
+    }).then(user => {
+        res.redirect('login')
+    })
+    console.log(req.body)
+    
+        
             
                
-            res.redirect('/')
+            
     }
+    
 }
     
 module.exports=usersController;

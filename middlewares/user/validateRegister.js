@@ -20,8 +20,8 @@ const validateRegister = [
             throw new Error ('Tienes que subir una imagen')
         } else {
 
-            let fileExtensions = path.extname(file.originalname)
-            if(acceptedExtensions.includes(fileExtension)){
+            let fileExtension = path.extname(file.originalname)
+            if(!acceptedExtensions.includes(fileExtension)){
             
                 throw new Error ('Las extensiones de archivo permitidas son '+ acceptedExtensions.join(',') )
                 
