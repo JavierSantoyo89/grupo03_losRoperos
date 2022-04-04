@@ -19,7 +19,7 @@
             <% if (locals.errors && errors.firstName) { %>
                 <p style="color: red"><%= errors.firstName.msg %></p>
             <% } %>
-            <input class="registro_input-formulario" type="text" name="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lasttName :null %>">
+            <input class="registro_input-formulario" type="text" name="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastName :null %>">
             <% if (locals.errors && errors.lastName) { %>
                 <p style="color: red"><%= errors.lastName.msg %></p>
             <% } %>
@@ -35,7 +35,10 @@
             <% if (locals.errors && errors.pass) { %>
                 <p style="color: red"><%= errors.pass.msg %></p>
             <% } %>
-            <input class="registro_Contraseña" type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
+            <input class="registro_Contraseña" type="password" name="passConfirm" placeholder="Confirmá tu contraseña">
+            <% if (locals.errors && errors.passConfirm) { %>
+                <p style="color: red"><%= errors.passConfirm.msg %></p>
+            <% } %>
             <br>
             <br>
             <label class="checkbox_Registro" for="birth_date" id='registro_cumpleaños'><b><h4>Fecha de nacimiento</h4></b></label>

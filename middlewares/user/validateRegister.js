@@ -1,5 +1,6 @@
-const { body } = require('express-validator')
-const path = require('path')
+const { body } = require('express-validator');
+const path = require('path');
+const bcryptjs = require('bcryptjs');
 
 const validateRegister = [
     body('firstName').notEmpty().withMessage('Falta el nombre'),
@@ -9,6 +10,21 @@ const validateRegister = [
     .notEmpty().withMessage('Falta tu correo').bail()
     .isEmail().withMessage('Debes escribir un formato de correo valido'),
     body('pass').notEmpty().withMessage('Falta contraseña'),
+    body('passConfirm')
+    .custom((value,{ req }) => {
+        let password = req.body.pass;
+        let hash = bcryptjs.hashSync(password,10);
+        let passConfirm = req.body.passConfirm
+        if(!passConfirm){
+            throw new Error ('Falta comprobar tu contraseña')
+        }
+        else {
+            if(!bcryptjs.compareSync(passConfirm,hash)){
+            throw new Error ('Contraseña no concuerda')
+            }
+        }
+        return true
+    }),
     body('address').notEmpty().withMessage('Falta tu dirección'),
     body('birth_date').notEmpty().withMessage('Falta fecha de nacimiento'),
     body('avatar')

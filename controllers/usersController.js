@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator');
 const { redirect, cookie } = require('express/lib/response');
 const fs =require('fs')
 const path = require('path');
-var bcrypt = require('bcryptjs');
+var bcryptjs = require('bcryptjs');
 const { Console } = require('console');
 
 let db = require('../data/models')
@@ -63,10 +63,11 @@ const usersController = {
             lastName: req.body.lastName,
             userName: req.body.user,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.pass,10),
+            password: bcryptjs.hashSync(req.body.pass,10),
             birthday: req.body.birth_date,
             address: req.body.address, 
             IdImageUser:req.file.filename
+
     }).then(user => {
         res.redirect('login')
     })
