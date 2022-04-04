@@ -25,6 +25,8 @@ routerUsers.post('/login',validateLogin, usersController.ProcessLogin);
 // ---- Rutas dedicadas a new user's ---- //
 routerUsers.get('/register',usersController.registro);
 routerUsers.post('/register', multerUser, validateRegister ,usersController.processRegister)
+
+
 // routerUsers.post('/login', validateLogin, usersController.validarUser)
 
 
