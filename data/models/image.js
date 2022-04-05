@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) =>{
         tableName: 'image',
         timestamps: false
     }
-    let user = sequelize.define(alias,cols, config);
+    let image = sequelize.define(alias,cols, config);
 
-    return user;
+    return image;
 }

@@ -5,10 +5,39 @@ const multer = require('multer');
 
 // **************** Llamada a la BD **************** //
 let db = require('../../data/models');
+const product = require('../../data/models/product');
 let Op = db.Sequelize.Op;
 
 const productsAPI = {
-    
+
+     // **************** Count de productos "In-Sale" en formato JSON (Done) **************** //
+     countador_insale: (req,res) =>{
+        db.Products.findAll(
+            {where: {nameStatus: 'In-sale'}}
+        )
+            .then(products=>{
+                return res.status(200).json({
+                    total: products.length,
+                    data: products,
+                    status: 200,
+                    SearchAll: 'Ok'
+                });
+            })
+    },
+    // **************** Count de productos "Season" en formato JSON (Done) **************** //
+    countador_insale: (req,res) =>{
+        db.Products.findAll(
+            {where: {nameStatus: 'Season'}}
+        )
+            .then(products=>{
+                return res.status(200).json({
+                    total: products.length,
+                    data: products,
+                    status: 200,
+                    SearchAll: 'Ok'
+                });
+            })
+    },
     // **************** Muestra todos los productos en formato JSON (Done) **************** //
     ProductsAll: (req,res) =>{
         db.Products.findAll()
@@ -26,6 +55,7 @@ const productsAPI = {
         db.Products.findByPk(req.params.id)
             .then(products=>{
                 return res.status(200).json({
+                    total: products.length,
                     data: products,
                     status: 200,
                     SearchById: 'Ok'

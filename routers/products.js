@@ -34,10 +34,13 @@ router.post('/edit/:id',multerProductUpdate, productsController.Update);
 router.post('/delete/:id',productsController.delete);
 
 // ---- Rutas de API REST ---- //
+
 router.get('/all',productsAPI.ProductsAll) // * http://localhost:1689/products/all * //
-router.get('/:id',productsAPI.ProductId) // * http://localhost:1689/products/{id} * //
+router.get('/count_in_sale',productsAPI.countador_insale) // * http://localhost:1689/products/count_in_sale //
+router.get('/count_season',productsAPI.countador_insale) // * http://localhost:1689/products/count_season //
+
 router.post('/new_api',productsAPI.CreateProductAPI) // * http://localhost:1689/products/new_api * //
 router.delete('/delete_api/:id',productsAPI.delete_api) // * http://localhost:1689/products/delete_api/{id} * //
-
+router.get('/:id',productsAPI.ProductId) // * http://localhost:1689/products/{id} * //
 
 module.exports = router;

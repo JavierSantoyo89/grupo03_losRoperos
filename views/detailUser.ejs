@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/home.css" >
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css" >
+    <link rel="stylesheet" href="/css/styles.css" >
+    <title>Detalle producto</title>
+</head>
+    <body>
+        <%- include('./partials/header') %>
+	<!-- user detail -->
+        <%-include ("./partials/banner.ejs") %>
+        <h1>Detalle de Usuario con id: <%=user.idUser%></h1>
+        <ul>
+            <li>
+                Nombre: <%=user.firstName%>
+            </li>
+            <li>
+                Apellidos: <%=user.lastName%>
+            </li>
+            <li>
+                Usuario: <%=user.userName%>
+            </li>
+            <li>
+                Email: <%=user.email%>
+            </li>
+            <li>
+                Cumpleaños: <%=user.birthday%>
+            </li>
+            <li>
+                Dirección: <%=user.address%>
+            </li>
+            
+        </ul>
+        <a href="/user/editar/<%= user.idUser %>">
+            <button>Editar</button>
+        </a>
+        <form action="/user/borrar/<%= user.idUser %>" method="POST">
+            <button type="submit">Borrar</button>
+        </form>
+        <%- include('partials/footer') %>
+     
+        <!-- /footer -->
+    
+    </body>	
+    </html>

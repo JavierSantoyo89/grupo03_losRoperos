@@ -15,9 +15,9 @@ module.exports ={
   },
   "production": {
     "username": "root",
-    "password": "Qwerty1234",
+    "password": "",
     "database": "losroperosdb",
-    "host": "losroperosdb.c9xdkhofgtjy.us-east-2.rds.amazonaws.com",
+    "host": "",
     "dialect": "mysql"
   }
 }

@@ -35,8 +35,7 @@ const productsController = {
         db.Products.findByPk(id)
             .then(function (products) {
                  res.render("detail",{products:products} )
-                 console.log('El correo es: ' + req.session.mail);
-                 console.log('El pass es: ' + req.session.password);
+                 
             })
 
             // ?------------------------------------------------------------------------------- //
