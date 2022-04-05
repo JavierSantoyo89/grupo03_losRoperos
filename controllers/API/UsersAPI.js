@@ -11,6 +11,31 @@ const Op = Sequelize.Op;
 
 const UsersAPI ={
 
+    //  *************** Carga a la BD el Id especifico para el dashboard mediante la API (Done)  ***************  //
+    Api_user_dashboard:(req,res)=>{
+        db.ApiUsersDashboard.findAll()
+            .then(user=>{
+                return res.status(200).json({
+                    total: user.length,
+                    data: user,
+                    status: 200,
+                    SearchById: 'Ok'
+                });
+            })
+    },
+    //  *************** Carga a la BD el Id especifico para el dashboard mediante la API (Done)  ***************  //
+    Api_UserId_Dashboard:(req,res)=>{
+        db.ApiUserIds.findAll({
+            where: {id: req.params.id}
+        })
+            .then(user=>{
+                return res.status(200).json({
+                    data: user,
+                    status: 200,
+                    SearchById: 'Ok'
+                });
+            })
+    },
      //  *************** Carga a la BD todos los usuarios mediante la API (Done)  ***************  //
     UsersAll:(req,res)=>{
         db.Users.findAll()
