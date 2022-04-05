@@ -48,6 +48,60 @@ const usersController = {
     registro: (req,res) => {
         res.render("register")
     },
+    editUser: (req,res) =>{
+        let id= req.params.idUser
+        db.Users.findByPk(id)
+            .then(function(user) {
+               res.render('editUser',{user:user})
+               
+            })
+    },
+    updateUser:(req,res)=>{
+        db.Users.update({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            userName: req.body.user,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.pass,10),
+            birthday: req.body.birth_date,
+            address: req.body.address, 
+            IdImageUser:req.file.filename
+        },{
+            where:{
+                idUser: req.params.idUser
+            }
+        });
+
+        res.redirect("/user/detalle/" + req.params.idUser)
+    },
+    deleteUser: (req,res)=>{
+        db.Users.destroy({
+            where:{
+                idUser: req.params.idUser
+            }
+        })
+        res.redirect('/user/list')
+
+    },
+    detalle:(req,res) => {
+        res.render('detailUser')
+    },
+    detailUser: (req,res) =>{
+        
+        let id= req.params.idUser
+        db.Users.findByPk(id)
+            .then(function(user) {
+               res.render('detailUser',{user:user})
+               
+            })
+
+    },
+    listaUsuarios:(req,res)=>{
+        db.Users.findAll()
+            .then(function(Users){
+                res.render('listadoUsuarios',{Users:Users})
+            })
+    },
      // ************ Controller accion registrar usuario (Done) ************** //
     processRegister: (req,res) => {
         //console.log("el nombre del avatar en controlador es: " + req.file.filename);
