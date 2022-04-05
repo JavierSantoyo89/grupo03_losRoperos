@@ -55,6 +55,7 @@ const productsAPI = {
         db.Products.findByPk(req.params.id)
             .then(products=>{
                 return res.status(200).json({
+                    total: products.length,
                     data: products,
                     status: 200,
                     SearchById: 'Ok'

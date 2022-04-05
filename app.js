@@ -32,6 +32,7 @@ app.use(express.json()); // convierte a JSON
 
 app.use(cookieParser());
 
+
 // ------- Variables de rutas ------- //
 const routes = require('./routers/main');
 const routerProduct = require('./routers/products');
