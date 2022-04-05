@@ -15,6 +15,51 @@
     width: 90%;
 }
 
+h1{
+    font-family: sans-serif;
+  
+    top:10%;
+    left: 20%;
+    font-size: 100px;
+    text-align: center;
+    text-transform: uppercase;
+background: linear-gradient(90deg,#ff0000,#ffff00,#ff00f3,#151f44,#ff00c4,#ff0000);
+background-size: 400%;
+letter-spacing: 10px;
+font-weight: 600;
+word-spacing: 5px;
+-webkit-text-fill-color:transparent;
+-webkit-background-clip: text;
+animation: animate 30s linear infinite;
+}
+@keyframes animate{
+    0% {
+       background-position: 0%;
+      
+    }
+    
+    100% {
+        background-position: 400%;
+       
+     }
+     
+}
+/* h1{
+
+    animation: bounce1 120s alternate infinite ease-out;
+}
+
+@keyframes bounce1{
+0% {
+    transform:translateX(-28%);
+  
+}
+
+100% {
+    transform: translateX(28%);
+  
+}
+} */
 .contact__img{
     width: 50%;
 }

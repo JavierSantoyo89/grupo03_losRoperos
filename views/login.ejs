@@ -28,7 +28,8 @@
                 </ul>
             <% } %>
 
-            <form class="login_Formulario" method="POST" action="/user/login" >
+
+            <form class="login_Formulario" method="POST" action="/user/login">
                 <h1>Login</h1> 
                 <% if (locals && locals.errors) {%>
                     <% errors.forEach(error => { %> 
@@ -36,24 +37,25 @@
                     <% }) %>
                 <% } %> 
                 <div class="contenedor_Login">
-                   
+                    <div class="input_contenedor_Login">
+                        <i class="fas fa-user icon_Login"></i>
+                        <input type="text" placeholder="Nombre de Usuario" name='user'>
+                    </div>
                         <div class="input_contenedor_Login">
                             <i class="fas fa-envelope icon_Login"></i>
-                            <input type="email" placeholder="Correo Electronico" name ='email' required>    
+                            <input type="text" placeholder="Correo Electronico" name ='email'>    
                         </div>
                             <div class="input_contenedor_Login">
                                 <i class="fas fa-key icon_Login"></i>
-                                <input type="password" placeholder="Contraseña" name="password" required>    
+                                <input type="password" placeholder="Contraseña" name="password">    
                             </div>
                         </div>
-                        <div class="input_contenedor_Login">
+                        <div class="input_contenedor_Login2">
                             <i class="fas fa-key icon_Login"></i>
-                             <label> Recordarme: </label>
-                             <input type="checkbox" name="Chk_recordarme">    
+                            <input type="checkbox" ip="etiqueta" name="Chk_recordarme" ><label for="etiqueta"> No cerrar Sesión</label>
+                          
                         </div>
-                       
                     <input type="submit" value="Ingresar" class="button_Login">    
-        
             <p class="texto1">Al registrarte, aceptas nuestras Condiciones de uso y Politica de privacidad.</p>
             <p class="texto1">¿Si no, tienes una cuenta? <a class="link_Login" href="/user/register">!Registrate¡</a></p>
                     </div>

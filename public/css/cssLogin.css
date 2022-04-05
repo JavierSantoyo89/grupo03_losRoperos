@@ -5,18 +5,18 @@
  }
 
 .login_Body {   
-padding: 0px;
-margin: 0px;
-background-color: rgb(99, 96, 96);
-background:url(../images/bike.jpg)no-repeat;
-background-size:100vw 100vh;
-background-repeat: no-repeat;
-background-attachment: fixed;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(99, 96, 96);
+    background:url(../images/bike.jpg) no-repeat;
+    background-size:100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
  .contenedor_Login {
-     width: 100%;
-     padding: 15px;
+    width: 100%;
+    padding: 5px;
  }
  
  .login_Formulario {  
@@ -39,20 +39,28 @@ h1 {
 
 input[type="text"],
 input[type="password"] {
-font-size: 16px;
-width: 82%;
-padding: 12px;
-border:none;
-border-bottom: 2px solid white;
-background:transparent;
+    font-size: 16px;
+    width: 82%;
+    padding: 12px;
+    border:none;
+    border-bottom: 2px solid white;
+    color:white;
+    background:transparent;
 }
-           
+ 
 .input_contenedor_Login {
     margin-bottom: 15px;
     border:none;
-    background: transparent;
+    /* background: transparent; */
+    
 }    
 
+.input_contenedor_Login2{
+    color:#fff;
+    margin:0;
+    text-align: center;
+    padding:10px;
+}
 .icon_Login {
     min-width:30px;
     text-align: center;
@@ -61,20 +69,20 @@ background:transparent;
 }
 
 .button_Login {
-border:none;
-width: 100%;
-text-align: center;
-padding: 12px;
-font-size: 20px;
-color: black;
-border-radius: 3px;
-cursor:pointer;
+    border:none;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 20px;
+    color: black;
+    border-radius: 3px;
+    cursor:pointer;
 }
 
 .button_Login:hover {
-color: #fff;
-background: rgba(0,0,0,0.3);
-}
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+    }
 
 .is-danger{
     color:red;

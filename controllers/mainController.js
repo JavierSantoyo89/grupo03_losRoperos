@@ -28,6 +28,9 @@ const mainController = {
             .then(function([season,inSale]){
                 res.render('home',{season:season, inSale,inSale})
             })
+            .catch(function (error) {
+                console.log(error);  
+             })
       
              //db.Products.findAll()
            // .then(function(products){

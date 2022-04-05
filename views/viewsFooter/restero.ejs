@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="../css/styles.css" type="text/css" media="all">
     <title>Rasteo del pedido</title>
 </head>
-    <body>
+
+ 
+<body >
         <!-------------------------------------------------------------------------- Cabezal -------------------------------------------------------------------------->
         <%-include ("../partials/header.ejs") %>
         
@@ -22,14 +24,17 @@
         <%-include ("../partials/banner.ejs") %>
         
         <!-------------------------------------------------------------------------- Main ----------------------------------------------------------------------------->
-        <main class="rastreo__main">
-                    <img class="rastreo__img" src="/images/Enconstruccion.png" alt="Foto 'En cosntruccion'">
+       <div class="imag_body">
+        <img class="imag_tam" src="/images/Enconstruccion.png" alt="Foto 'En cosntruccion'">
+
+       </div>
                    
-        </main>
+                   
+        
         
         <!-------------------------------------------------------------------------- Fotter ----------------------------------------------------------------------------->
-       
         <%- include('../partials/footer') %>
+        
     </body>
-    
+   
 </html>

@@ -15,6 +15,25 @@
     width: 90%;
 }
 
-.contact__img{
-    width: 50%;
+.rastreo_imag{
+  padding:auto;
+  margin:auto;
+}
+
+.imag_body{
+    /* padding: 0px;
+    margin: 0px; */
+
+
+text-align: center;
+margin:0px; 
+    /* background-color: rgb(99, 96, 96); */
+   /* background-position: center; */
+    /* background-size:100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+
+}
+.imag_tam{
+    width: 1522px;
 }

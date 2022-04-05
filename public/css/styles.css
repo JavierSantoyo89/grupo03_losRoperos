@@ -23,11 +23,11 @@ body{
 }
 p{
     font-size: 12px;
-}
+
 /* ----------------------------------------------------- */
 
 /* --------------------- Header ------------------------ */
-
+}
 /*--------------------------------- css header----------------------------------------------*/
 header{
     display: flex;
@@ -103,6 +103,9 @@ header div {
     color: var(--negro);
     font-weight: bold;
 }
+.navegacion ul li a:hover{
+color:rgb(19, 19, 158);
+}
 .productos{
     width: 100%;
     background-color: var(--productos-color);
@@ -110,6 +113,7 @@ header div {
     margin-right: 10%;
     margin-left:10%;
     font-weight: bold;
+    border-radius: 5px;
 }
 /* ------------------------ */
 
@@ -131,6 +135,8 @@ header div {
     height: 50%;
     margin-right: 10%;
     margin-left:10%;
+    margin-bottom: 1px;
+    border-radius: 5px;
     align-items: center;
     
 }
@@ -155,8 +161,9 @@ header div {
 footer{
     background-color: var(--blanco);
     color: var(--blanco);
-    padding: 28px 0px 64px;
+    /*padding:auto;*/
     font-size: 16px;
+    border-radius: 5px;
 }
 footer p{
   font-size: 16px; 
@@ -168,23 +175,29 @@ footer .down{
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-right: 10%;
-    margin-left:10%;
+    margin:1px;
+    padding: 50px;
+    height: 50%;
+    margin-top:1px;
+    border-radius: 5px;
+
     
 }
 footer .down .service, .account, .information, .follow{
     width:25%;
     display:flex;
     flex-direction: column;
-    padding:5%;
+   /* padding:0%;*/
     
-    
+   
 }
+
+
 footer ul{
     list-style-type: none;
     color: var(--blanco);
     text-decoration: none;
-    padding:5%
+    padding:0%
 }
 footer a{
     text-decoration: none;
@@ -195,10 +208,30 @@ footer a{
 footer .footer-flex ul, .terms ul, .follow ul{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:center;
 }
 
-.follow ul{
+.footer-flex ul a:hover{
+    color:#ccc;
+}
+.servicio ul li a:hover{
+    color:#ccc;
+}  
+.redes ul li a i:hover{
+    color:#ccc;
+}  
+.info ul li a:hover{
+    color:#ccc;
+}  
+.perfil ul li a:hover{
+    color:#ccc;
+}  
+
+.follow p{ 
+text-align: center;
+}
+.follow ul {
+    text-align: center;
     justify-content:center;
     
 }
@@ -224,16 +257,3 @@ footer .terms li{
         -webkit-background-size: cover;
         -o-background-size: cover;
 }
-
-#noAutorizado-Body{
-    background-image:url('../images/SoloLogeados.png');
-    height: 100vh;
-    width: 100vw;
-    background-repeat: no-repeat;
-    background-size: cover;
-         -moz-background-size: cover;
-         -webkit-background-size: cover;
-         -o-background-size: cover;
-}
-
-/* -------------------- login ------------ */
