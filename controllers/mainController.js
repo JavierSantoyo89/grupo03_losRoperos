@@ -26,7 +26,7 @@ const mainController = {
 
         Promise.all([season,inSale])
             .then(function([season,inSale]){
-                res.render('home',{season:season, inSale,inSale})
+                res.render('home',{season:season, inSale:inSale})
             })
       
              //db.Products.findAll()

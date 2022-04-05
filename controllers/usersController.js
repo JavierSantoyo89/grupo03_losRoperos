@@ -4,9 +4,13 @@ const fs =require('fs')
 const path = require('path');
 var bcryptjs = require('bcryptjs');
 const { Console } = require('console');
-
+const Sequelize = require("Sequelize");
+const Op = Sequelize.Op;
+const { error, log } = require('console');
 let db = require('../data/models')
-
+const sequelize =db.sequelize;
+const res = require('express/lib/response');
+const { send } = require('process');
 //const userJSON = path.join(__dirname, '../data/User.json');
 
 const usersController = {
@@ -47,36 +51,51 @@ const usersController = {
      // ************ Controller accion registrar usuario (Done) ************** //
     processRegister: (req,res) => {
         //console.log("el nombre del avatar en controlador es: " + req.file.filename);
-        const resultValidation = validationResult(req)
+    const resultValidation = validationResult(req)        
 
-        if(resultValidation.errors.length > 0){
-            return res.render('register' , 
-            {errors: resultValidation.mapped(), 
-            oldData: req.body
-        });
-            
-        }
-
-        db.Users.create({
-            
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            userName: req.body.user,
-            email: req.body.email,
-            password: bcryptjs.hashSync(req.body.pass,10),
-            birthday: req.body.birth_date,
-            address: req.body.address, 
-            IdImageUser:req.file.filename
-
-    }).then(user => {
-        res.redirect('login')
+    var email = db.Users.findOne({
+        where: {email :req.body.email}
     })
-    console.log(req.body)
     
-        
-            
-               
-            
+    Promise.any([email])
+            .then(function(email){
+                if(resultValidation.errors.length > 0){
+                    return res.render('register' , 
+                    {errors: resultValidation.mapped(), 
+                    oldData: req.body
+                    });
+                    
+                }
+                if(email !==null){
+                    console.log(email)
+                        res.render('register' , 
+                            {errors: {
+                                    email: {
+                                             msg: 'Email en uso. Intenta con otro' }
+                            },
+                            oldData: req.body
+                            }
+                        )
+                    }else {
+                        db.Users.create({
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName,
+                        userName: req.body.user,
+                        email: req.body.email,
+                        password: bcryptjs.hashSync(req.body.pass,10),
+                        birthday: req.body.birth_date,
+                        address: req.body.address, 
+                        IdImageUser:req.file.filename
+                       }).then(user => res.redirect('login'))}
+                 
+                
+              
+         })
+      
+  
+
+ 
+       
     }
     
 }
