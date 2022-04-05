@@ -35,12 +35,12 @@ module.exports = (sequelize, dataTypes) =>{
             },
         imgProduct:{
             type: dataTypes.STRING(45)
-        }
+        }   
     };
     let config ={
         tableName: 'product',
         timestamps: false
-    }
+    } 
     let product = sequelize.define(alias,columns,config);
 
     return product;
