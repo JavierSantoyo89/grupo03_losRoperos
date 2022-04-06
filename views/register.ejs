@@ -7,23 +7,79 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script>  window.addEventListener('load',function(){
+       let formulario = document.querySelector("form.registro_Form_Registro")
+
+       formulario.addEventListener("submit",function(e){
+           
+           let errores = [];
+           let campoNombre = document.querySelector('#name');
+           if(campoNombre.value == ""){
+              errores.push("El campo de nombre tiene que estar completo ")
+           }else if(campoNombre.value.length < 2){
+               errores.push("El campo de nombre debe tener al menos 2 caracteres")
+           }
+           
+           let campoEmail = document.querySelector('#email');
+           if(campoEmail.value == ""){
+               errores.push("El campo de email tiene que estar completo ")
+           }else if(!campoEmail.validity.valid) {
+               errores.push("Debe ser un Email valido")
+           }
+
+           let campoPassword = document.querySelector('#pass');
+           if(campoPassword.value == ""){
+               errores.push("El campo de contraseña tiene que estar completo ")
+           }else if(campoPassword.value.length < 8) {
+               errores.push("Contraseña al almenos 8 caracteres")
+           }
+
+           let campoImage = document.querySelector('#avatar');
+           let filePath = campoImage.value;
+           console.log(filePath)
+           let allowedExtensions = ['.jpg','.png','.gif', '.jpeg'];
+           if (filePath == ""){
+            errores.push('Las extensiones de archivo permitidas son '+ allowedExtensions.join(','))
+           }
+
+           if(errores.length > 0){
+                e.preventDefault();
+                let ulErrores = document.querySelector("div.errores ul")
+                ulErrores.innerHTML = ""
+                for (let i=0; i < errores.length; i++){
+                    ulErrores.innerHTML += "<li>" + errores[i]+"</li>"
+                }
+                
+           } 
+
+           
+        
+           
+       })
+    }) </script>
     <title> Registro usuario </title>
 </head>
 <body class='registro_Body'>
     <%-include ("./partials/header.ejs")%>
     <%-include ("./partials/banner.ejs")%>
     <div class="registro_Contenedor_Global">
+        <div class = "errores" style="color: red">
+            <ul>
+
+            </ul>
+
+        </div>
     <form action="/user/register" method="POST" enctype = "multipart/form-data" class="registro_Form_Registro">
             <h2 class="registro_H2">Registro de Usuario</h2>
-
+            
            
 
-            <input class="registro_input-formulario" type="text" name="firstName" placeholder="Nombre"  value="<%= locals.oldData ? oldData.firstName :null %>">
+            <input class="registro_input-formulario" id='name'type="text" name="firstName" placeholder="Nombre"  value="<%= locals.oldData ? oldData.firstName :null %>">
             <% if (locals.errors && errors.firstName) { %>
                 <p style="color: red"><%= errors.firstName.msg %></p>
             <% } %>
 
-            <input class="registro_input-formulario" type="text" name="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastName :null %>">
+            <input class="registro_input-formulario"  type="text" name="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastName :null %>">
             <% if (locals.errors && errors.lastName) { %>
                 <p style="color: red"><%= errors.lastName.msg %></p>
             <% } %>
@@ -34,12 +90,12 @@
             <% }  %>
         
 
-            <input class="registro_input-formulario" type="email" name="email" placeholder="E-mail" value="<%= locals.oldData ? oldData.email :null %>">
+            <input class="registro_input-formulario" type="email" id='email' name="email" placeholder="E-mail" value="<%= locals.oldData ? oldData.email :null %>">
             <% if (locals.errors && errors.email) { %>
                 <p style="color: red"><%= errors.email.msg %></p> 
             <% } %>  
 
-            <input class="registro_Contraseña" type="password" name="pass" placeholder="Elegí tu contraseña">
+            <input class="registro_Contraseña" type="password" name="pass" id="pass"placeholder="Elegí tu contraseña">
             <% if (locals.errors && errors.pass) { %>
                 <p style="color: red"><%= errors.pass.msg %></p>
             <% } %>
@@ -62,7 +118,7 @@
             <% } %>
             <br>
             <br>
-            <input type="file" name="avatar" >
+            <input type="file" name="avatar" id="avatar" accept=".jpg, .png, .gif, .jpeg">
             <% if (locals.errors && errors.avatar) { %>
                 <p style="color: red"><%= errors.avatar.msg %></p>
             <% } %>
