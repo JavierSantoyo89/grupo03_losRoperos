@@ -35,7 +35,7 @@ routerUsers.post('/borrar/:idUser', usersController.deleteUser);
 
 // ---- Rutas de API REST ---- //
 routerUsers.get('/user_dashboard/:id',UsersAPI.Api_UserId_Dashboard) // * http://localhost:1689/user/user_dashboard/{id} * //
-routerUsers.get('/user_dashboard/',UsersAPI.Api_user_dashboard) // * http://localhost:1689/user/user_dashboard/ * //
+routerUsers.get('/user_dashboard/',UsersAPI.Api_user_dashboard) // * http://localhost:1689/user/user_dashboard/ *  DONE//
 routerUsers.get('/all',UsersAPI.UsersAll) // * http://localhost:1689/user/all * //
 routerUsers.get('idUser',UsersAPI.UserId) // * http://localhost:1689/user/{id} * //
 routerUsers.post('/new_user_api',UsersAPI.new_user_api) // * http://localhost:1689/user/new_user_api * //
