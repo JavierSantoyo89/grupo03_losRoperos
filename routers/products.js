@@ -24,11 +24,11 @@ router.get('/detail/:id',productsController.detalle);
 
 // ---- Rutas para agregar producto ---- //
 router.get('/new',  productsController.NewProduct);
-router.post('/new',validateNewProduct, multerProductUpdate,productsController.CreateProduct);
+router.post('/new', multerProductUpdate,validateNewProduct,productsController.CreateProduct);
 
 // ---- Rutas para editar por determinado ID ---- //
 router.get('/edit/:id', productsController.Edit);
-router.post('/edit/:id',multerProductUpdate, productsController.Update);
+router.put('/edit/:id',multerProductUpdate, validateNewProduct,productsController.Update);
 
 // ---- Rutas para delete ---- //
 router.post('/delete/:id',productsController.delete);
