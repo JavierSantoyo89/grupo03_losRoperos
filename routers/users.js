@@ -20,7 +20,11 @@ const multerUser = require('../middlewares/user/multerUser')
 
 // ---- Rutas dedicadas a user's ---- //
 routerUsers.get('/login',usersController.login);
-routerUsers.post('/login',validateLogin, usersController.ProcessLogin);
+
+    //Procesar el login 
+//routerUsers.post('/login',validateLogin, usersController.ProcessLogin);
+routerUsers.post('/login',validateLogin, usersController.loginProcess);
+
 
 // ---- Rutas dedicadas a new user's ---- //
 routerUsers.get('/register',usersController.registro);
