@@ -37,7 +37,7 @@ router.post('/delete/:id',productsController.delete);
 
 router.get('/all',productsAPI.ProductsAll) // * http://localhost:1689/products/all * //
 router.get('/count_in_sale',productsAPI.countador_insale) // * http://localhost:1689/products/count_in_sale //
-router.get('/count_season',productsAPI.countador_insale) // * http://localhost:1689/products/count_season //
+router.get('/count_season',productsAPI.countador_season) // * http://localhost:1689/products/count_season //
 
 router.post('/new_api',productsAPI.CreateProductAPI) // * http://localhost:1689/products/new_api * //
 router.delete('/delete_api/:id',productsAPI.delete_api) // * http://localhost:1689/products/delete_api/{id} * //
