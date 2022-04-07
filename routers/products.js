@@ -24,7 +24,7 @@ router.get('/detail/:id',productsController.detalle);
 
 // ---- Rutas para agregar producto ---- //
 router.get('/new',  productsController.NewProduct);
-router.post('/new',validateNewProduct,multer, multerProductUpdate,productsController.CreateProduct);
+router.post('/new',validateNewProduct, multerProductUpdate,productsController.CreateProduct);
 
 // ---- Rutas para editar por determinado ID ---- //
 router.get('/edit/:id', productsController.Edit);
