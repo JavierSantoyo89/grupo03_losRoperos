@@ -31,25 +31,28 @@
 
             <form class="login_Formulario" method="POST" action="/user/login">
                 <h1>Login</h1> 
-                <% if (locals && locals.errors) {%>
-                    <% errors.forEach(error => { %> 
-                        <p class="feedback is-danger"> <%= error.msg %> </p>
-                    <% }) %>
-                <% } %> 
+            
                 <div class="contenedor_Login">
-                    <div class="input_contenedor_Login">
+                    <!-- <div class="input_contenedor_Login">
                         <i class="fas fa-user icon_Login"></i>
                         <input type="text" placeholder="Nombre de Usuario" name='user'>
                     </div>
+                    -->
                         <div class="input_contenedor_Login">
                             <i class="fas fa-envelope icon_Login"></i>
                             <input type="text" placeholder="Correo Electronico" name ='email'>    
                         </div>
+                        <% if (locals.errors && errors.email) { %>
+                            <p style="color: red"><%= errors.email.msg %></p> 
+                        <% } %>  
                             <div class="input_contenedor_Login">
                                 <i class="fas fa-key icon_Login"></i>
                                 <input type="password" placeholder="Contraseña" name="password">    
                             </div>
                         </div>
+                        <% if (locals.errors && errors.password) { %>
+                            <p style="color: red"><%= errors.password.msg %></p> 
+                        <% } %>  
                         <div class="input_contenedor_Login2">
                             <i class="fas fa-key icon_Login"></i>
                             <input type="checkbox" ip="etiqueta" name="Chk_recordarme" ><label for="etiqueta"> No cerrar Sesión</label>

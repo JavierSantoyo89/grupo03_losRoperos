@@ -19,6 +19,56 @@ const usersController = {
     login: (req,res) => {
         res.render('login')
     },
+    // -- Login Mike
+    loginProcess: (req, res) => {
+
+        var email = db.Users.findOne({
+            where: {email :req.body.email}
+        });       
+        
+        Promise.any([email])
+            .then(function(email){
+
+                if(email !==null){
+                    let isOkThePassword = bcryptjs.compareSync(req.body.password, email.password);
+                    if (isOkThePassword){
+                        res.send('Puedes entrar') 
+                    }
+                    else {
+                        res.render('login', {
+                            errors: {
+                                password: {
+                                    msg: 'Password incorrecto'
+                                }
+                            }
+                        
+                        })
+                    }
+                    //res.send(email);
+                    
+                }else {
+                    // Mandar mensaje de error
+                    res.render('login', {
+                        errors: {
+                            email: {
+                                msg: 'No existe el usuario en la db'
+                            }
+                        }
+                    
+                    });
+                    
+                }
+                 
+                
+              
+         });
+        
+
+        
+    },
+
+    //--Fin Login Mike
+
     ProcessLogin: (req,res) =>{
         let errors = validationResult(req);
         if (errors.isEmpty()){
