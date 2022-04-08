@@ -24,7 +24,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // ---- Rutas dedicadas a user's ---- //
 // Login 
 routerUsers.get('/login',guestMiddleware,usersController.login);
-routerUsers.post('/login',validateLogin, usersController.loginProcess);
+routerUsers.post('/login',validateLogin, multerUser, usersController.loginProcess);
 
 // Perfil
 routerUsers.get('/profile/',authMiddleware,usersController.profile);

@@ -21,8 +21,8 @@ app.use(methodOverride('_method'));
 // ------- Cadena para llamar express session(Global) ----------- //
     app.use(session({
         secret: "Un secreto ;b",
-        resave: false,
-        saveUninitialized: false,
+        resave: true,
+        saveUninitialized: true,
     }));
 
     app.use(cookieParser());

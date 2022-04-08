@@ -62,6 +62,7 @@ const usersController = {
     profile: (req,res) =>{
         res.render('userProfile', {
             user: req.session.userLogged
+           
         });
     },
     logout: (req, res) => {
