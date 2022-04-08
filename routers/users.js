@@ -19,6 +19,7 @@ const validateRegister = require('../middlewares/user/validateRegister');
 const multerUser = require('../middlewares/user/multerUser');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const userAuth = require('../middlewares/user/userAuth');
 
 
 // ---- Rutas dedicadas a user's ---- //
