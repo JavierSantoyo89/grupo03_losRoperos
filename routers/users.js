@@ -37,7 +37,7 @@ routerUsers.get('/register',guestMiddleware,usersController.registro);
 routerUsers.post('/register', multerUser, validateRegister ,usersController.processRegister);
 routerUsers.get('/list',usersController.listaUsuarios);
 routerUsers.get('/editar/:idUser',usersController.editUser);
-routerUsers.post('/editar/:idUser', multerUser,usersController.updateUser);
+routerUsers.post('/editar/:idUser', multerUser,validateRegister ,usersController.updateUser);
 routerUsers.get('/detalle/:idUser', usersController.detailUser);
 routerUsers.post('/borrar/:idUser', usersController.deleteUser);
 // routerUsers.post('/login', validateLogin, usersController.validarUser)

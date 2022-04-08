@@ -126,7 +126,7 @@ const usersController = {
             }
         });
 
-        res.redirect("/user/detalle/" + req.params.idUser)
+        res.redirect("/user/list")
     },
     deleteUser: (req,res)=>{
         db.Users.destroy({
