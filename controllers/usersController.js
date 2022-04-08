@@ -112,7 +112,29 @@ const usersController = {
             })
     },
     updateUser:(req,res)=>{
-        db.Users.update({
+        var user = db.Users.findOne({
+            where: {idUser :req.params.idUser}
+        });
+       
+        var email = db.Users.findOne({
+            where: {email :req.body.email}
+        });
+        const resultValidation = validationResult(req);
+        
+        Promise.all([user,email])
+        .then(function([user,email]){
+            
+            if(resultValidation.errors.length > 0){
+                return res.render('editUser' , 
+                {errors: resultValidation.mapped(), 
+                oldData: req.body,
+                user:user}
+                );
+                
+            }
+    
+            
+            db.Users.update({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             userName: req.body.user,
@@ -121,13 +143,13 @@ const usersController = {
             birthday: req.body.birth_date,
             address: req.body.address, 
             IdImageUser:req.file.filename
-        },{
-            where:{
-                idUser: req.params.idUser
-            }
-        });
+           },{
+               where: {idUser:req.params.idUser}
+           }
+           ).then((user) => res.redirect('/user/list'))
+        })
 
-        res.redirect("/user/list")
+       
     },
     deleteUser: (req,res)=>{
         db.Users.destroy({
@@ -195,7 +217,8 @@ const usersController = {
                         birthday: req.body.birth_date,
                         address: req.body.address, 
                         IdImageUser:req.file.filename
-                       }).then(user => res.redirect('login'))}
+                       }).then(user => res.redirect('login'))
+                    }
                  
                 
               

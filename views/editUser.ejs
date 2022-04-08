@@ -73,23 +73,23 @@
         
                 </div>
 
-            <input class="registro_input-formulario" type="text" id="name"name="firstName" placeholder="Nombre"  value="<%= user.firstName %>">
+            <input class="registro_input-formulario" type="text" id="name"name="firstName" placeholder="Nombre"  value="<%= locals.oldData ? oldData.firstName :user.firstName %>">
             <% if (locals.errors && errors.firstName) { %>
                 <p style="color: red"><%= errors.firstName.msg %></p>
             <% } %>
 
-            <input class="registro_input-formulario" type="text" name="lastName" placeholder="Apellido" value="<%= user.lastName %>">
+            <input class="registro_input-formulario" type="text" name="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastName :user.lastName %>">
             <% if (locals.errors && errors.lastName) { %>
                 <p style="color: red"><%= errors.lastName.msg %></p>
             <% } %>
 
-            <input class="registro_input-formulario" type="text" name="user" placeholder="Nombre de usuario" value="<%= user.userName %>">
+            <input class="registro_input-formulario" type="text" name="user" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.user :user.userName %>">
             <% if (locals.errors && errors.user) { %>
                 <p style="color: red"><%= errors.user.msg %></p>
             <% }  %>
         
 
-            <input class="registro_input-formulario" type="email" id= "email" name="email" placeholder="E-mail" value="<%= user.email %>">
+            <input class="registro_input-formulario" type="email" id= "email" name="email" placeholder="E-mail" value="<%= locals.oldData ? oldData.email :user.email %>">
             <% if (locals.errors && errors.email) { %>
                 <p style="color: red"><%= errors.email.msg %></p> 
             <% } %>  
@@ -105,12 +105,12 @@
             <br>
             <br>
             <label class="checkbox_Registro" for="birth_date" id='registro_cumpleaños'><b><h4>Fecha de nacimiento</h4></b></label>
-            <input class="registro_input-formulario" type="date" name="birth_date" placeholder="birth_date" value="<%= user.birthday %>">
+            <input class="registro_input-formulario" type="date" name="birth_date" placeholder="birth_date" value="<%= locals.oldData ? oldData.birth_date :user.birthday %>">
             <% if (locals.errors && errors.birth_date) { %>
                 <p style="color: red"><%= errors.birth_date.msg %></p>
             <% } %>
             <label class="checkbox_Registro" for="address" id='address'><b><h4>Direccion</h4></b></label>
-            <input class="registro_input-formulario" type="text" name="address" placeholder="Domicilio" value="<%= user.address %>">
+            <input class="registro_input-formulario" type="text" name="address" placeholder="Domicilio" value="<%= locals.oldData ? oldData.address :user.address %>">
             
             <% if (locals.errors && errors.address) { %>
                 <p style="color: red"><%= errors.address.msg %></p>
@@ -123,7 +123,9 @@
             <% } %>
             <br>
             <br>
+            <form action="/user/editar/<%= user.idUser %>" method="POST">
             <input class="registro_Input-casilla" type="submit" value="Enviar">
+            </form>
             <input class="registro_Input-casilla" type="reset" value="Borrar">
             <br>
             <br>
