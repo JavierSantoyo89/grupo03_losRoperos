@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/home.css" >
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css" >
+    <link rel="stylesheet" href="/css/styles.css" >
+    <title>Detalle producto</title>
+</head>
+    <body>
+        <%- include('./partials/header') %>
+	<!-- product detail -->
+        <%-include ("./partials/banner.ejs") %>
+	
+     <div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title"><%= products.name %></h2>
+			</div>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<div class="col-12 col-lg-8">
+					<img src="/images/products/<%= products.imgProduct %>" alt="product image" class="product-detail-img">
+					<p class="product-detail-description">
+						<%= products.description %>
+					</p>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="product-detail-info">
+						<h2 class="product-detail-title"><%= products.name %></h2>
+						<% if(products.discount > 0) { 
+							let finalPrice = (products.price * ((100 - products.discount) / 100)).toFixed(0)
+						%>
+							<p class="product-detail-price small">
+								<span>$<%= products.price %></span>
+								/
+								<b><%= products.discount %>% OFF</b>
+							</p>
+							<p class="product-detail-price">
+								$<%= finalPrice %>
+							</p>
+						<% } else { %>
+							<p class="product-detail-price">
+								$<%= products.price %>
+							</p>
+						<% } %>
+
+						<ul class="actions-list">
+							<li>
+								<i class="fas fa-credit-card"></i>
+								<p>Pagá en 12 cuotas sin interes</p>
+							</li>
+							<li>
+								<i class="fas fa-store"></i>
+								<p>Retiro gratis en locales del vendedor</p>
+							</li>
+						</ul>
+
+						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
+						<hr>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /product detail -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+
+</body>	
+</html>

@@ -17,14 +17,14 @@ const UsersAPI = require('../controllers/API/UsersAPI')
 const validateLogin = require('../middlewares/user/validateLogin');
 const validateRegister = require('../middlewares/user/validateRegister');
 const multerUser = require('../middlewares/user/multerUser');
-const guestMiddleware = require('../middlewares/guestMiddleware');
+//const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const userAuth = require('../middlewares/user/userAuth');
 
 
 // ---- Rutas dedicadas a user's ---- //
 // Login 
-routerUsers.get('/login',guestMiddleware,usersController.login);
+routerUsers.get('/login',usersController.login);
 routerUsers.post('/login',validateLogin, multerUser, usersController.loginProcess);
 
 // Perfil
@@ -34,7 +34,7 @@ routerUsers.get('/profile/',authMiddleware,usersController.profile);
 routerUsers.get('/logout/', usersController.logout);
 
 // ---- Rutas dedicadas a new user's ---- //
-routerUsers.get('/register',guestMiddleware,usersController.registro);
+routerUsers.get('/register',usersController.registro);
 routerUsers.post('/register', multerUser, validateRegister ,usersController.processRegister);
 routerUsers.get('/list',usersController.listaUsuarios);
 routerUsers.get('/editar/:idUser',usersController.editUser);

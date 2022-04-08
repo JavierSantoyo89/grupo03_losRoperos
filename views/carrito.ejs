@@ -10,53 +10,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carrito.css">
+    <script src="https://kit.fontawesome.com/76e3715301.js" crossorigin="anonymous"></script> 
 </head>
 <%-include ("./partials/header.ejs") %>
 <%-include ("./partials/banner.ejs") %>
 
         <main>
-            <h1>Carrito</h1>
+            <h1>Carrito<i class="fa-solid fa-cart-shopping"></i></h1>
                 <section class= "main-section">
-                    <div class= "descripcion">
-                        <img src="images/ropa2.jpg" alt="producto-vender">
-                        <div class= "name">
-                            <strong id="descripcion">Los Roperos</strong>
-                            <p id="descripcion">Cool Jacket 300 </p>
-                            <p id="descripcion">Talla:Mediana</p>
-                            <span id="descripcion">SKU: 34324535DT12-3124</span>
+                    <figure>
+                    <img src="images/ropa2.jpg" alt="producto-vender">
+                </figure>
+                        <div class="cont1">
+                           
+                            <div ip="nombreArticulo"><strong> Jacket 300</strong> </div>
+                            <div>Talla:<strong>Mediana</strong></div>
+                            <span>SKU:<strong> 34324535DT12-3124</strong></span>
+                        <br>
+                       <span>Cantidad: </span>
+                            <!-- <i class="fas fa-minus"></i> -->
+                            <!-- <form class="numero" method="GET" action=# ><input type="text" id="cantidad" placeholder="  1"></form> -->
+                            <!-- <i class="fas fa-plus"></i> -->
+                         <div>
+                            <span><strong>$999.00 MXN</strong></span>
+                            <br>
+                            
+                                <button  name="Agregar" type="button" onclick="window.open('/')" ip="boton"><span>Eliminar</span>
+                                </button>   
                         </div>
+                    <div>
+                        <span>Aqui va un cupon</span> <i class="fa-brands fa-cc-stripe"></i>
                     </div>
-                    <div class="cantidad">
-                        <div id="cantidad">
-                            <span>Cantidad: </span>
-                            <i class="fas fa-minus"></i>
-                            <form class="numero" method="GET" action=# ><input type="text" id="cantidad" placeholder="  1"></form>
-                            <i class="fas fa-plus"></i>
-                         </div>
-                    </div>
-                    <div class="precio">
-                        <div id="precio">
-                            <span>$999.00 MXN</span>
-                            <span>Eliminar</span> 
-
-                        </div>
-                    </div>
-                </section>
-                <section class="secondary-section">
-                    <div id="cupon">
-                        <span>Aqui va un cupon</span>
-                    </div>
-                    <div id="pagar">
-                        <div class="subtotal">
+                       <div>
                             <span>SUBTOTAL:</span>
-                            <span>$999.00</span>
+                            <span><strong>$999.00</strong></span>
                         </div>
-                        <div class="total">
+                        <div>
                             <span>TOTAL:</span>
-                            <span>$999.00</span>
+                            <span><strong>$999.00</strong></span>
                         </div>
-                    </div>
-                </section>
+                        <div>
+                            <button  name="Agregar" type="button" ip="boton">Agregar
+                            </button>
+                            
+                        </div> 
+                        
+                        <div class="estrella"> 
+                            <input type="radio" name=="rate"id="rate-5">
+                             <label for="rate-5" class="fas fa-star" onclick="star5()"></label><input type="radio"
+                            name=="rate"id="rate-4"><label for="rate-4" class="fas fa-star"></label>
+                            <input type="radio" name=="rate"id="rate-3"><label for="rate-3" class="fas fa-star"></label><input type="radio" name=="rate"id="rate-2"><label for="rate-2" class="fas fa-star"></label><input type="radio" name=="rate"id="rate-1"><label for="rate-1" class="fas fa-star"></label>  
+                       
+                    </div> 
+                     </div>   
+
+
+                    </section>
         </main>
        <%-include ("./partials/footer.ejs")%>
     </body>

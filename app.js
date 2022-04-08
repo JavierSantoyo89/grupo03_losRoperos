@@ -5,7 +5,7 @@ const  path = require('path');
 const session = require('express-session');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
-const cookieParser = require('cookie-parser');// Intruccion para poder usar cookies
+var cookieParser = require('cookie-parser');// Intruccion para poder usar cookies
 app.use(cookieParser())
 
 // ------- Para poder usar metodo PUT & DELETE ------- //
@@ -20,12 +20,9 @@ app.use(methodOverride('_method'));
         app.use(logMiddleware);
 // ------- Cadena para llamar express session(Global) ----------- //
     app.use(session({
-        secret: "Un secreto ;b",
-        resave: true,
-        saveUninitialized: true,
+        secret: "Un secreto ;b"
     }));
 
-    app.use(cookieParser());
     app.use(userLoggedMiddleware);
 
 // ------- Template engine ------- //

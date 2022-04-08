@@ -31,8 +31,15 @@ const usersController = {
         
         Promise.any([userToLogin])
             .then(function(userToLogin){
+                
+                
+                if(userToLogin !==null){ 
+                        avatarName = userToLogin.userName
+                    res.cookie('username',avatarName, {maxAge: 600000})
 
-                if(userToLogin !==null){
+               
+
+
                     let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
                     if (isOkThePassword){                        
                         delete userToLogin.password;
@@ -40,8 +47,8 @@ const usersController = {
 
                         if(req.body.remember_user) {
                             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-                        }
-                        
+                        }                   
+
                         res.redirect('/user/profile');
                     }
                     else {
@@ -113,7 +120,40 @@ const usersController = {
             })
     },
     updateUser:(req,res)=>{
-        db.Users.update({
+        var user = db.Users.findOne({
+            where: {idUser :req.params.idUser}
+        });
+       
+        var email = db.Users.findOne({
+            where: {email :req.body.email}
+        });
+        const resultValidation = validationResult(req);
+        
+        Promise.all([user,email])
+        .then(function([user,email]){
+            
+            if(resultValidation.errors.length > 0){
+                return res.render('editUser' , 
+                {errors: resultValidation.mapped(), 
+                oldData: req.body,
+                user:user}
+                );
+                
+            }if(email !==null){
+                console.log(email)
+                    res.render('editUser' , 
+                        {errors: {
+                                email: {
+                                         msg: 'Email en uso. Intenta con otro' }
+                        },
+                        oldData: req.body,
+                        user:user
+                        }
+                    )
+                }else {
+    
+            
+            db.Users.update({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             userName: req.body.user,
@@ -122,13 +162,13 @@ const usersController = {
             birthday: req.body.birth_date,
             address: req.body.address, 
             IdImageUser:req.file.filename
-        },{
-            where:{
-                idUser: req.params.idUser
-            }
-        });
+           },{
+               where: {idUser:req.params.idUser}
+           }
+           ).then((user) => res.redirect('/user/list'))}
+        })
 
-        res.redirect("/user/list")
+       
     },
     deleteUser: (req,res)=>{
         db.Users.destroy({
@@ -196,7 +236,8 @@ const usersController = {
                         birthday: req.body.birth_date,
                         address: req.body.address, 
                         IdImageUser:req.file.filename
-                       }).then(user => res.redirect('login'))}
+                       }).then(user => res.redirect('login'))
+                    }
                  
                 
               

@@ -17,9 +17,14 @@ const validateNewProduct = require('../middlewares/products/validateNewProduct')
 const userAuth = require('../middlewares/user/userAuth') // Validad que el usuario esta loggeado
 const multerProductUpdate = require('../middlewares/products/multerProductUpload')
 const multerS3 = require('../middlewares/products/multerS3ProductUploadAWS')
-
+const authAccessProducts =require('../middlewares/authAccessProducts')
 // ---- Rutas dedicadas para productos ---- //
 router.get('/',productsController.Index);
+
+// --- detalle de usuario NO logeado
+router.get('/detail_invite/:id',productsController.detalleInvited); 
+
+//--- detalle de usuario logeado
 router.get('/detail/:id',productsController.detalle); 
 
 // ---- Rutas para agregar producto ---- //
