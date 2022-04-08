@@ -164,7 +164,7 @@
                             <label for="size" class="form-label">Talla:</label>
                            
                             <select name="size" id="size" class="form-input">
-                                <option value=""><%= locals.oldData ? oldData.size :products.size %></option>
+                                <option value="<%= locals.oldData ? oldData.size :products.size %>"><%= locals.oldData ? oldData.size :products.size %></option>
                                 <option value="Ch">Ch</option>
                                 <option value="M">M</option>
                                 <option value="G">G</option>
@@ -177,7 +177,7 @@
                           <div class="col-12 col-md-6">
                             <label for="status" class="form-label">Categoría:</label>
                             <select name="status" id="status" class="form-input">
-                                <option value=""><%= locals.oldData ? oldData.status :products.nameStatus %></option>
+                                <option value="<%= locals.oldData ? oldData.status :products.nameStatus %>"><%= locals.oldData ? oldData.status :products.nameStatus %></option>
                                 <option value="In-sale">In-sale</option>
                                 <option value="Season">Season</option>
                             </select>
