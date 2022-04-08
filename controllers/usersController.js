@@ -31,7 +31,8 @@ const usersController = {
         
         Promise.any([userToLogin])
             .then(function(userToLogin){
-
+                res.cookie('userName', userToLogin.userName)
+                console.log(res.cookie.userName);
                 if(userToLogin !==null){
                     let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
                     if (isOkThePassword){                        
