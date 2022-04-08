@@ -18,13 +18,13 @@ const usersController = {
 
     // ************ Controlers of Login(Get/POST) ************** //
     login: (req,res) => {
-        //console.log(req.session);
+        //console.log(req.cookies.testing);
         res.render('login')
     },
 
     // -- Inicio --> Mike
     loginProcess: (req, res) => {
-
+        //return res.send(req.body);
         var userToLogin = db.Users.findOne({
             where: {email :req.body.email}
         });       
@@ -44,11 +44,11 @@ const usersController = {
                     if (isOkThePassword){                        
                         delete userToLogin.password;
                         req.session.userLogged = userToLogin;
-                        console.log("usuario logeado");
-                        console.log(req.session.userLogged);
-                        /*if(req.body.remember_user) {
+
+                        if(req.body.remember_user) {
                             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-                        }*/
+                        }                   
+
                         res.redirect('/user/profile');
                     }
                     else {
@@ -66,13 +66,14 @@ const usersController = {
     },
 
     profile: (req,res) =>{
+        
         res.render('userProfile', {
             user: req.session.userLogged
            
         });
     },
     logout: (req, res) => {
-		//res.clearCookie('userEmail');
+		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect('/');
 	},
@@ -107,6 +108,7 @@ const usersController = {
 
     // ************ Controller vista registrar usuario (Done) ************** //
     registro: (req,res) => {
+        res.cookie('testing', 'Hola mundo!', {maxAge: 1000*30})
         res.render("register")
     },
     editUser: (req,res) =>{
