@@ -21,6 +21,7 @@ const usersController = {
         //console.log(req.session);
         res.render('login')
     },
+
     // -- Inicio --> Mike
     loginProcess: (req, res) => {
 
@@ -70,6 +71,7 @@ const usersController = {
 	},
 
     // Fin --> Mike
+
 
     ProcessLogin: (req,res) =>{
         let errors = validationResult(req);
