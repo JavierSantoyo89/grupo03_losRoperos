@@ -239,7 +239,7 @@ textarea.form-input {
 
 
 /*====== Media-Queries ======*/
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .main-header_credit-link {
     margin-top: 0;
     text-align: right;
@@ -288,4 +288,4 @@ textarea.form-input {
     width: 95%;
     margin: auto;
   }
-}
+} */
