@@ -6,44 +6,53 @@
 }
 
 .contact__container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    display: inline-block;
+   position:relative;
+
+    /* margin-left: 270px; */
+   
+    padding:10px;
+    /* z-index: -1;  */
+  
+    /* text-align: center; */
+    /* text-align: center; */
     background: black;
-    color: green;
-    width: 90%;
+    width: 100%;
+    border-radius: 5px;
+    
+
 }
 
 h1{
     font-family: sans-serif;
-  
     top:10%;
     left: 20%;
-    font-size: 100px;
+    font-size: 80px;
     text-align: center;
     text-transform: uppercase;
-background: linear-gradient(90deg,#ff0000,#ffff00,#ff00f3,#151f44,#ff00c4,#ff0000);
-background-size: 400%;
-letter-spacing: 10px;
-font-weight: 600;
-word-spacing: 5px;
--webkit-text-fill-color:transparent;
--webkit-background-clip: text;
-animation: animate 30s linear infinite;
-}
+    background: linear-gradient(90deg,#ff0000,#ffff00,#ff00f3,#151f44,#ff00c4,#ff0000);
+    background-size: 400%;
+    letter-spacing: 10px;
+    font-weight: 600;
+    word-spacing: 5px;
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip:text;
+    animation: animate 30s linear infinite;
+    }
+
 @keyframes animate{
     0% {
-       background-position: 0%;
-      
+    background-position: 0%;
+    
     }
     
     100% {
         background-position: 400%;
-       
-     }
-     
+    
+    }
+    
 }
+/* ---------------------------------------------------- */
 /* h1{
 
     animation: bounce1 120s alternate infinite ease-out;
@@ -60,6 +69,67 @@ animation: animate 30s linear infinite;
   
 }
 } */
+/* ---------------------------------------------------- */
 .contact__img{
-    width: 50%;
+text-align: center;    
+    margin-bottom: 100px; 
+    margin:50px;
+    border:1px solid #fff;
+    width:30%;
+    /* margin:10px; */
+    padding:1px;
+
 }
+
+    .Mike:hover, .Marco:hover, .Javier:hover, .Diego:hover{
+        transform: translateY(-20px);
+    box-shadow: 0px 0px 30px -15px #ffff;
+    
+        
+    }
+.contact__img .nombre {
+float:right;
+    
+} 
+
+    
+.nombre{
+ font-size: 30px !important;
+      border-bottom: 0.5px solid rgba(204,204,204,0.5);
+
+  
+}
+
+.Descripcion:hover {
+   
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+.nombre, .Descripcion{
+    position: relative;
+    /* bottom:270px; */
+     /* left:38%;  */
+     bottom:auto;
+     margin-left:auto;
+     /* margin-right:500px; */
+    text-align: justify;
+    /* width:80%; */
+    font-size: 20px;   
+   
+    
+    /* align-items: flex-start; */
+    color:#fff;
+}
+
+
+
+
+ @media all and (min-width: 200px) and (max-width:600px){
+     .contact__container {
+        width: 100%;
+    }
+    h1{
+        text-align: center;
+        font-size: 38px;
+    }
+    } 

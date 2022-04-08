@@ -102,3 +102,9 @@ input[type="password"] {
     text-align: center;
     color:#fff;
 }
+
+@media all and (min-width: 600px) and (max-width:1200px){
+    .contenedor_Login{
+        width: 20vw;
+    }
+    }

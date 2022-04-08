@@ -2,7 +2,7 @@ const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer')
-
+const { validationResult } = require('express-validator');
 let db = require('../data/models')
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -49,6 +49,16 @@ const productsController = {
     },
     // * ---- Controlador para realizar el Insert en la BD (Done) ---- //
     CreateProduct: (req,res)=>{
+
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0){
+            return res.render('CreateProduct' , 
+            {errors: resultValidation.mapped(), 
+            oldData: req.body
+            });
+            
+            
+        }
             let productoImagen = req.body;
             productoImagen.imgProduct = req.file.filename
 
@@ -88,6 +98,18 @@ const productsController = {
     },
     // *---- Controlador para hacer un UPDATE en la BD por su Id (Funciona al 100%) ----//
     Update: (req,res) => {
+       
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0){
+            
+            return res.render('/products/edit/' + req.params.id , 
+            {errors: resultValidation.mapped(), 
+            oldData: req.body
+            });
+            
+            
+        }
+
         let id = req.params.id;
         let productoImagen = req.body;
         productoImagen.imgProduct = req.file.filename;

@@ -124,7 +124,7 @@ color:rgb(19, 19, 158);
     
     background-color: #FFFFFF;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .anuncio{
@@ -132,7 +132,7 @@ color:rgb(19, 19, 158);
     flex-direction: column;
     background: var(--anuncio-background);
     width: 80%;
-    height: 50%;
+    /* height: 60%; */
     margin-right: 10%;
     margin-left:10%;
     margin-bottom: 1px;
@@ -176,28 +176,33 @@ footer .down{
     justify-content: center;
     flex-wrap: wrap;
     margin:1px;
-    padding: 50px;
-    height: 50%;
+    padding: 20px;
+    /* height:300px; */
     margin-top:1px;
     border-radius: 5px;
 
     
 }
 footer .down .service, .account, .information, .follow{
-    width:25%;
+    width:23%;
     display:flex;
     flex-direction: column;
+    padding-top: 40px;
+
    /* padding:0%;*/
     
    
 }
 
 
+
 footer ul{
     list-style-type: none;
     color: var(--blanco);
     text-decoration: none;
-    padding:0%
+    padding:0%;
+    /* height:1px; */
+    
 }
 footer a{
     text-decoration: none;
@@ -242,7 +247,8 @@ footer i{
     font-size:24px;
 }
 footer .terms li{
-    padding:5%;
+    padding:2px;
+    
 }
 
 /* --------------------- Footer ----------------------- */
@@ -257,3 +263,18 @@ footer .terms li{
         -webkit-background-size: cover;
         -o-background-size: cover;
 }
+
+
+@media all and (min-width: 200px) and (max-width:1200px){
+    header {
+
+        width: 100%;
+    }
+header a{
+    width: 100%;
+}
+
+  .input-buscador{
+      width: 100%;
+  }
+    }

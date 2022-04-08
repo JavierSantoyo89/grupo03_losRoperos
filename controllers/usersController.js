@@ -1,6 +1,6 @@
-const { validationResult } = require('express-validator');
-const { redirect, cookie } = require('express/lib/response');
 const fs =require('fs')
+const { redirect, cookie } = require('express/lib/response');
+
 const path = require('path');
 var bcryptjs = require('bcryptjs');
 const { Console } = require('console');
@@ -11,6 +11,7 @@ let db = require('../data/models')
 const sequelize =db.sequelize;
 const res = require('express/lib/response');
 const { send } = require('process');
+const { validationResult } = require('express-validator');
 //const userJSON = path.join(__dirname, '../data/User.json');
 
 const usersController = {
