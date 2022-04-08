@@ -18,57 +18,61 @@ const usersController = {
 
     // ************ Controlers of Login(Get/POST) ************** //
     login: (req,res) => {
+        //console.log(req.session);
         res.render('login')
     },
-    // -- Login Mike
+
+    // -- Inicio --> Mike
     loginProcess: (req, res) => {
 
-        var email = db.Users.findOne({
+        var userToLogin = db.Users.findOne({
             where: {email :req.body.email}
         });       
         
-        Promise.any([email])
-            .then(function(email){
+        Promise.any([userToLogin])
+            .then(function(userToLogin){
 
-                if(email !==null){
-                    let isOkThePassword = bcryptjs.compareSync(req.body.password, email.password);
-                    if (isOkThePassword){
-                        res.send('Puedes entrar') 
+                if(userToLogin !==null){
+                    let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                    if (isOkThePassword){                        
+                        delete userToLogin.password;
+                        req.session.userLogged = userToLogin;
+                        console.log("usuario logeado");
+                        console.log(req.session.userLogged);
+                        /*if(req.body.remember_user) {
+                            res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+                        }*/
+                        
+                        res.redirect('/user/profile');
                     }
                     else {
-                        res.render('login', {
-                            errors: {
-                                password: {
-                                    msg: 'Password incorrecto'
-                                }
-                            }
-                        
-                        })
+                        res.render('login', { 
+                            errors: { password: { msg: 'Credenciales inválidas' } }                    
+                        });
                     }
-                    //res.send(email);
                     
-                }else {
-                    // Mandar mensaje de error
+                } else {
                     res.render('login', {
-                        errors: {
-                            email: {
-                                msg: 'No existe el usuario en la db'
-                            }
-                        }
-                    
-                    });
-                    
+                        errors: { email: { msg: 'El usuario no está registrado' } }
+                    });   
                 }
-                 
-                
-              
          });
-        
-
-        
     },
 
-    //--Fin Login Mike
+    profile: (req,res) =>{
+        res.render('userProfile', {
+            user: req.session.userLogged
+           
+        });
+    },
+    logout: (req, res) => {
+		//res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	},
+
+    // Fin --> Mike
+
 
     ProcessLogin: (req,res) =>{
         let errors = validationResult(req);
@@ -108,7 +112,29 @@ const usersController = {
             })
     },
     updateUser:(req,res)=>{
-        db.Users.update({
+        var user = db.Users.findOne({
+            where: {idUser :req.params.idUser}
+        });
+       
+        var email = db.Users.findOne({
+            where: {email :req.body.email}
+        });
+        const resultValidation = validationResult(req);
+        
+        Promise.all([user,email])
+        .then(function([user,email]){
+            
+            if(resultValidation.errors.length > 0){
+                return res.render('editUser' , 
+                {errors: resultValidation.mapped(), 
+                oldData: req.body,
+                user:user}
+                );
+                
+            }
+    
+            
+            db.Users.update({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             userName: req.body.user,
@@ -117,13 +143,13 @@ const usersController = {
             birthday: req.body.birth_date,
             address: req.body.address, 
             IdImageUser:req.file.filename
-        },{
-            where:{
-                idUser: req.params.idUser
-            }
-        });
+           },{
+               where: {idUser:req.params.idUser}
+           }
+           ).then((user) => res.redirect('/user/list'))
+        })
 
-        res.redirect("/user/detalle/" + req.params.idUser)
+       
     },
     deleteUser: (req,res)=>{
         db.Users.destroy({
@@ -191,7 +217,8 @@ const usersController = {
                         birthday: req.body.birth_date,
                         address: req.body.address, 
                         IdImageUser:req.file.filename
-                       }).then(user => res.redirect('login'))}
+                       }).then(user => res.redirect('login'))
+                    }
                  
                 
               

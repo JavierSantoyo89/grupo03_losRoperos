@@ -3,10 +3,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/register.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script>  window.addEventListener('load',function(){
+        let formulario = document.querySelector("form.registro_Form_Registro")
+ 
+        formulario.addEventListener("submit",function(e){
+            
+            let errores = [];
+            let campoNombre = document.querySelector('#name');
+            if(campoNombre.value == ""){
+               errores.push("El campo de nombre tiene que estar completo ")
+            }else if(campoNombre.value.length < 2){
+                errores.push("El campo de nombre debe tener al menos 2 caracteres")
+            }
+            
+            let campoEmail = document.querySelector('#email');
+            if(campoEmail.value == ""){
+                errores.push("El campo de email tiene que estar completo ")
+            }else if(!campoEmail.validity.valid) {
+                errores.push("Debe ser un Email valido")
+            }
+ 
+            let campoPassword = document.querySelector('#pass');
+            if(campoPassword.value == ""){
+                errores.push("El campo de contraseña tiene que estar completo ")
+            }else if(campoPassword.value.length < 8) {
+                errores.push("Contraseña al almenos 8 caracteres")
+            }
+ 
+            let campoImage = document.querySelector('#avatar');
+            let filePath = campoImage.value;
+            let allowedExtensions = ['.jpg','.png','.gif', '.jpeg'];
+            if (filePath == ""){
+             errores.push('Las extensiones de archivo permitidas son '+ allowedExtensions.join(','))
+            }
+ 
+            if(errores.length > 0){
+                 e.preventDefault();
+                 let ulErrores = document.querySelector("div.errores ul")
+                 ulErrores.innerHTML = ""
+                 for (let i=0; i < errores.length; i++){
+                     ulErrores.innerHTML += "<li>" + errores[i]+"</li>"
+                 }
+                 
+            } 
+ 
+            
+         
+            
+        })
+     }) </script>
     <title> Registro usuario </title>
 </head>
 <body class='registro_Body'>
@@ -16,30 +65,36 @@
     <form action="/user/editar/<%=user.idUser%>" method="POST" enctype = "multipart/form-data" class="registro_Form_Registro">
             <h2 class="registro_H2">Editar Usuario</h2>
 
-           
+            <div class="registro_Contenedor_Global">
+                <div class = "errores" style="color: red">
+                    <ul>
+        
+                    </ul>
+        
+                </div>
 
-            <input class="registro_input-formulario" type="text" name="firstName" placeholder="Nombre"  value="<%= user.firstName %>">
+            <input class="registro_input-formulario" type="text" id="name"name="firstName" placeholder="Nombre"  value="<%= locals.oldData ? oldData.firstName :user.firstName %>">
             <% if (locals.errors && errors.firstName) { %>
                 <p style="color: red"><%= errors.firstName.msg %></p>
             <% } %>
 
-            <input class="registro_input-formulario" type="text" name="lastName" placeholder="Apellido" value="<%= user.lastName %>">
+            <input class="registro_input-formulario" type="text" name="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastName :user.lastName %>">
             <% if (locals.errors && errors.lastName) { %>
                 <p style="color: red"><%= errors.lastName.msg %></p>
             <% } %>
 
-            <input class="registro_input-formulario" type="text" name="user" placeholder="Nombre de usuario" value="<%= user.userName %>">
+            <input class="registro_input-formulario" type="text" name="user" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.user :user.userName %>">
             <% if (locals.errors && errors.user) { %>
                 <p style="color: red"><%= errors.user.msg %></p>
             <% }  %>
         
 
-            <input class="registro_input-formulario" type="email" name="email" placeholder="E-mail" value="<%= user.email %>">
+            <input class="registro_input-formulario" type="email" id= "email" name="email" placeholder="E-mail" value="<%= locals.oldData ? oldData.email :user.email %>">
             <% if (locals.errors && errors.email) { %>
                 <p style="color: red"><%= errors.email.msg %></p> 
             <% } %>  
 
-            <input class="registro_Contraseña" type="password" name="pass" placeholder="Elegí tu contraseña">
+            <input class="registro_Contraseña" type="password" id ="pass" name="pass" placeholder="Elegí tu contraseña">
             <% if (locals.errors && errors.pass) { %>
                 <p style="color: red"><%= errors.pass.msg %></p>
             <% } %>
@@ -50,25 +105,27 @@
             <br>
             <br>
             <label class="checkbox_Registro" for="birth_date" id='registro_cumpleaños'><b><h4>Fecha de nacimiento</h4></b></label>
-            <input class="registro_input-formulario" type="date" name="birth_date" placeholder="birth_date" value="<%= user.birthday %>">
+            <input class="registro_input-formulario" type="date" name="birth_date" placeholder="birth_date" value="<%= locals.oldData ? oldData.birth_date :user.birthday %>">
             <% if (locals.errors && errors.birth_date) { %>
                 <p style="color: red"><%= errors.birth_date.msg %></p>
             <% } %>
             <label class="checkbox_Registro" for="address" id='address'><b><h4>Direccion</h4></b></label>
-            <input class="registro_input-formulario" type="text" name="address" placeholder="Domicilio" value="<%= user.address %>">
+            <input class="registro_input-formulario" type="text" name="address" placeholder="Domicilio" value="<%= locals.oldData ? oldData.address :user.address %>">
             
             <% if (locals.errors && errors.address) { %>
                 <p style="color: red"><%= errors.address.msg %></p>
             <% } %>
             <br>
             <br>
-            <input type="file" name="avatar" >
+            <input type="file" name="avatar" id="avatar" accept=".jpg, .png, .gif, .jpeg">
             <% if (locals.errors && errors.avatar) { %>
                 <p style="color: red"><%= errors.avatar.msg %></p>
             <% } %>
             <br>
             <br>
+            <form action="/user/editar/<%= user.idUser %>" method="POST">
             <input class="registro_Input-casilla" type="submit" value="Enviar">
+            </form>
             <input class="registro_Input-casilla" type="reset" value="Borrar">
             <br>
             <br>

@@ -12,6 +12,45 @@
     <link rel="stylesheet" href="/css/home.css" >
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css" >
     <link rel="stylesheet" href="/css/styles.css" >
+    <script>  window.addEventListener('load',function(){
+      let formulario = document.querySelector("form.registro_Form_Registro")
+
+      formulario.addEventListener("submit",function(e){
+          
+          let errores = [];
+          let campoNombre = document.querySelector('#name');
+          if(campoNombre.value == ""){
+             errores.push("El campo de nombre tiene que estar completo ")
+          }else if(campoNombre.value.length < 5){
+              errores.push("El campo de nombre debe tener al menos 5 caracteres")
+          }
+          
+          let campoDescripcion = document.querySelector('#description');
+          if(campoDescripcion.value == ""){
+              errores.push("El campo de descripcion no puede estar vacio ")
+          }else if(campoDescripcion.value.length < 20){
+              errores.push("El campo de descripcion debe tener al menos 20 caracteres")
+          }
+
+          let campoImage = document.querySelector('#file');
+          let filePath = campoImage.value;
+          console.log(filePath)
+          let allowedExtensions = ['.jpg','.png','.gif', '.jpeg'];
+          if (filePath == ""){
+           errores.push('Las extensiones de archivo permitidas son '+ allowedExtensions.join(','))
+          }
+
+          if(errores.length > 0){
+               e.preventDefault();
+               let ulErrores = document.querySelector("div.errores ul")
+               ulErrores.innerHTML = ""
+               for (let i=0; i < errores.length; i++){
+                   ulErrores.innerHTML += "<li>" + errores[i]+"</li>"
+               }
+               
+          }            
+      })
+   }) </script>
 </head>
     <body>
 
@@ -29,8 +68,14 @@
                         <h2 class="products-title">Estás editando: <i><%= products.name %></i></h2>
                       </div>
                     </div>
+                    <div class = "errores" style="color: red">
+                      <ul>
+          
+                      </ul>
+          
+                  </div>
                     <div class="col-12">
-                      <form action="/products/edit/<%= products.id %>"method="POST"  enctype="multipart/form-data" >
+                      <form action="/products/edit/<%= products.id %>"method="POST" class="registro_Form_Registro" enctype="multipart/form-data" >
                         <div class="row product-detail">
                           <div class="col-12 col-md-6">
                             <label for="name" class="form-label">Nombre del producto:</label>

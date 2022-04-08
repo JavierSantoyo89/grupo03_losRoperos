@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const  path = require('path');
 const session = require('express-session');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 const cookieParser = require('cookie-parser');// Intruccion para poder usar cookies
 app.use(cookieParser())
@@ -13,11 +14,20 @@ app.use(methodOverride('_method'));
 
 // ------- Cadena para llamar middlewares(Globales) ------- //
 
+
 // ------- Cadena para llamar el middleware de registro de pag visitadas por parte del usuario(Global) --------- //
     var logMiddleware = require('./middlewares/logmiddleware');
         app.use(logMiddleware);
 // ------- Cadena para llamar express session(Global) ----------- //
-        app.use(session({secret: 'Secreto!!!'})); // para iniciar session
+    app.use(session({
+        secret: "Un secreto ;b",
+        resave: true,
+        saveUninitialized: true,
+    }));
+
+    app.use(cookieParser());
+    app.use(userLoggedMiddleware);
+
 // ------- Template engine ------- //
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname,'/views'));
@@ -30,7 +40,7 @@ app.use(express.urlencoded({ extended: false})); // convierte el form a objeto l
 app.use(express.json()); // convierte a JSON
 
 
-app.use(cookieParser());
+
 
 
 // ------- Variables de rutas ------- //
@@ -48,6 +58,7 @@ app.use('/user',routerUser);
 app.use((req,res,next)=>{
     res.status(404).render('not-found')
 })
+
 
 
 // ------- levantar servidor ------- //

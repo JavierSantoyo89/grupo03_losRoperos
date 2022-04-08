@@ -99,21 +99,7 @@ const productsController = {
     // *---- Controlador para hacer un UPDATE en la BD por su Id (Funciona al 100%) ----//
     Update: (req,res) => {
        
-        const resultValidation = validationResult(req);
-        if(resultValidation.errors.length > 0){
-            
-            return res.render('/products/edit/' + req.params.id , 
-            {errors: resultValidation.mapped(), 
-            oldData: req.body
-            });
-            
-            
-        }
-
-        let id = req.params.id;
-        let productoImagen = req.body;
-        productoImagen.imgProduct = req.file.filename;
-            console.log('el nombre de la imagen en el controlador update ' + req.file.filename);
+  
 
             db.Products.update({
                 name: req.body.name,
@@ -132,7 +118,7 @@ const productsController = {
                     id: req.params.id
                 }
             })
-                res.redirect('/products/edit/' + req.params.id)
+                res.redirect('/products')
 	},
 
         //? --------------------------------------------------------------------------------- //
@@ -151,3 +137,8 @@ const productsController = {
 };
 
 module.exports = productsController
+
+      /*let id = req.params.id;
+        let productoImagen = req.body;
+        productoImagen.imgProduct = req.file.filename;
+            console.log('el nombre de la imagen en el controlador update ' + req.file.filename);*/

@@ -75,8 +75,8 @@ const productsAPI = {
             })
     },
     //  *************** Borra un registo de la BD mediente la API  ***************  //
-    delete_api: (req,res) =>{
-        db.Products.destroy({
+    delete_api: async (req,res) =>{
+       await db.Products.destroy({
             where: {id: req.params.id}
         })
         .then(response =>{
@@ -84,5 +84,6 @@ const productsAPI = {
         })
     }
 }
+
 
 module.exports = productsAPI
