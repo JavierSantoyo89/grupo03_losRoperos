@@ -1,6 +1,6 @@
 function userAuth (req, res, next){
             //req.session.usuarioALogearse = 'javier'
-        if (req.session.userLogged != undefined){
+        if (req.session.userName != undefined ){
             res.redirect('/user/profile')
         }else{
             //res.send('Requiere permisos para verlo animal')

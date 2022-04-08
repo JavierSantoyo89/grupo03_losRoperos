@@ -31,9 +31,11 @@ const usersController = {
         
         Promise.any([userToLogin])
             .then(function(userToLogin){
-                res.cookie('userName', userToLogin.userName)
-                console.log(res.cookie.userName);
-                if(userToLogin !==null){
+                
+                
+                if(userToLogin !==null){ 
+                        avatarName = userToLogin.userName
+                    res.cookie('userName',avatarName, {maxAge: 60000})
                     let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
                     if (isOkThePassword){                        
                         delete userToLogin.password;
@@ -43,7 +45,6 @@ const usersController = {
                         /*if(req.body.remember_user) {
                             res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
                         }*/
-                        
                         res.redirect('/user/profile');
                     }
                     else {
