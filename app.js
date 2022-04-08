@@ -20,9 +20,7 @@ app.use(methodOverride('_method'));
         app.use(logMiddleware);
 // ------- Cadena para llamar express session(Global) ----------- //
     app.use(session({
-        secret: "Un secreto ;b",
-        resave: false,
-        saveUninitialized: false,
+        secret: "Un secreto ;b"
     }));
 
     app.use(userLoggedMiddleware);

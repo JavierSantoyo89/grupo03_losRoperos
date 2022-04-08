@@ -37,7 +37,15 @@ const productsController = {
                  res.render("detail",{products:products} )
                  
             })
-
+        },
+        detalleInvited: (req,res) => {
+            let id = req.params.id;
+            db.Products.findByPk(id)
+                .then(function (products) {
+                     res.render("detail_invited",{products:products} )
+                     
+                })
+    
             // ?------------------------------------------------------------------------------- //
             // *------------- Controladores de la vista de crear nuevo producto --------------* //
             // ?------------------------------------------------------------------------------- //
