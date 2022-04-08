@@ -35,7 +35,11 @@ const usersController = {
                 
                 if(userToLogin !==null){ 
                         avatarName = userToLogin.userName
-                    res.cookie('userName',avatarName, {maxAge: 60000})
+                    res.cookie('username',avatarName, {maxAge: 600000})
+
+               
+
+
                     let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
                     if (isOkThePassword){                        
                         delete userToLogin.password;
