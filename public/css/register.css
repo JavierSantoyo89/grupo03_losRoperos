@@ -11,10 +11,9 @@
  }
 
  .registro_Contenedor_Global{
-     display: flexbox;
+     display:flexbox;
      justify-content: center;
-   
-    width: 30vw;
+     width: 30vw;
      align-self: center;
  }
  .registro_Form_Registro{
@@ -61,6 +60,11 @@
     padding:0;
 }
 
+input[type=file]{
+    color:#fff;
+
+}
+
 .registro_H4{
     color:#fff;
 }
@@ -73,6 +77,16 @@ font-size: 18px;
 .checkbox_registro {
     color:#fff;
 }
+
+
+@media screen and (min-width: 600px) and (max-width:1200px){
+    body   {
+       width: 100%;
+    }
+    .registro_Form_Registro {
+        width: 100%;
+    }
+    }
 /*
 @media(max-width:480){
     .form{
