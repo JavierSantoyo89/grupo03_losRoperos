@@ -25,7 +25,7 @@ const productsAPI = {
             })
     },
     // **************** Count de productos "Season" en formato JSON (Done) **************** //
-    countador_insale: (req,res) =>{
+    countador_season: (req,res) =>{
         db.Products.findAll(
             {where: {nameStatus: 'Season'}}
         )

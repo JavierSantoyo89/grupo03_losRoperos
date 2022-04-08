@@ -12,6 +12,45 @@
     <link rel="stylesheet" href="/css/home.css" type="text/css" media="all">
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
+    <script>  window.addEventListener('load',function(){
+        let formulario = document.querySelector("form.registro_Form_Registro")
+ 
+        formulario.addEventListener("submit",function(e){
+            
+            let errores = [];
+            let campoNombre = document.querySelector('#name');
+            if(campoNombre.value == ""){
+               errores.push("El campo de nombre tiene que estar completo ")
+            }else if(campoNombre.value.length < 5){
+                errores.push("El campo de nombre debe tener al menos 5 caracteres")
+            }
+            
+            let campoDescripcion = document.querySelector('#description');
+            if(campoDescripcion.value == ""){
+                errores.push("El campo de descripcion no puede estar vacio ")
+            }else if(campoDescripcion.value.length < 20){
+                errores.push("El campo de descripcion debe tener al menos 20 caracteres")
+            }
+ 
+            let campoImage = document.querySelector('#file');
+            let filePath = campoImage.value;
+            console.log(filePath)
+            let allowedExtensions = ['.jpg','.png','.gif', '.jpeg'];
+            if (filePath == ""){
+             errores.push('Las extensiones de archivo permitidas son '+ allowedExtensions.join(','))
+            }
+ 
+            if(errores.length > 0){
+                 e.preventDefault();
+                 let ulErrores = document.querySelector("div.errores ul")
+                 ulErrores.innerHTML = ""
+                 for (let i=0; i < errores.length; i++){
+                     ulErrores.innerHTML += "<li>" + errores[i]+"</li>"
+                 }
+                 
+            }            
+        })
+     }) </script>
 </head>
     <body id="Bodys">
 
@@ -29,58 +68,95 @@
                             <h2 class="products-title">Formulario de creación de productos</h2>
                         </div>
                     </div>
+                    <div class = "errores" style="color: red">
+                        <ul>
+            
+                        </ul>
+            
+                    </div>
                     <div class="col-12">
-                        <form action="/products/new" method="post" enctype="multipart/form-data" >
+                        <form action="/products/new" class = "registro_Form_Registro" method="POST" enctype="multipart/form-data" >
                             <div class="row product-detail">
                                 <div class="col-12 col-md-6">
                                     <label for="name" class="form-label">Nombre del producto:</label>
-                                    <input type="text" id="name" name="name"  placeholder="Ej: Pantalon cool" >
+                                    <input type="text" id="name" name="name" class="form-input" placeholder="Ej: Pantalon " value="<%= locals.oldData ? oldData.name :null %>">
+                                    <% if (locals.errors && errors.name) { %>
+                                        <p style="color: red"><%= errors.name.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="model" class="form-label">Modelo del producto:</label>
-                                    <input type="text" id="model" name="model"  placeholder="Ej: DSL5000" >
+                                    <input type="text" id="model" name="model" class="form-input" placeholder="Ej: DSL5000" value="<%= locals.oldData ? oldData.model :null %>">
+                                    <% if (locals.errors && errors.model) { %>
+                                        <p style="color: red"><%= errors.model.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="brand" class="form-label">Marca del producto:</label>
-                                    <input type="text" id="brand" name="brand"  placeholder="Ej: Pull y Bear" >
+                                    <input type="text" id="brand" name="brand" class="form-input" placeholder="Ej: Pull y Bear" value="<%= locals.oldData ? oldData.brand :null %>">
+                                    <% if (locals.errors && errors.brand) { %>
+                                        <p style="color: red"><%= errors.brand.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="color" class="form-label">Color del producto:</label>
-                                    <input type="text" id="color" name="color"  placeholder="Ej: Rojo">
+                                    <input type="text" id="color" name="color" class="form-input" placeholder="Ej: Rojo" value="<%= locals.oldData ? oldData.color :null %>">
+                                    <% if (locals.errors && errors.color) { %>
+                                        <p style="color: red"><%= errors.color.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="price" class="form-label">Precio del producto:</label>
-                                    <input type="number" id="price" name="price" placeholder="Ej: 5678" >
+                                    <input type="number" id="price" name="price" class="form-input"placeholder="Ej: 5678" value="<%= locals.oldData ? oldData.price :null %>">
+                                    <% if (locals.errors && errors.price) { %>
+                                        <p style="color: red"><%= errors.price.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="discount" class="form-label">Descuento:</label>
-                                    <input type="number" id="discount" name="discount"  placeholder="Ej: 15" class="form-input">
+                                    <input type="number" id="discount" name="discount" class="form-input" placeholder="Ej: 15" class="form-input" value="<%= locals.oldData ? oldData.discount :null %>">
+                                    <% if (locals.errors && errors.discount) { %>
+                                        <p style="color: red"><%= errors.discount.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="size" class="form-label" >Talla:</label>
-                                    <select name="size" id="size" required class="form-input">
-                                        <option value="">Elegí</option>
-                                        <option value="Ch">Chica</option>
-                                        <option value="M">Mediana</option>
-                                        <option value="G">Grande</option>
+                                    <select name="size" id="size"  class="form-input" placeholder="Elegir"  value="<%= locals.oldData ? oldData.size :null %>">
+                                        <option value="">Elegir</option>
+                                        <option value="Ch">Ch</option>
+                                        <option value="M">M</option>
+                                        <option value="G">G</option>
                                     </select>
+                                    <% if (locals.errors && errors.size) { %>
+                                        <p style="color: red"><%= errors.size.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="status" class="form-label">Status:</label>
-                                    <select name="status" id="status" required class="form-input">
-                                        <option value="">Elegí</option>
-                                        <option value="In-sale">En oferta</option>
-                                        <option value="Season">Nueva Temporada</option>
+                                    <select name="status" id="status"  class="form-input" placeholder="Elegir"  value="<%= locals.oldData ? oldData.status :null %>">
+                                        
+                                        <option value="">Elegir</option>
+                                        <option value="In-sale">In-sale</option>
+                                        <option value="Season">Season</option>
                                     </select>
+                                    <% if (locals.errors && errors.status) { %>
+                                        <p style="color: red"><%= errors.status.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12">
                                     <label for="description" class="form-label">Descripción:</label>
-                                    <textarea name="description"  id="description" required class="form-input"></textarea>
+                                    <textarea name="description"  id="description"  class="form-input" value="<%= locals.oldData ? oldData.description :null %>"></textarea>
+                                    <% if (locals.errors && errors.description) { %>
+                                        <p style="color: red"><%= errors.description.msg %> </p>
+                                    <% } %>
                                 </div>
                                 <div class="col-12">
                                     <label for="img" class="form-label">Sube la imagen:</label>
-                                    <input type="file" name="imgProduct" id="file" required accept=".jpg">
-                                </div>
+                                    <input type="file" name="imgProduct" id="file"  accept=".jpg, .png,.gif,.jpeg">
+                                    <% if (locals.errors && errors.imgProduct) { %>
+                                        <p style="color: red"><%= errors.imgProduct.msg %> </p>
+                                    <% } %>
+                                </div> 
                                 <div class="col-12">
                                     <button type="submit" class="buy-now-button">Guardar producto</button>
                                 </div>

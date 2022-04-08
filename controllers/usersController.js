@@ -1,6 +1,6 @@
-const { validationResult } = require('express-validator');
-const { redirect, cookie } = require('express/lib/response');
 const fs =require('fs')
+const { redirect, cookie } = require('express/lib/response');
+
 const path = require('path');
 var bcryptjs = require('bcryptjs');
 const { Console } = require('console');
@@ -11,6 +11,7 @@ let db = require('../data/models')
 const sequelize =db.sequelize;
 const res = require('express/lib/response');
 const { send } = require('process');
+const { validationResult } = require('express-validator');
 //const userJSON = path.join(__dirname, '../data/User.json');
 
 const usersController = {
@@ -19,6 +20,56 @@ const usersController = {
     login: (req,res) => {
         res.render('login')
     },
+    // -- Login Mike
+    loginProcess: (req, res) => {
+
+        var email = db.Users.findOne({
+            where: {email :req.body.email}
+        });       
+        
+        Promise.any([email])
+            .then(function(email){
+
+                if(email !==null){
+                    let isOkThePassword = bcryptjs.compareSync(req.body.password, email.password);
+                    if (isOkThePassword){
+                        res.send('Puedes entrar') 
+                    }
+                    else {
+                        res.render('login', {
+                            errors: {
+                                password: {
+                                    msg: 'Password incorrecto'
+                                }
+                            }
+                        
+                        })
+                    }
+                    //res.send(email);
+                    
+                }else {
+                    // Mandar mensaje de error
+                    res.render('login', {
+                        errors: {
+                            email: {
+                                msg: 'No existe el usuario en la db'
+                            }
+                        }
+                    
+                    });
+                    
+                }
+                 
+                
+              
+         });
+        
+
+        
+    },
+
+    //--Fin Login Mike
+
     ProcessLogin: (req,res) =>{
         let errors = validationResult(req);
         if (errors.isEmpty()){
