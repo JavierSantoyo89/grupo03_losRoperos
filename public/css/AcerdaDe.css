@@ -1,0 +1,11 @@
+.parrafo1{
+  border:1px solid #ccc;
+  overflow: hidden;
+  transform: translateX(500px);
+}
+
+.menu1 li{
+  display:block;
+  text-decoration: none;
+  width: 100%;
+}
