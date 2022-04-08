@@ -15,11 +15,18 @@
 
     <div class= "navegacion">
         <nav>
-            <ul>
+
+            <ul class="navbar-nav align-items-center">
                 <li><a href="/"> Home </a></li>
-                <li><a href="/user/login"> Login </a></li>
                 <li><a href="../carrito"> Carrito </a></li>
-            </ul>
+				<% if (locals.isLogged) { %>
+                    <li><a href="/user/profile"> Perfil </a></li>
+                    <li><a href="/user/logout"> Logout </a></li>
+				<% } else { %>
+					<li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
+				<% } %>
+			</ul>
+
         </nav>
     </div>
         

@@ -15,19 +15,25 @@ const UsersAPI = require('../controllers/API/UsersAPI')
 
 // ************ Middleware's Require ************
 const validateLogin = require('../middlewares/user/validateLogin');
-const validateRegister = require('../middlewares/user/validateRegister')
-const multerUser = require('../middlewares/user/multerUser')
+const validateRegister = require('../middlewares/user/validateRegister');
+const multerUser = require('../middlewares/user/multerUser');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 // ---- Rutas dedicadas a user's ---- //
-routerUsers.get('/login',usersController.login);
-
-    //Procesar el login 
-//routerUsers.post('/login',validateLogin, usersController.ProcessLogin);
+// Login 
+routerUsers.get('/login',guestMiddleware,usersController.login);
 routerUsers.post('/login',validateLogin, usersController.loginProcess);
 
+// Perfil
+routerUsers.get('/profile/',authMiddleware,usersController.profile);
+
+// Logout
+routerUsers.get('/logout/', usersController.logout);
 
 // ---- Rutas dedicadas a new user's ---- //
-routerUsers.get('/register',usersController.registro);
+routerUsers.get('/register',guestMiddleware,usersController.registro);
 routerUsers.post('/register', multerUser, validateRegister ,usersController.processRegister);
 routerUsers.get('/list',usersController.listaUsuarios);
 routerUsers.get('/editar/:idUser',usersController.editUser);
