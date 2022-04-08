@@ -131,7 +131,18 @@ const usersController = {
                 user:user}
                 );
                 
-            }
+            }if(email !==null){
+                console.log(email)
+                    res.render('editUser' , 
+                        {errors: {
+                                email: {
+                                         msg: 'Email en uso. Intenta con otro' }
+                        },
+                        oldData: req.body,
+                        user:user
+                        }
+                    )
+                }else {
     
             
             db.Users.update({
@@ -146,7 +157,7 @@ const usersController = {
            },{
                where: {idUser:req.params.idUser}
            }
-           ).then((user) => res.redirect('/user/list'))
+           ).then((user) => res.redirect('/user/list'))}
         })
 
        
