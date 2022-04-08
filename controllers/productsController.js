@@ -98,27 +98,42 @@ const productsController = {
     },
     // *---- Controlador para hacer un UPDATE en la BD por su Id (Funciona al 100%) ----//
     Update: (req,res) => {
-       
+        var products = db.Products.findOne({
+            where: {id :req.params.id}
+        });
   
+        const resultValidation = validationResult(req);
 
-            db.Products.update({
-                name: req.body.name,
-                model: req.body.model,
-                brand: req.body.brand,
-                size: req.body.size,
-                color: req.body.color,
-                discount: req.body.discount,
-                price: req.body.price,
-                decriptionProduct: req.body.description,
-                nameStatus: req.body.status,
-                imgProduct: req.file.filename
-            },
-            {
-                where:{
-                    id: req.params.id
-                }
+        Promise.any([products])
+            .then(function(products){
+                if(resultValidation.errors.length > 0){
+                    return res.render('EditProduct' , 
+                    {errors: resultValidation.mapped(), 
+                    oldData: req.body,
+                    products:products
+                    });
+                    
+                }else{
+                db.Products.update({
+                    name: req.body.name,
+                    model: req.body.model,
+                    brand: req.body.brand,
+                    size: req.body.size,
+                    color: req.body.color,
+                    discount: req.body.discount,
+                    price: req.body.price,
+                    decriptionProduct: req.body.description,
+                    nameStatus: req.body.status,
+                    imgProduct: req.file.filename
+                },
+                {
+                    where:{
+                        id: req.params.id
+                    }
+                }).then((product) => res.redirect('/products'))}
             })
-                res.redirect('/products')
+
+           
 	},
 
         //? --------------------------------------------------------------------------------- //
