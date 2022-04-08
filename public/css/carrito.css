@@ -25,98 +25,166 @@ p{
 }
 /* ----------------------------------------------------- */
 /* --------------------- CSS Carrito.ejs ----------------------- */
-main{
+/* main{
     background-color: var(--blanco);
     margin-right: 10%;
     margin-left:10%;
     font-family:var(--Cabin-font);
-}
+} */
 
-h1{
+/* h1{
     padding:20px;
     font-weight: bolder;
-}
+} */
 
-main section {
+/* main section {
     display: flex;
     flex-direction: row;
-}
+} */
 
-main section .descripcion {
+/* main section .descripcion {
     display: flex;
     flex-direction: row;
     width: 50%;
-}
-main section .cantidad, .precio{
+} */
+/* main section .cantidad, .precio{
     display: flex;
     flex-direction: row;
     width: 25%;
     justify-content:center;
     align-items: center;
-}
-main section .name{
+} */
+/* main section .name{
     display: flex;
     flex-direction: column; 
     justify-content:center;
     padding:5%
-}
-main section .name strong{
+} */
+/* main section .name strong{
     font-weight: bold;
-}
-#descripcion{
+} */
+/* #descripcion{
     padding:5%;
     font-size:16px;
-}
+} */
 
-#cantidad{
+/* #cantidad{
     display:flex;
     flex-direction:row;
     justify-content:center;
-}
-#cantidad span{
+} */
+/* #cantidad span{
     margin-right: 5%;
-}
-#cantidad form{
+} */
+/* #cantidad form{
     width:10%;
     
-}
-#cantidad input{
+} */
+/* #cantidad input{
     width:100%;
-}
-.precio{
+} */
+/* .precio{
     justify-content: flex-end;
-}
-#precio{
+} */
+/* #precio{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     
     
-}
+} */
 
-#precio span{
+/* #precio span{
     width:100%;
     
-}
-main section .cupon, .pagar {
+} */
+/* main section .cupon, .pagar {
     display: flex;
     flex-direction: row;
     width: 50%;
-}
-#cupon{
+} */
+/* #cupon{
     width:100%;
-}
-#pagar{
+} */
+/* #pagar{
     display: flex;
     flex-direction: column;
     
     justify-content:space-between;
     
-}
-.subtotal, .total{
+} */
+/* .subtotal, .total{
     display: flex;
     flex-direction:row;
     justify-content: flex-end;
+} */
+h1{
+    text-align: center;
+    font-size: 30px;
 }
+
+main {
+    align-items: center;
+width: 100%;
+
+    align-content: center;
+}
+.main-section{
+    display:none;
+    overflow: hidden;
+    transition: 300ms;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    line-height: 22px;
+    width:auto;
+    align-content: center;
+    /* width:100%; */ 
+    /* margin-left: 400px; */
+}
+.main-section:hover{
+   
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+ h1 i{
+     color:rgb(171, 54, 54);
+ }
+
+ .main-section img{
+     border: 2px solid #000;
+ }
+ .cont1  {
+    display:block; 
+    margin-left:20px;
+ }
+
+ button{
+    font-size: 20px;
+    width: 50%;
+    padding: 1px;
+    border:none;
+    border-bottom: 1px solid #ccc ;
+    color:#000;
+    cursor: pointer;
+    background:transparent;
+ }
+ button:hover{
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+ }
+
+ .estrella input{
+    display:none; 
+    
+     transition:all 0.2s ease;
+ }
 /* --------------------- */
+.estrella label:hover{
+    color:#fd4;
+}
+#nombreArticulo{
+    font-size: 20px;
+}
