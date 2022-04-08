@@ -22,10 +22,10 @@ const authAccessProducts =require('../middlewares/authAccessProducts')
 router.get('/',productsController.Index);
 
 // --- detalle de usuario NO logeado
-router.get('/detail_invite/:id',productsController.detalle); 
+router.get('/detail_invite/:id',productsController.detalleInvited); 
 
 //--- detalle de usuario logeado
-router.get('/detail/:id',productsController.detalleInvited); 
+router.get('/detail/:id',productsController.detalle); 
 
 // ---- Rutas para agregar producto ---- //
 router.get('/new',  productsController.NewProduct);
