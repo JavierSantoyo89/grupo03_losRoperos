@@ -37,6 +37,9 @@ Licenciado en tecnologías de Información con experiencia en bases de datos rel
 
 #### Backup & Restore DB
 
+Seccion de React
+https://github.com/JavierSantoyo89/dashboard_los_roperos
+
 Si creaste el diagrama y pasarlo a DB
 https://www.youtube.com/watch?v=hfE0_Mme32k
 
