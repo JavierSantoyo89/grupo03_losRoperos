@@ -59,9 +59,9 @@ app.use((req,res,next)=>{
 
 
 // ------- levantar servidor ------- //
-app.listen(1689,()=>{
-    console.log('Servidor funcionando en http://localhost:1689');
-
+const port = process.env.PORT || 1689
+app.listen(port,()=>{
+    console.log('Servidor funcionando en http://localhost:' + port);
 });
 
 /*
