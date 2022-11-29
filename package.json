@@ -20,22 +20,22 @@
   "homepage": "https://github.com/JavierSantoyo89/grupo03_losRoperos#readme",
   "dependencies": {
     "aws-sdk": "^2.1104.0",
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "express-validator": "^6.14.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
     "method": "^2.0.0",
     "method-override": "^3.0.0",
-    "multer": "1.4.5-lts.1",
-    "multer-s3": "^3.0.1",
+    "multer": "^1.4.4",
+    "multer-s3": "^2.10.0",
     "mysql2": "^2.3.3",
-    "nodemon": "^2.0.20",
+    "nodemon": "^2.0.15",
     "override": "^0.0.1",
-    "sequelize": "^6.25.5",
-    "sequelize-cli": "^6.5.2"
+    "sequelize": "^6.17.0",
+    "sequelize-cli": "^6.4.1"
   }
 }
